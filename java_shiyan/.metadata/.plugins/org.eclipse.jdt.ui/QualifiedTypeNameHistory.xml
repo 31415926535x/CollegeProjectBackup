@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.lang.VirtualMachineError"/>
+<fullyQualifiedTypeName name="javax.swing.text.NavigationFilter"/>
+<fullyQualifiedTypeName name="java.nio.channels.NonReadableChannelException"/>
+<fullyQualifiedTypeName name="v4_9.SavingsAccount"/>
+<fullyQualifiedTypeName name="v6_25.Date"/>
+<fullyQualifiedTypeName name="v6_25.SavingsAccount"/>
+<fullyQualifiedTypeName name="v7_10.accumulator"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.lang.SecurityException"/>
+<fullyQualifiedTypeName name="java.lang.Number"/>
+<fullyQualifiedTypeName name="java.lang.Readable"/>
+<fullyQualifiedTypeName name="v7_10.Accumulator"/>
+<fullyQualifiedTypeName name="v7_10.SavingsAccount"/>
+<fullyQualifiedTypeName name="javax.swing.CellRendererPane"/>
+<fullyQualifiedTypeName name="v7_10.CreditAccount"/>
+<fullyQualifiedTypeName name="java.lang.NumberFormatException"/>
+<fullyQualifiedTypeName name="java.text.NumberFormat"/>
+<fullyQualifiedTypeName name="java.text.DecimalFormat"/>
+<fullyQualifiedTypeName name="v7_10.Account"/>
+<fullyQualifiedTypeName name="v7_10.Date"/>
+<fullyQualifiedTypeName name="v8_8.CreditAccount"/>
+<fullyQualifiedTypeName name="v8_8.SavingsAccount"/>
+<fullyQualifiedTypeName name="v8_8.Accumulator"/>
+<fullyQualifiedTypeName name="v8_8.Account"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="v8_8.Date"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+</qualifiedTypeNameHistroy>
