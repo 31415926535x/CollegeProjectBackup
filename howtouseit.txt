@@ -1,0 +1,4 @@
+1.首先将要备份保存的文件复制到这个文件下
+2.然后在 git Bash 中输入 git add .
+3.继续输入 git commit -m "[修改信息]"
+4.上传到GitHub git push [分支]
