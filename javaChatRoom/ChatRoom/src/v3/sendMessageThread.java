@@ -27,6 +27,7 @@ import java.net.Socket;
 
 public class sendMessageThread extends Thread {
 	Socket socket = null;
+	private volatile Thread blinker;
 	
 	/**
 	* @Title: sendMessageThread
@@ -40,7 +41,17 @@ public class sendMessageThread extends Thread {
 		this.socket = socket;
 	}
 	
-	    /* (non-Javadoc)
+	
+	public void start() {
+		blinker = new Thread(this);
+		blinker.start();
+	}
+	
+	
+	public void stopThisThread() {
+		blinker = null;
+	}
+	    /* 
 	    * 
 	    * 
 		* @Title: run
@@ -51,24 +62,28 @@ public class sendMessageThread extends Thread {
 	    */
 	    
 	public void run() {
+		Thread thisThread = Thread.currentThread();
+
 		try {
 			//由系统标准输入设备构造BufferedReader对象
-			BufferedReader sin=new BufferedReader(new InputStreamReader(System.in));
+			BufferedReader sin = new BufferedReader(new InputStreamReader(System.in));
 			//由Socket对象得到输出流，并构造PrintWriter对象
-			PrintWriter os=new PrintWriter(socket.getOutputStream());
+			PrintWriter os = new PrintWriter(socket.getOutputStream());
 			
 			String readlineString = sin.readLine();
 			
-			while(!readlineString.equals("bye")) {
+			while(blinker == thisThread) {
 				os.println(readlineString);
 				os.flush();
 				System.out.println("You said: " + readlineString);
+				if(readlineString.equals("bye")) {
+					break;
+				}
 				readlineString = sin.readLine();
-			}			
+			}
 			
-			os.close();
-			sin.close();
-			socket.close();
+//			os.close();
+//			sin.close();
 			
 		} catch (Exception e) {
 			// TODO: handle exception

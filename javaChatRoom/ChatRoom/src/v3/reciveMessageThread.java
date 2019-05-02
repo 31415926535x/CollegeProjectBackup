@@ -14,7 +14,6 @@ package v3;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 
 /**
@@ -27,7 +26,7 @@ import java.net.Socket;
 
 public class reciveMessageThread extends Thread {
 	Socket socket = null;
-
+	private Thread blinker;
 	    /**
 	    * @Title: reciveMessageThread
 	    * @Description: TODO 接收消息的操作线程
@@ -40,19 +39,34 @@ public class reciveMessageThread extends Thread {
 		// TODO Auto-generated constructor stub
 		this.socket = socket;
 	}
+	
+	public void start() {
+		blinker = new Thread(this);
+		blinker.start();
+	}
+	
+	public void stopThisThread() {
+		blinker = null;
+	}
+	
 	public void run() {
+		Thread thisThread = Thread.currentThread();
+		
 		try {
 			//由Socket对象得到输入流，并构造相应的BufferedReader对象
 			BufferedReader is=new BufferedReader(new InputStreamReader(socket.getInputStream()));
 			
 			String readlineString = is.readLine();
 			
-			while(!readlineString.equals("bye")) {
-				System.out.println("He said: " + is.readLine());
+			while(blinker == thisThread) {
+				System.out.println("He said: " + readlineString);
+//				if(readlineString.equals("bye")) {
+//					break;
+//				}
+				readlineString = is.readLine();
 			}
 			
-			is.close();
-			socket.close();
+//			is.close();
 			
 		} catch (Exception e) {
 			// TODO: handle exception

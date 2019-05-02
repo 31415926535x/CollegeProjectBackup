@@ -67,24 +67,19 @@ public class sendAndReciveOfServerThread extends Thread {
 //			PrintWriter os1 = new PrintWriter(clientASocket.getOutputStream());
 			
 			String readlineString = is1.readLine();
-			if(readlineString.equals("bye")) {
+			while(true) {
 				os2.println(readlineString);
 				os2.flush();
-				is1.close();
-				os2.close();
-				clientASocket.close();
-				clientBSocket.close();
-				return;
-			}
-			do {
-				os2.println(readlineString);
-				os2.flush();
+				System.out.println("Client1 talk ot Client2: " + readlineString);
+				if(readlineString.equals("bye")) {
+					break;
+				}
 				readlineString = is1.readLine();
-			} while (!readlineString.equals("bye"));
-			is1.close();
-			os2.close();
-			clientASocket.close();
-			clientBSocket.close();
+			}
+//			is1.close();
+//			os2.close();
+//			clientASocket.close();
+//			clientBSocket.close();
 		} catch (Exception e) {
 			// TODO: handle exception
 			System.out.println("Erroe: " + e);

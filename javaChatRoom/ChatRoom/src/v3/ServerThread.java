@@ -44,34 +44,73 @@ public class ServerThread extends Thread{
 
 			MultiTalkServer.putAccountIntoDB(accountString, socket1);	//保存信息到上线数据库
 			
-			os1.println("You are now logging in!");
-			os1.flush();
-			os1.println("Input the id that you wanna talk to...");
+			os1.println("You logged in!");
 			os1.flush();
 			
-			String theOtherClientString = is1.readLine();				//得到当前客户端想要通信的客户端id
-			
-			socket2 = MultiTalkServer.getSocket(theOtherClientString);	//获得要通信的客户端的套接字
-			
-			
-			//创建两个反向的线程，用于实现客户端A的发送与接收功能
-			sendAndReciveOfServerThread clientASendMessageToClientB = new sendAndReciveOfServerThread(socket1, socket2);
-			sendAndReciveOfServerThread clientAReciveMessageFromClientB = new sendAndReciveOfServerThread(socket2, socket1);
-			
-			clientASendMessageToClientB.start();	
-			clientAReciveMessageFromClientB.start();
-			
-			while(clientAReciveMessageFromClientB.isAlive() && clientASendMessageToClientB.isAlive()) {
-				if(!clientAReciveMessageFromClientB.isAlive() || !clientASendMessageToClientB.isAlive()) {
-					os1.close();
-					is1.close();
-					socket1.close();
-					socket2.close();
+			boolean clientIsLogin = true;
+			while(clientIsLogin) {
+				os1.println("Input the id that you wanna talk to..Or \"exit\" if you wanna to exit");
+				os1.flush();
+				System.out.println("--0-0-");
+				
+				
+				
+				String theOtherClientString = is1.readLine();
+				System.out.println(theOtherClientString + "------");
+				if(theOtherClientString.equals("exit")) {
+					break;
+				}
+				System.out.println(theOtherClientString + "------");
+				socket2 = MultiTalkServer.getSocket(theOtherClientString);
+				
+				sendAndReciveOfServerThread clientASendMessageToClientB = new sendAndReciveOfServerThread(socket1, socket2);
+				clientASendMessageToClientB.start();
+				
+				try {
+					clientASendMessageToClientB.join();
+				} catch (Exception e) {
+					// TODO: handle exception
+					System.out.println("Error: " + e);
 				}
 			}
+//			os1.println("Input the id that you wanna talk to...");
+//			os1.flush();
+//			
+//			String theOtherClientString = is1.readLine();				//得到当前客户端想要通信的客户端id
+//			
+//			socket2 = MultiTalkServer.getSocket(theOtherClientString);	//获得要通信的客户端的套接字
+			
+			
+//			//创建两个反向的线程，用于实现客户端A的发送与接收功能
+//			sendAndReciveOfServerThread clientASendMessageToClientB = new sendAndReciveOfServerThread(socket1, socket2);
+//			sendAndReciveOfServerThread clientAReciveMessageFromClientB = new sendAndReciveOfServerThread(socket2, socket1);
+//			
+//			clientASendMessageToClientB.start();	
+//			clientAReciveMessageFromClientB.start();
+//			
+//			while(clientAReciveMessageFromClientB.isAlive() && clientASendMessageToClientB.isAlive()) {
+//				if(!clientAReciveMessageFromClientB.isAlive() || !clientASendMessageToClientB.isAlive()) {
+//					os1.close();
+//					is1.close();
+//					socket1.close();
+//					socket2.close();
+//				}
+//			}
+			
+//			sendAndReciveOfServerThread clientASendMessageToClientB = new sendAndReciveOfServerThread(socket1, socket2);
+//			clientASendMessageToClientB.start();
+//			while(clientASendMessageToClientB.isAlive()) {
+//				if(!clientASendMessageToClientB.isAlive()) {
+//					break;
+//				}
+//			}
+//			os1.close();
+//			is1.close();
+//			socket1.close();
+//			socket2.close();
 			
 		}catch(Exception e){
-			System.out.println("Error:"+e);//出错，打印出错信息
+			System.out.println("Error:" + e);//出错，打印出错信息
 		}
 	}
 }

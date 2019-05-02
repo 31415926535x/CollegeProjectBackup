@@ -61,7 +61,7 @@ public class Account {
 	}
 	
 	
-	    /* (non-Javadoc)
+	    /* 
 	    * 
 	    * 
 		* @Title: equals
