@@ -55,21 +55,35 @@ public class TalkClient {
 			
 			boolean clientIslogin = true;
 			while(clientIslogin) {
+				System.out.println(23333);
 				
 //				System.out.println("Server: " + is.readLine());	//输出想要与之通信的客户端的提示信息
-//				
-//				String theOhterClientString;					//记录当前客户端想要与其通信的另一个客户端名称
-//				theOhterClientString = sin.readLine();
-//				
-//				os.println(theOhterClientString);				//向服务器请求与之通信的另一客户端
-//				os.flush();
+
+				String theOhterClientString;					//记录当前客户端想要与其通信的另一个客户端名称
 				
-				clientSendIdToServer client = new clientSendIdToServer(socket);
-				client.join();
+				theOhterClientString = sin.readLine();
+				
+//				System.out.println(sin.readLine());
+//				theOhterClientString = sin.readLine();
+//				while(theOhterClientString == null) {
+//					theOhterClientString = sin.readLine();
+//				}
+				
+				
+				System.out.println("bbbbbbbbbbb" + theOhterClientString);
+				os.println(theOhterClientString);				//向服务器请求与之通信的另一客户端
+				os.flush();
+				
+//				clientSendIdToServer client = new clientSendIdToServer(socket);
+//				client.start();
+//				System.out.println(233);
+//				while(client.isAlive()) {
+//					recive.yield();
+//				}
 				
 				sendMessageThread send = new sendMessageThread(socket);
 				send.start();
-				
+
 //				if(theOhterClientString.equals("exit")) {
 //					send.stopThisThread();
 //					break;
@@ -77,12 +91,12 @@ public class TalkClient {
 				
 //				send.start();
 				
-				try {
-					send.join();
-				} catch (Exception e) {
-					// TODO: handle exception
-					System.out.println("Error: --" + e);
+				Thread mainThread = Thread.currentThread();
+				while(send.getFlag()) {
+					mainThread.yield();
 				}
+
+				System.out.println("once talk stopped");
 			}
 			
 			

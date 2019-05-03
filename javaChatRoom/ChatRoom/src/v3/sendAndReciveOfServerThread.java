@@ -26,8 +26,9 @@ import java.net.Socket;
     */
 
 public class sendAndReciveOfServerThread extends Thread {
-	Socket clientASocket = null;
-	Socket clientBSocket = null;
+	private Socket clientASocket = null;
+	private Socket clientBSocket = null;
+	private boolean flag = true;
 	/**
 	* @Title: sendAndReciveOfServerThread
 	* @Description: TODO(这里用一句话描述这个方法的作用)
@@ -48,7 +49,9 @@ public class sendAndReciveOfServerThread extends Thread {
 		this.clientASocket = clientASocket;
 		this.clientBSocket = clientBSocket;
 	}
-	
+	public boolean getFlag() {
+		return flag;
+	}
 	    /**
 	    * 
 	    * 
@@ -72,6 +75,7 @@ public class sendAndReciveOfServerThread extends Thread {
 				os2.flush();
 				System.out.println("Client1 talk ot Client2: " + readlineString);
 				if(readlineString.equals("bye")) {
+					flag = false;
 					break;
 				}
 				readlineString = is1.readLine();

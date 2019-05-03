@@ -28,7 +28,7 @@ import java.net.Socket;
 public class sendMessageThread extends Thread {
 	Socket socket = null;
 	private volatile Thread blinker;
-	
+	private boolean flag = true; 
 	/**
 	* @Title: sendMessageThread
 	* @Description: TODO 构造方法，记录当前客户端与服务器通信的套接字（服务器的套接字）
@@ -41,7 +41,9 @@ public class sendMessageThread extends Thread {
 		this.socket = socket;
 	}
 	
-	
+	public boolean getFlag() {
+		return flag;
+	}
 	public void start() {
 		blinker = new Thread(this);
 		blinker.start();
@@ -50,6 +52,7 @@ public class sendMessageThread extends Thread {
 	
 	public void stopThisThread() {
 		blinker = null;
+		flag = false;
 	}
 	    /* 
 	    * 
@@ -65,6 +68,7 @@ public class sendMessageThread extends Thread {
 		Thread thisThread = Thread.currentThread();
 
 		try {
+			
 			//由系统标准输入设备构造BufferedReader对象
 			BufferedReader sin = new BufferedReader(new InputStreamReader(System.in));
 			//由Socket对象得到输出流，并构造PrintWriter对象
@@ -73,12 +77,15 @@ public class sendMessageThread extends Thread {
 			String readlineString = sin.readLine();
 			
 			while(blinker == thisThread) {
-				os.println(readlineString);
+				os.println("He said: " + readlineString);
 				os.flush();
 				System.out.println("You said: " + readlineString);
 				if(readlineString.equals("bye")) {
+					System.out.println("send Thread stop");
+					stopThisThread();
 					break;
 				}
+				
 				readlineString = sin.readLine();
 			}
 			
@@ -87,7 +94,7 @@ public class sendMessageThread extends Thread {
 			
 		} catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Error: " + e);
+			System.out.println("Error: --" + e);
 		}
 	}
 }

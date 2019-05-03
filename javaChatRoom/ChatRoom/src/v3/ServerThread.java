@@ -49,11 +49,11 @@ public class ServerThread extends Thread{
 			
 			boolean clientIsLogin = true;
 			while(clientIsLogin) {
-				os1.println("Input the id that you wanna talk to..Or \"exit\" if you wanna to exit");
+				
+				System.out.println("------");
+				
+				os1.println("Server: Input the id that you wanna talk to..Or \"exit\" if you wanna to exit");
 				os1.flush();
-				System.out.println("--0-0-");
-				
-				
 				
 				String theOtherClientString = is1.readLine();
 				System.out.println(theOtherClientString + "------");
@@ -66,11 +66,9 @@ public class ServerThread extends Thread{
 				sendAndReciveOfServerThread clientASendMessageToClientB = new sendAndReciveOfServerThread(socket1, socket2);
 				clientASendMessageToClientB.start();
 				
-				try {
-					clientASendMessageToClientB.join();
-				} catch (Exception e) {
-					// TODO: handle exception
-					System.out.println("Error: " + e);
+				Thread thisThread = Thread.currentThread();
+				while(clientASendMessageToClientB.getFlag()) {
+					thisThread.yield();
 				}
 			}
 //			os1.println("Input the id that you wanna talk to...");
