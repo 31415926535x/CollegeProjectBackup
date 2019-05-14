@@ -46,68 +46,45 @@ public class TalkClient {
 			os.println(account.conventAccountToString());	//像服务器传递自己的账户信息，记录到在线列表数据库
 			os.flush();
 			
-			System.out.println("Server: " + is.readLine());	//输出登陆成功提示信息
 			
 			
 			//创建收发消息两个线程，实现收发消息的任意性
 			reciveMessageThread recive = new reciveMessageThread(socket);
 			recive.start();
-			
+			Thread.currentThread().sleep(500);
 			boolean clientIslogin = true;
 			while(clientIslogin) {
-				System.out.println(23333);
-				
-//				System.out.println("Server: " + is.readLine());	//输出想要与之通信的客户端的提示信息
 
 				String theOhterClientString;					//记录当前客户端想要与其通信的另一个客户端名称
-				
 				theOhterClientString = sin.readLine();
-				
-//				System.out.println(sin.readLine());
-//				theOhterClientString = sin.readLine();
-//				while(theOhterClientString == null) {
-//					theOhterClientString = sin.readLine();
-//				}
-				
-				
-				System.out.println("bbbbbbbbbbb" + theOhterClientString);
+
+//				System.out.println("bbbbbbbbbbb" + theOhterClientString);
 				os.println(theOhterClientString);				//向服务器请求与之通信的另一客户端
 				os.flush();
 				
-//				clientSendIdToServer client = new clientSendIdToServer(socket);
-//				client.start();
-//				System.out.println(233);
-//				while(client.isAlive()) {
-//					recive.yield();
-//				}
+				if(theOhterClientString.equals("exit")) {
+					break;
+				}
 				
-				sendMessageThread send = new sendMessageThread(socket);
+				sendMessageThread send = new sendMessageThread(socket);		//建立一个发送消息的线程，用于向另一个客户端发送消息
 				send.start();
 
-//				if(theOhterClientString.equals("exit")) {
-//					send.stopThisThread();
-//					break;
-//				}
 				
-//				send.start();
-				
-				Thread mainThread = Thread.currentThread();
+				Thread mainThread = Thread.currentThread();					//利用这个发送消息线程的flag使main线程暂停执行，即保证在通信的这段时间里一直为接发消息
 				while(send.getFlag()) {
 					mainThread.yield();
 				}
 
-				System.out.println("once talk stopped");
+				System.out.println("You have stopped communiating the other person");
 			}
 			
-			
-			recive.stopThisThread();
-			os.close();
-			is.close();
+			//当前用户下线
+			recive.stopThisThread();		//停止接收消息
+			os.close();						//关闭各种流
+			is.close();						
 			sin.close();
-			System.out.println(23333);
-			socket.close();
-			
-			
+//			System.out.println(23333);
+			socket.close();					//关闭套接字
 			
 			
 		}catch(Exception e) {

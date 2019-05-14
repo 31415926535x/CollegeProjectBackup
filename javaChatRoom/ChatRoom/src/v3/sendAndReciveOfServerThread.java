@@ -28,6 +28,7 @@ import java.net.Socket;
 public class sendAndReciveOfServerThread extends Thread {
 	private Socket clientASocket = null;
 	private Socket clientBSocket = null;
+	private volatile Thread blinker;
 	private boolean flag = true;
 	/**
 	* @Title: sendAndReciveOfServerThread
@@ -52,6 +53,15 @@ public class sendAndReciveOfServerThread extends Thread {
 	public boolean getFlag() {
 		return flag;
 	}
+	public void start() {
+		blinker = new Thread(this);
+		blinker.start();
+	}
+	public void stopThisThread() {
+		blinker = null;
+		flag = false;
+	}
+	
 	    /**
 	    * 
 	    * 
@@ -61,6 +71,8 @@ public class sendAndReciveOfServerThread extends Thread {
 	    */
 	    
 	public void run() {
+		Thread thisThread = this.currentThread();
+		
 		try {
 			
 			BufferedReader is1 = new BufferedReader(new InputStreamReader(clientASocket.getInputStream()));		//接收客户端A处的消息
@@ -70,16 +82,19 @@ public class sendAndReciveOfServerThread extends Thread {
 //			PrintWriter os1 = new PrintWriter(clientASocket.getOutputStream());
 			
 			String readlineString = is1.readLine();
-			while(true) {
-				os2.println(readlineString);
+			while(blinker == thisThread) {
+				os2.println("He said: " + readlineString);
 				os2.flush();
 				System.out.println("Client1 talk ot Client2: " + readlineString);
 				if(readlineString.equals("bye")) {
-					flag = false;
+					System.out.println("stoppppppppppppp");
+					stopThisThread();
 					break;
 				}
 				readlineString = is1.readLine();
 			}
+			
+//因为流关闭会导致套接字的关闭，所以这里不管
 //			is1.close();
 //			os2.close();
 //			clientASocket.close();

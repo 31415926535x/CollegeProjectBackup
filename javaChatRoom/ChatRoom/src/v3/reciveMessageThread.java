@@ -60,9 +60,6 @@ public class reciveMessageThread extends Thread {
 			
 			while(blinker == thisThread) {
 				System.out.println(readlineString);
-//				if(readlineString.equals("bye")) {
-//					break;
-//				}
 				readlineString = is.readLine();
 			}
 			

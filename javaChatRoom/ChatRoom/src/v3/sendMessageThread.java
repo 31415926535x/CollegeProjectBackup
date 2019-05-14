@@ -54,7 +54,7 @@ public class sendMessageThread extends Thread {
 		blinker = null;
 		flag = false;
 	}
-	    /* 
+	    /**
 	    * 
 	    * 
 		* @Title: run
@@ -77,7 +77,7 @@ public class sendMessageThread extends Thread {
 			String readlineString = sin.readLine();
 			
 			while(blinker == thisThread) {
-				os.println("He said: " + readlineString);
+				os.println(readlineString);
 				os.flush();
 				System.out.println("You said: " + readlineString);
 				if(readlineString.equals("bye")) {
@@ -85,10 +85,9 @@ public class sendMessageThread extends Thread {
 					stopThisThread();
 					break;
 				}
-				
 				readlineString = sin.readLine();
 			}
-			
+			System.out.println("send thread stopped");
 //			os.close();
 //			sin.close();
 			
