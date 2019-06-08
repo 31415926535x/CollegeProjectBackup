@@ -51,7 +51,7 @@ public class TalkClient {
 			//创建收发消息两个线程，实现收发消息的任意性
 			reciveMessageThread recive = new reciveMessageThread(socket);
 			recive.start();
-			Thread.currentThread().sleep(500);
+
 			boolean clientIslogin = true;
 			while(clientIslogin) {
 
