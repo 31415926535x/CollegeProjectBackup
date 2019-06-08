@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="426px" preserveAspectRatio="none" style="width:376px;height:426px;background:#EEEBDC;" version="1.1" viewBox="0 0 376 426" width="376px" zoomAndPan="magnify"><defs><filter height="300%" id="f6d073ozmwvlp" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="178.5" cy="20" fill="#000000" filter="url(#f6d073ozmwvlp)" rx="10" ry="10" style="stroke: none; stroke-width: 1.0;"/><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="116" x="120.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="96" x="130.5" y="73.752">人脸基础数据录入</text><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="80" x="138.5" y="106.3887"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="60" x="148.5" y="130.1406">建立数据库</text><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="140" x="108.5" y="162.7773"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="120" x="118.5" y="186.5293">人脸数据训练具体模型</text><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="68" x="144.5" y="219.166"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="48" x="154.5" y="242.918">识别人脸</text><polygon fill="#FEFECE" filter="url(#f6d073ozmwvlp)" points="96,275.5547,261,275.5547,273,287.5547,261,299.5547,96,299.5547,84,287.5547,96,275.5547" style="stroke: #A80036; stroke-width: 1.5;"/><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="165" x="96" y="292.6492">当前识别到的人脸为之前所录入者</text><text fill="#000000" font-family="sans-serif" font-size="11" lengthAdjust="spacingAndGlyphs" textLength="18" x="66" y="285.1377">yes</text><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="128" x="10" y="309.5547"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="108" x="20" y="333.3066">闸机打开，允许通过</text><rect fill="#FEFECE" filter="url(#f6d073ozmwvlp)" height="36.3887" rx="12.5" ry="12.5" style="stroke: #A80036; stroke-width: 1.5;" width="164" x="201" y="309.5547"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="144" x="211" y="333.3066">提醒重新识别，不允许通过</text><polygon fill="#FEFECE" filter="url(#f6d073ozmwvlp)" points="178.5,351.9434,190.5,363.9434,178.5,375.9434,166.5,363.9434,178.5,351.9434" style="stroke: #A80036; stroke-width: 1.5;"/><ellipse cx="178.5" cy="405.9434" fill="#FFFFFF" filter="url(#f6d073ozmwvlp)" rx="10" ry="10" style="stroke: #000000; stroke-width: 1.5;"/><line style="stroke: #000000; stroke-width: 2.5;" x1="172.3128" x2="184.6872" y1="399.7562" y2="412.1305"/><line style="stroke: #000000; stroke-width: 2.5;" x1="184.6872" x2="172.3128" y1="399.7562" y2="412.1305"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="30" y2="50"/><polygon fill="#A80036" points="174.5,40,178.5,50,182.5,40,178.5,44" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="86.3887" y2="106.3887"/><polygon fill="#A80036" points="174.5,96.3887,178.5,106.3887,182.5,96.3887,178.5,100.3887" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="142.7773" y2="162.7773"/><polygon fill="#A80036" points="174.5,152.7773,178.5,162.7773,182.5,152.7773,178.5,156.7773" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="199.166" y2="219.166"/><polygon fill="#A80036" points="174.5,209.166,178.5,219.166,182.5,209.166,178.5,213.166" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="84" x2="74" y1="287.5547" y2="287.5547"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="74" x2="74" y1="287.5547" y2="309.5547"/><polygon fill="#A80036" points="70,299.5547,74,309.5547,78,299.5547,74,303.5547" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="273" x2="283" y1="287.5547" y2="287.5547"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="283" x2="283" y1="287.5547" y2="309.5547"/><polygon fill="#A80036" points="279,299.5547,283,309.5547,287,299.5547,283,303.5547" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="74" x2="74" y1="345.9434" y2="363.9434"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="74" x2="166.5" y1="363.9434" y2="363.9434"/><polygon fill="#A80036" points="156.5,359.9434,166.5,363.9434,156.5,367.9434,160.5,363.9434" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="283" x2="283" y1="345.9434" y2="363.9434"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="283" x2="190.5" y1="363.9434" y2="363.9434"/><polygon fill="#A80036" points="200.5,359.9434,190.5,363.9434,200.5,367.9434,196.5,363.9434" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="255.5547" y2="275.5547"/><polygon fill="#A80036" points="174.5,265.5547,178.5,275.5547,182.5,265.5547,178.5,269.5547" style="stroke: #A80036; stroke-width: 1.0;"/><line style="stroke: #A80036; stroke-width: 1.5;" x1="178.5" x2="178.5" y1="375.9434" y2="395.9434"/><polygon fill="#A80036" points="174.5,385.9434,178.5,395.9434,182.5,385.9434,178.5,389.9434" style="stroke: #A80036; stroke-width: 1.0;"/><!--
+@startuml
+
+skinparam backgroundColor #EEEBDC
+
+start
+
+:人脸基础数据录入;
+
+:建立数据库;
+
+:人脸数据训练具体模型;
+
+:识别人脸;
+
+if(当前识别到的人脸为之前所录入者) then(yes)
+    :闸机打开，允许通过;
+else
+    :提醒重新识别，不允许通过;
+endif
+
+end
+
+@enduml
+
+PlantUML version 1.2019.03(Sun Mar 10 19:04:44 CST 2019)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_201-b09
+Operating System: Windows 10
+OS Version: 10.0
+Default Encoding: GBK
+Language: zh
+Country: CN
+--></g></svg>
