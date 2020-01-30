@@ -6,11 +6,11 @@
 
 安装油猴扩展，然后安装脚本
 
-在使用前进入到要导出课程表的页面，![](./img/1.png)
+在使用前进入到要导出课程表的页面，![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ZhengfangClassScheduleToICS/img/1.PNG)
 
-然后确定这学期开学的第一周的周一的日期，![](./img/2.png)
+然后确定这学期开学的第一周的周一的日期，![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ZhengfangClassScheduleToICS/img/2.PNG)
 
-点击 ``生成课表`` 然后就会提示导出成功，这时点击旁边的 ``下载ics文件`` 即可下载 ``course.ics`` 文件，![](./img/3.png)
+点击 ``生成课表`` 然后就会提示导出成功，这时点击旁边的 ``下载ics文件`` 即可下载 ``course.ics`` 文件，![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ZhengfangClassScheduleToICS/img/3.PNG)
 
 之后怎么使用就看你了，，这样可以不再使用各种 **课程表 等看个课程表还要等半天，看半天广告，而且还占空间。。~~（深受其害.jpg）~~
 
