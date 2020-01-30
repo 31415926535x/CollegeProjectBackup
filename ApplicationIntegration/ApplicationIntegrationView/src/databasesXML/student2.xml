@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<properties>
+		<driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+		<url>jdbc:mysql://localhost:3306/applicationintegration2?serverTimezone=UTC</url>
+		<username>root</username>
+		<password>123456</password>
+
+		<databaseName>applicationintegration2</databaseName>
+		<databaseTableNum>1</databaseTableNum>
+	</properties>
+	
+	<table id='1'>
+		<tableproperties>
+			<tableName>student2</tableName>
+			<tableColNum>9</tableColNum>
+		</tableproperties>
+		<columns>
+			<cid>
+				<name>nid</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</cid>
+			<cfirstname>
+				<name>FirstName</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</cfirstname>
+			<clastname>
+				<name>LastName</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</clastname>
+			<csex>
+				<name>sex</name>
+				<type>string</type>
+				<isSelect>true</isSelect>
+			</csex>
+			<year>
+				<name>year</name>
+				<type>int</type>
+				<isSelect>true</isSelect>
+			</year>
+			<month>
+				<name>month</name>
+				<type>int</type>
+				<isSelect>true</isSelect>
+			</month>
+			<day>
+				<name>day</name>
+				<type>int</type>
+				<isSelect>true</isSelect>
+			</day>
+			<cstartyear>
+				<name>startyear</name>
+				<type>int</type>
+				<isSelect>true</isSelect>
+			</cstartyear>
+			<cgpa>
+				<name>GPA</name>
+				<type>double</type>
+				<isSelect>false</isSelect>
+			</cgpa>
+		</columns>
+	</table>
+</database>

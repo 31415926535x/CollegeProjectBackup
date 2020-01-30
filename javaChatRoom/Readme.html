@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family:  "Meiryo", "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+</head>
+<body>
+<p>课程设计报告二：聊天室系统</p>
+<h1 id="%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E8%A6%81%E6%B1%82%E4%B8%8E%E7%9B%AE%E7%9A%84">课程设计要求与目的</h1>
+<h2 id="%E7%9B%AE%E7%9A%84%EF%BC%9A">目的：</h2>
+<p>编写一个小型Java聊天室系统，掌握Java网络通信、多线程、IO文件操作等高级应用编程技能。</p>
+<h2 id="%E8%A6%81%E6%B1%82%EF%BC%9A">要求：</h2>
+<p>以课本第15章 Java网络通信例15.3、15.4的源代码为基础，编写一个小型Java聊天室系统。</p>
+<h2 id="%E5%AE%8C%E6%88%90%E5%A6%82%E4%B8%8B%E5%8A%9F%E8%83%BD%EF%BC%9A">完成如下功能：</h2>
+<ul>
+<li>多客户端模式下，实现任意已上线用户的单独通信，通信的信息（包括消息、文件数据）都经过服务器的中转；</li>
+<li>端到端的通信，任意客户端可以选定一个要聊天的对象，消息的发送、接收，文件的发送、接收都是并行处理，即一方的操作不取决于对方的状态，且任意客户端任何状态下都可以接收到其他人发送来的消息、文件，即使他未选择与任何人通信；</li>
+<li>整个聊天室的所有通信信息都封装为 <code>gson</code> 包装的 <code>json</code> 字符串，对于普通消息 <code>message</code> 类型的信息封装了发送者、接收者以及发送时间等信息；对于文件消息 <code>file</code> 类型的信息封装了除 <code>message</code> 的信息还包括文件的基本信息，如文件名、文件大小、已传送大小、当前传输的文件数据块以及是否传送完毕等信息，也用 <code>gson</code> 封装为 <code>json</code> 串；对于当前上线用户信息 <code>accounts</code> 类型的信息封装了所有的上线用户信息；</li>
+<li>文件传输以及普通消息的发送都是并行化的，即同时可以发送多个文件，发送文件的过程中可以发送消息，无须等待文件发送对方接收后才可以发送消息；</li>
+<li>简单的图形化界面（目前尚未全部完成）：简单的图像化界面使用 <code>javafx</code> GUI 包实现，同时相关的控件使用的是第三方包 <a href="http://www.jfoenix.com/"> <code>JFoenix</code> </a>， 因为一些原因当前只实现了发送消息、点击选择聊天对象等功能，其他功能后台实现但GUI未重绘；</li>
+</ul>
+<h1 id="%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1">系统设计</h1>
+<p>整个系统的设计从最初的课本上的示例程序开始，每一个版本的系统添加一些必要的功能，后一版本由上一版本继承，并继续添加功能。当前工程中 v1~v5都是已经全部实现对应的功能的版本，可以直接编译运行，基本的功能运行正常， v6版本添加一个简单的GUI，但是部分功能未实现；</p>
+<h2 id="%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86%E4%B8%8E%E6%80%9D%E6%83%B3%EF%BC%88socket%E5%A5%97%E6%8E%A5%E5%AD%97%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%EF%BC%8C%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%EF%BC%89">设计原理与思想（Socket套接字通信原理，系统设计思想）</h2>
+<h3 id="%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%9C%AC%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86%EF%BC%9A">系统的基本通信原理：</h3>
+<p>整个系统的总的原理基于 Socket套接字的通信 ，任意一端（客户端、服务器端）之间的通信都是基于 Socket 的流来通信，这里的通信也就是两端的字符串之间的传送与接收；</p>
+<p>最终的系统的通信原理：对于任意一个客户端，先与服务器建立一个 Socket 联系，然后客户端开启一个接收消息的线程，此时客户端可以在上线的状态下不管对方什么状态都可以接收到消息，并显示到自己的控制台（UI界面）下，之后客户端可以选择要与之通信的用户，具体的通信用户列表服务器会在每一个人上线时向所有人发送，当选择完毕后，客户端会根据 Socket 来与 服务器 建立一个发送消息的线程，服务器会由此前用户上线时建立的转发消息线程来接收并转发消息到要通信的用户，而对方的接收消息线程此时会获取到消息，进行显示消息的处理。</p>
+<p><img src="./Readme/readme.png" alt=""></p>
+<pre class="hljs"><code><div>@startdot
+digraph communication {
+
+    //图设置信息
+    label=&quot;系统基本的通信流程图&quot;
+    rankdir = LR
+    fontsize = 20
+
+    node[shape=record]
+    edge [arrowsize= .5, fontsize=14]
+    //
+
+    clientA [label=&quot;客户端A&quot; shape=box]
+    server  [label=&quot;服务器&quot; shape=ellipse]
+    clientB [label=&quot;客户端B&quot; shape=box]
+
+    socketA [label=&quot;Socket&quot; shape=box]
+    socketB [label=&quot;Socket&quot; shape=box]
+
+    socketA -&gt; clientA [label=&quot;客户端A的接收消息线程&quot;]
+    socketB -&gt; clientB [label=&quot;客户端B的接收消息线程&quot;]
+    
+    clientA -&gt; socketA [label=&quot;客户端A的发送消息线程&quot;]
+
+    socketA -&gt; server [label=&quot;服务器端接收客户端A的发送的消息&quot;]
+    server  -&gt; socketB [label=&quot;服务器将接收的消息转发到客户端B&quot;]
+}
+@enddot
+</div></code></pre>
+<h3 id="%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%B6%88%E6%81%AF%E5%B0%81%E8%A3%85">系统的消息封装</h3>
+<p>因为对于普通消息和文件的通信来说，本质上是字符串的通信，所以在通信上我们可以不管发送接收的内容是什么，即使他是一段文件的二进制数据，都可以转化成字符串来传送，而接收方在根据约定来进行相应的操作即可。</p>
+<p>所以我的思路是将消息和文件数据都转化成一个json字符串，具体的形式如下：</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"message"</span>,                      //消息的类型，最后的系统消息有三种类型： message, file, account 分别表示普通消息、文件数据块、一上线的用户列表信息
+    <span class="hljs-attr">"fromAccountId"</span>: <span class="hljs-string">"804"</span>,                 //发送者的ID
+    <span class="hljs-attr">"fromAccountName"</span>: <span class="hljs-string">"149"</span>,               //发送者的昵称
+    <span class="hljs-attr">"toAccountId"</span>: <span class="hljs-string">""</span>,                      //接收者的ID
+    <span class="hljs-attr">"toAccountName"</span>: <span class="hljs-string">""</span>,                    //接收者的昵称
+    <span class="hljs-attr">"message"</span>: <span class="hljs-string">"Send own account's id"</span>,     //type=message时的具体消息
+    <span class="hljs-attr">"date"</span>: <span class="hljs-string">"Jun 14, 2019 11:44:53 AM"</span>,     //发送的时间
+    <span class="hljs-attr">"size"</span>: <span class="hljs-number">512</span>,                            //当为文件时传送文件的大小
+    <span class="hljs-attr">"nowLength"</span>: <span class="hljs-number">0</span>,                         //已经传送的文件的大小
+    <span class="hljs-attr">"totalLength"</span>: <span class="hljs-number">0</span>,                       //实际的文件的大小
+    <span class="hljs-attr">"flag"</span>: <span class="hljs-literal">false</span>                           //是否已经传送完毕
+}
+</div></code></pre>
+<p>对于以上线的所有用户的列表json格式如下：</p>
+<pre class="hljs"><code><div>{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"account"</span>,                      //表示这是一个AccountsList
+    <span class="hljs-attr">"accounts"</span>: [                           //一个Account数组，存有所有的用户的信息
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"790"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"362"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"639"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"943"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"818"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"545"</span>
+        }
+    ]
+}
+</div></code></pre>
+<p>java中生成json数据的第三方包有很多，<a href="http://www.json.org/json-zh.html">具体的介绍</a>，，最后我选择了 Google 的 <code>Gson</code> 第三方包，，选择的原因是因为他可以将一个具体的 <code>Message</code> 类中的所有数据成员直接转化成一个json，，同时也以将一个json字符串转化成一个具体的类，这对于我的这个系统来说是很方便的。</p>
+<h3 id="gui%E7%9A%84%E8%AE%BE%E8%AE%A1">GUI的设计</h3>
+<p>虽然说GUI是Java的一个弱项，现在很多的应用、系统都向着 B/S 设计，但是学习Java的GUI设计对其他软件系统的设计，尤其是UI的设计有很大的帮助。</p>
+<p>前期通过我的一些查阅了解到广为人知的两个JavaGUI设计包： <code>AWT</code> 和 <code>Swing</code> 因为很久不更新，已经是很过时的东西了，很多设计理念已经很现在软件的设计不同，近些年出现的另一个GUI包： <code>JavaFX</code> 较为符合现在的GUI的设计理念，而且也有很多的第三方控件库，例如我选择的 <code>JFoenix</code> 就是以MD质感设计为目标的一个控件库。</p>
+<p>但是貌似受到大的潮流的影响， <code>JavaFx</code> 在国内的介绍、资料很少，，有很多的问题提出、解决的人的案例也很难寻找到，，但在国外，很多JavaGUI的设计都对 <code>JavaFX</code> 感兴趣，讨论的人很多，想着学习技术应该学习新的，所以尝试利用 <code>JavaFx</code> 来开发GUI。</p>
+<p>因为自己对这一未曾涉足过的领域的估计不够，留给这块学习，开发的时间很少很少，，导致出现很多新手易出现的问题，尽管查找了很多的资料，边看文档边写，最后也没能完全的实现所有的GUI功能，（主要是非 <code>JavaFx</code> 线程下对UI的更新的操作没有实现，导致目前的成果是GUI不会自动的根据内容变化、重绘）。</p>
+<h2 id="%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%EF%BC%88%E7%B1%BB%E4%B8%8E%E7%B1%BB%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%89">总体设计（类与类的关系）</h2>
+<p>下列是分版本来介绍类间的关系：</p>
+<h3 id="v1">v1</h3>
+<p>这一版本主要是课本上的示例程序，共有三个类</p>
+<ul>
+<li>MultiTalkServer.java      服务器类，实时监听某一个端口，用户上线开启一个线程，用来处理一个客户端</li>
+<li>ServerThread.java         服务器线程，用来处理一个客户端的通信</li>
+<li>TalkClient.java           客户端</li>
+</ul>
+<h3 id="v2">v2</h3>
+<ul>
+<li>Account.java              用户类，记录基本的用户的信息ID、Name等，同时可以将用户信息转化成一个字符串，并从一个字符串转化为一个用户对象，客户端、服务器端使用</li>
+<li>getRandomAccountForTest.java 得到一个随机的用户对象，简化后续的测试过程</li>
+<li>MultiTalkServer.java      服务器端类，存储每一个用户的信息以及socket到hashmap</li>
+<li>ServerThread.java         服务器线程</li>
+<li>TalkClient.java           客户端类</li>
+</ul>
+<h3 id="v3">v3</h3>
+<ul>
+<li>Account.java                      无变化，与上版本一致</li>
+<li>getRandomAccountForTest.java      无变化，与上版本一致</li>
+<li>MultiTalkServer.java              无变化，与上版本一致</li>
+<li>reciveMessageThread.java          客户端的接收消息线程，实时接收任何人发来的消息</li>
+<li>sendAndReciveOfServerThread.java  服务器端转发消息线程，每一个确定联系对象的客户端建立一个转发消息线程，用于转发消息</li>
+<li>sendMessageThread.java            客户端发送消息线程，实时检测用户的输入，然后发送</li>
+<li>ServerThread.java                 增加获取对方ID、开辟转发消息线程的功能</li>
+<li>TalkClient.java                   增加开启接收信息线程、选择聊天对象并通知服务器以及控制发送消息线程功能</li>
+</ul>
+<h3 id="v4">v4</h3>
+<p>本版本添加文件传输的功能，但是当一个用户进行文件的发送时，他在文件没有传输完成时不能发送消息，对方在没有接收完消息时，不会接收到其他人发来的消息；</p>
+<p>对于文件的操作：客户端A发送的文件会暂存到服务器端客户端A的相关文件夹，然后对于接收者，接收的文件将保存到自身的目录下，，以上的目录都是通过一个 文件操作 类来实现文件夹的创建，文件的读写等功能，具体的路径的设置由设置类实现；</p>
+<ul>
+<li>Account.java                      与上版本相比，增加为当前用户创立个人文件夹的功能，路径由userGlobalSettingsInfos中的字段提供</li>
+<li>fileSystemOperation.java          文件操作模块，实现文件夹的建立，文件信息的获取功能</li>
+<li>getRandomAccountForTest.java      无变化</li>
+<li>MultiTalkServer.java              无变化</li>
+<li>reciveMessageThread.java          当接收文件时，进行文件的接收，存储到本地的功能</li>
+<li>sendAndReciveOfServerThread.java  当转发文件时，先将客户端发送的文件全部保存到服务器本地，然后转发到接收的客户端</li>
+<li>sendMessageThread.java            增加当发送文件时，读取文件，发送出去</li>
+<li>serverGlobalSettingsInfos.java    服务器端的全局设置</li>
+<li>ServerThread.java                 无变化</li>
+<li>TalkClient.java                   无变化</li>
+<li>userGlobalSettingsInfos.java      用户端的全局设置</li>
+</ul>
+<h3 id="v5">v5</h3>
+<p>本版本将字符串消息、文件转化为由Gson实现的Json字符串来传送，使得用一个接收端即可根据json中的值判断接收到的字符串是什么类型数据，实现文件数据和消息的并行的发送接收；</p>
+<ul>
+<li>Account.java                      信息的转化改为json格式的字符串</li>
+<li>fileSystemOperation.java          无变化</li>
+<li>fileTransferThread.java           文件发送线程，用于多个文件间的并行发送，实现发送文件的同时可以发送消息，接收消息</li>
+<li>getRandomAccountForTest.java      无变化</li>
+<li>Message.java                      消息类，包含主要的普通消息，文件数据块等消息的保存，之后利用 gson 来转化成json，统一作为字符串传输，同时包括json转message的功能</li>
+<li>MultiTalkServer.java              无变化</li>
+<li>reciveMessageThread.java          将所有接收消息的字符串改为接收json字符串，然后根据具体的type值来进行不同的操作，对于文件类型的数据，将文件数据块追加到对应的文件后</li>
+<li>sendAndReciveOfServerThread.java  服务器的转发消息线程，将所有的字符串的发送改为json字符串的发送接收，对于文件，开启一个文件传输的线程，保证并行传输文件，接收到客户端的所有文件后转发到另一客户端</li>
+<li>sendMessageThread.java            客户端的转发消息线程，功能与服务器端的转发消息线程类似</li>
+<li>serverGlobalSettingsInfos.java    无变化</li>
+<li>ServerThread.java                 无变化</li>
+<li>TalkClient.java                   将字符串改为json类型</li>
+<li>userGlobalSettingsInfos.java      无变化</li>
+</ul>
+<h3 id="v6">v6</h3>
+<p>本版计划实现基本的GUI界面，GUI的实现用 <code>JavaFx</code> 来实现，将用户接收到的信息显示到文本域中，用户可以在文本框中输入要发送的信息后点击发送按钮实现消息的发送，点击发送文件按钮，用户可以选择文件，然后发送文件，用户可以点击左侧的 <code>JFXListView</code> 来实现不同用户间的聊天，用户可以点击退出按钮结束所有的聊天。</p>
+<p>目前实现了用户在文本框中输入信息后点击发送按钮即可发送信息，点击刷新按钮可以刷新所有上线用户列表，点击对应的单元格可以选择与其聊天等功能；</p>
+<ul>
+<li>Account.java                      无变化</li>
+<li>accountMessage.java               以上线用户的列表信息</li>
+<li>clientController.java             JavaFx下的界面控件的注册controller</li>
+<li>clientScene.fxml                  JavaFxUI配置信息</li>
+<li>clientStyle.css                   JavaFxUI的样式</li>
+<li>communication.java                基本的通信操作</li>
+<li>fileSystemOperation.java          无变化</li>
+<li>fileTransferThread.java           无变化</li>
+<li>getRandomAccountForTest.java      无变化</li>
+<li>Message.java                      无变化</li>
+<li>MultiTalkServer.java              无变化</li>
+<li>reciveMessageThread.java          将标准输出到控制台到转化到UI上</li>
+<li>sendAndReciveOfServerThread.java  无变化</li>
+<li>sendMessageThread.java            将在控制台的标准输入转为JFXTextField上的输入信息</li>
+<li>serverGlobalSettingsInfos.java    无变化</li>
+<li>ServerThread.java                 无变化</li>
+<li>TalkClient.java                   修改客户端的UI界面</li>
+<li>userGlobalSettingsInfos.java      无变化</li>
+</ul>
+<h2 id="%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%8D%95%E4%B8%AA%E7%B1%BB%E7%9A%84%E8%AE%BE%E8%AE%A1%EF%BC%8C%E5%85%B3%E9%94%AE%E6%AD%A5%E9%AA%A4%E6%88%96%E7%AE%97%E6%B3%95%EF%BC%89">详细设计（单个类的设计，关键步骤或算法）</h2>
+<h3 id="v1">v1</h3>
+<p>基本的内容很简单，实现服务器和客户端之间的一人一句的通信</p>
+<h3 id="v2">v2</h3>
+<h4 id="accountjava">Account.java</h4>
+<p>实现每一个用户的基本信息，同时增加转化为字符串和从字符串转化为用户对象的功能：</p>
+<p>此外，因为服务器端要用一个hashmap来存用户以及他申请的socket，所有 <code>Account</code> 类要重载 <code>hashcode()</code> 、 <code>equals()</code>；</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//以类作为hashmap的键时要重载 hashcode() 和 equals()</span>
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> prime = <span class="hljs-number">1007</span>;
+    <span class="hljs-keyword">int</span> ret = <span class="hljs-number">1</span>;
+    ret = prime * ret + id.hashCode();
+    ret = prime * ret + name.hashCode();
+    <span class="hljs-keyword">return</span> ret;
+}
+        
+<span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span> </span>{
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == obj)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    <span class="hljs-keyword">if</span>(obj == <span class="hljs-keyword">null</span>)
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">if</span>(getClass() != obj.getClass())
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    Account otherAccount = (Account)obj;
+    <span class="hljs-keyword">if</span>(id == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">if</span>(otherAccount.id != <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!id.equals(otherAccount.id))
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    
+    <span class="hljs-keyword">if</span>(name == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-keyword">if</span>(otherAccount.name != <span class="hljs-keyword">null</span>)
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!name.equals(otherAccount.name))
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+</div></code></pre>
+<h4 id="getrandomaccountfortestjava">getRandomAccountForTest.java</h4>
+<p>随机出一个用户类</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> Account <span class="hljs-title">getARandomAccountForTest</span><span class="hljs-params">()</span> </span>{
+		Random random = <span class="hljs-keyword">new</span> Random();
+		<span class="hljs-keyword">int</span> id = random.nextInt(<span class="hljs-number">1000</span>);
+		<span class="hljs-keyword">int</span> name = random.nextInt(<span class="hljs-number">1000</span>);
+		<span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Account(Integer.toString(id), Integer.toString(name));
+		<span class="hljs-comment">//java中使用.toString() 会返回 "类型@字符串" 形式的值</span>
+		<span class="hljs-comment">//return new Account((new Random()).toString(), (new Random()).toString());</span>
+	}
+</div></code></pre>
+<h4 id="multitalkserverjava">MultiTalkServer.java</h4>
+<p>遇上一版本相比，主要增加一个 <code>hashmap</code> 的插入键值、由键得值的方法</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">static</span> HashMap&lt;Account, Socket&gt; databaseMap = <span class="hljs-keyword">new</span> HashMap&lt;Account, Socket&gt;();
+	
+	
+    <span class="hljs-comment">/**
+    * <span class="hljs-doctag">@Title</span>: putAccountIntoDB
+    * <span class="hljs-doctag">@Description</span>: TODO 将一个账户以及它当前的套接字作为键值保存到 hashMap 中
+    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@param</span> accountString	账户信息（用字符串表示）
+    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@param</span> socket    参数	套接字对象
+    * <span class="hljs-doctag">@return</span> void    返回类型
+    * <span class="hljs-doctag">@throws</span>
+    */</span>
+    
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">putAccountIntoDB</span><span class="hljs-params">(String accountString, Socket socket)</span> </span>{
+    databaseMap.put(Account.conventStringToAccount(accountString), socket);		<span class="hljs-comment">//将当前用户的账户的信息和他的套接字对应保存</span>
+}
+
+
+    <span class="hljs-comment">/**
+    * <span class="hljs-doctag">@Title</span>: getSocket
+    * <span class="hljs-doctag">@Description</span>: TODO 寻找到一个账户对象的套接字
+    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@param</span> theOtherClientString	账户字符串表示
+    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@return</span>    参数
+    * <span class="hljs-doctag">@return</span> Socket    返回类型
+    * <span class="hljs-doctag">@throws</span>
+    */</span>
+    
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Socket <span class="hljs-title">getSocket</span><span class="hljs-params">(String theOtherClientString)</span> </span>{
+    <span class="hljs-keyword">return</span> databaseMap.get(Account.conventStringToAccount(theOtherClientString));
+}
+</div></code></pre>
+<h4 id="serverthreadjava">ServerThread.java</h4>
+<p>基本无变化</p>
+<h4 id="talkclientjava">TalkClient.java</h4>
+<p>基本无变化</p>
+<h3 id="v3">v3</h3>
+<h4 id="accountjava">Account.java</h4>
+<p>与上一版本基本一致</p>
+<h4 id="getrandomaccountfortestjava">getRandomAccountForTest.java</h4>
+<p>与上一版本基本一致</p>
+<h4 id="multitalkserverjava">MultiTalkServer.java</h4>
+<p>与上一版本基本一致</p>
+<h4 id="recivemessagethreadjava">reciveMessageThread.java</h4>
+<p>接收消息线程，当客户端与服务器端建立联系时，开启一个一直接收消息并显示的线程，从服务器端的socket建立的接收流获取信息</p>
+<p>主要设计为线程的 <code>run()</code> 方法的设计</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+		Thread thisThread = Thread.currentThread();
+		
+		<span class="hljs-keyword">try</span> {
+			<span class="hljs-comment">//由Socket对象得到输入流，并构造相应的BufferedReader对象</span>
+			BufferedReader is=<span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(socket.getInputStream()));
+			
+			String readlineString = is.readLine();
+			
+			<span class="hljs-keyword">while</span>(blinker == thisThread) {
+				System.out.println(readlineString);
+				readlineString = is.readLine();
+			}
+			
+<span class="hljs-comment">//			is.close();</span>
+			
+		} <span class="hljs-keyword">catch</span> (Exception e) {
+			<span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+			System.out.println(<span class="hljs-string">"Error: "</span> + e);
+		}
+	}
+</div></code></pre>
+<h4 id="sendandreciveofserverthreadjava">sendAndReciveOfServerThread.java</h4>
+<p>服务器端转发消息的线程，当一个用户确定要联系的用户时，从 <code>hashmap</code> 中获取到双方的 <code>socket</code> ，记录下来，然后对客户端A建立一个输入流，实时读取客户端A发送的消息，对客户端B建立一个输出流，实时的将接收到的信息转发到客户端B，实现客户端A向客户端B任意的发送消息功能；</p>
+<p>主要功能代码为 <code>run()</code> 方法的实现</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    Thread thisThread = <span class="hljs-keyword">this</span>.currentThread();
+    
+    <span class="hljs-keyword">try</span> {
+        
+        BufferedReader is1 = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(clientASocket.getInputStream()));		<span class="hljs-comment">//接收客户端A处的消息</span>
+        PrintWriter os2 = <span class="hljs-keyword">new</span> PrintWriter(clientBSocket.getOutputStream());									<span class="hljs-comment">//将接收的消息转发到B</span>
+        
+        
+        String readlineString = is1.readLine();
+        <span class="hljs-keyword">while</span>(blinker == thisThread) {
+            os2.println(<span class="hljs-string">"He said: "</span> + readlineString);
+            os2.flush();
+            System.out.println(<span class="hljs-string">"Client1 talk ot Client2: "</span> + readlineString);
+            <span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"bye"</span>)) {
+                System.out.println(<span class="hljs-string">"stoppppppppppppp"</span>);
+                stopThisThread();
+                <span class="hljs-keyword">break</span>;
+            }
+            readlineString = is1.readLine();
+        }
+        
+<span class="hljs-comment">//因为流关闭会导致套接字的关闭，所以这里不管</span>
+<span class="hljs-comment">//			is1.close();</span>
+<span class="hljs-comment">//			os2.close();</span>
+<span class="hljs-comment">//			clientASocket.close();</span>
+<span class="hljs-comment">//			clientBSocket.close();</span>
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Erroe: "</span> + e);
+    }	
+}
+</div></code></pre>
+<h4 id="sendmessagethreadjava">sendMessageThread.java</h4>
+<p>客户端的发送消息线程，当用户确定一个聊天的对象时，会向服务器建立一个一直发送消息的线程，将消息发送到服务器端，当输入 <code>bye</code> 时结束当前的聊天；</p>
+<p>主要功能代码为 <code>run()</code> 方法的实现</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    Thread thisThread = Thread.currentThread();
+
+    <span class="hljs-keyword">try</span> {
+        
+        <span class="hljs-comment">//由系统标准输入设备构造BufferedReader对象</span>
+        BufferedReader sin = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(System.in));
+        <span class="hljs-comment">//由Socket对象得到输出流，并构造PrintWriter对象</span>
+        PrintWriter os = <span class="hljs-keyword">new</span> PrintWriter(socket.getOutputStream());
+        
+        String readlineString = sin.readLine();
+        
+        <span class="hljs-keyword">while</span>(blinker == thisThread) {
+            os.println(readlineString);
+            os.flush();
+            System.out.println(<span class="hljs-string">"You said: "</span> + readlineString);
+            <span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"bye"</span>)) {
+                System.out.println(<span class="hljs-string">"send Thread stop"</span>);
+                stopThisThread();
+                <span class="hljs-keyword">break</span>;
+            }
+            readlineString = sin.readLine();
+        }
+        System.out.println(<span class="hljs-string">"send thread stopped"</span>);
+    <span class="hljs-comment">//			os.close();</span>
+    <span class="hljs-comment">//			sin.close();</span>
+        
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Error: --"</span> + e);
+    }
+    }
+</div></code></pre>
+<h4 id="serverthreadjava">ServerThread.java</h4>
+<p>与上一版本相比，添加了建立转发消息线程的功能：先提示客户端A输入聊天对象，然后得到两个人的套接字，开启转发线程</p>
+<p>主要代码实现是套接字的获取以及线程的建立：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//根据昵称获取对方的套接字</span>
+socket2 = MultiTalkServer.getSocket(theOtherClientString);
+
+<span class="hljs-comment">//服务器与对方建立一个发消息的线程，用于将从用户收到的消息内容转发到另一用户</span>
+sendAndReciveOfServerThread clientASendMessageToClientB = <span class="hljs-keyword">new</span> sendAndReciveOfServerThread(socket1, socket2);
+clientASendMessageToClientB.start();
+</div></code></pre>
+<h4 id="talkclientjava">TalkClient.java</h4>
+<p>客户端与上一版本相比增加建立收发消息线程的过程</p>
+<p>主要代码实现：</p>
+<pre class="hljs"><code><div>os.println(account.conventAccountToString());	<span class="hljs-comment">//像服务器传递自己的账户信息，记录到在线列表数据库</span>
+os.flush();
+
+
+
+<span class="hljs-comment">//创建收发消息两个线程，实现收发消息的任意性</span>
+reciveMessageThread recive = <span class="hljs-keyword">new</span> reciveMessageThread(socket);
+recive.start();
+
+<span class="hljs-keyword">boolean</span> clientIslogin = <span class="hljs-keyword">true</span>;
+<span class="hljs-keyword">while</span>(clientIslogin) {
+
+    String theOhterClientString;					<span class="hljs-comment">//记录当前客户端想要与其通信的另一个客户端名称</span>
+    theOhterClientString = sin.readLine();
+
+<span class="hljs-comment">//				System.out.println("bbbbbbbbbbb" + theOhterClientString);</span>
+    os.println(theOhterClientString);				<span class="hljs-comment">//向服务器请求与之通信的另一客户端</span>
+    os.flush();
+    
+    <span class="hljs-keyword">if</span>(theOhterClientString.equals(<span class="hljs-string">"exit"</span>)) {
+        <span class="hljs-keyword">break</span>;
+    }
+    
+    sendMessageThread send = <span class="hljs-keyword">new</span> sendMessageThread(socket);		<span class="hljs-comment">//建立一个发送消息的线程，用于向另一个客户端发送消息</span>
+    send.start();
+
+    
+    Thread mainThread = Thread.currentThread();					<span class="hljs-comment">//利用这个发送消息线程的flag使main线程暂停执行，即保证在通信的这段时间里一直为接发消息</span>
+    <span class="hljs-keyword">while</span>(send.getFlag()) {
+        mainThread.yield();
+    }
+
+    System.out.println(<span class="hljs-string">"You have stopped communiating the other person"</span>);
+}
+
+<span class="hljs-comment">//当前用户下线</span>
+recive.stopThisThread();		<span class="hljs-comment">//停止接收消息</span>
+os.close();						<span class="hljs-comment">//关闭各种流</span>
+is.close();						
+sin.close();
+<span class="hljs-comment">//			System.out.println(23333);</span>
+socket.close();					<span class="hljs-comment">//关闭套接字</span>
+</div></code></pre>
+<h3 id="v4">v4</h3>
+<h4 id="accountjava">Account.java</h4>
+<p>增加生成个人目录的功能：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">generateOwnDir</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> userOrServer)</span> </span>{
+    fileSystemOperation.mkdir_(id, userOrServer);
+    <span class="hljs-keyword">if</span>(!userOrServer) {
+        System.out.println(<span class="hljs-string">"\t\t\t&lt;Server&gt;"</span>);
+    }
+    System.out.println();
+    System.out.println(<span class="hljs-string">"User "</span> + id + <span class="hljs-string">"'s dir has been mkdired!"</span>);
+    <span class="hljs-keyword">if</span>(userOrServer) {
+        System.out.println(<span class="hljs-string">"Now you can transfer and recive files in this dir!"</span>);
+    }
+    System.out.println();
+}
+</div></code></pre>
+<h4 id="filesystemoperationjava">fileSystemOperation.java</h4>
+<p>实现创建文件夹的功能</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">mkdir_</span><span class="hljs-params">(String fileNameString, <span class="hljs-keyword">boolean</span> userOrServer)</span></span>{
+    <span class="hljs-keyword">if</span>(userOrServer) {
+        fileNameString = userGlobalSettingsInfos.getUserDirString() + fileNameString;
+    }
+    <span class="hljs-keyword">else</span> {
+        fileNameString = serverGlobalSettingsInfos.getServerDirString() + fileNameString;
+    }
+    File dirFile = <span class="hljs-keyword">new</span> File(fileNameString);
+    <span class="hljs-keyword">if</span>(!dirFile.exists()) {
+        <span class="hljs-keyword">boolean</span> flag = dirFile.mkdirs();
+        <span class="hljs-keyword">if</span>(flag) {
+            System.out.println(fileNameString + <span class="hljs-string">": has been mkdir!"</span>);
+        }
+        <span class="hljs-keyword">else</span> {
+            System.out.println(fileNameString + <span class="hljs-string">": can't be mkdired!"</span>);
+        }
+        <span class="hljs-keyword">try</span> {
+            getInfo(dirFile);
+        } <span class="hljs-keyword">catch</span> (IOException e) {
+            <span class="hljs-comment">// TODO Auto-generated catch block</span>
+            e.printStackTrace();
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    }
+    <span class="hljs-keyword">else</span> {
+        System.out.println(fileNameString + <span class="hljs-string">": has been existed! No need to mkdir it again"</span>);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</div></code></pre>
+<p>实现得到文件信息的功能</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getInfo</span><span class="hljs-params">(File f1)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    SimpleDateFormat sdf;
+    sdf= <span class="hljs-keyword">new</span> SimpleDateFormat(<span class="hljs-string">"yyyy年MM月dd日hh时mm分"</span>);
+    <span class="hljs-keyword">if</span> (f1.isFile())
+        System.out.println(<span class="hljs-string">"&lt;File&gt;\t"</span>+f1.getAbsolutePath()+<span class="hljs-string">"\t"</span>+
+            f1.length()+<span class="hljs-string">"\t"</span>+sdf.format(<span class="hljs-keyword">new</span> Date(f1.lastModified())));
+    <span class="hljs-keyword">else</span>
+    {
+        System.out.println(<span class="hljs-string">"&lt;Dir&gt;\t"</span>+f1.getAbsolutePath());
+        File[] files = f1.listFiles();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;files.length;i++)
+            getInfo(files[i]);
+    }
+    }
+</div></code></pre>
+<h4 id="getrandomaccountfortestjava">getRandomAccountForTest.java</h4>
+<p>无变化</p>
+<h4 id="multitalkserverjava">MultiTalkServer.java</h4>
+<p>无变化</p>
+<h4 id="recivemessagethreadjava">reciveMessageThread.java</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">//增加文件的接收</span>
+<span class="hljs-comment">//当检测到文件传送时</span>
+<span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"&lt;File&gt;"</span>)) {
+    System.out.println(<span class="hljs-string">"File start"</span>);
+    readlineString = is.readLine();								<span class="hljs-comment">//得到文件名</span>
+<span class="hljs-comment">//					System.out.println("id:" + MultiTalkServer.getAccount(socket).getId());</span>
+    System.out.println(readlineString);
+                                                                <span class="hljs-comment">//得到文件的绝对路径</span>
+    readlineString = userGlobalSettingsInfos.getUserDirString()
+                    + TalkClient.account.getId() + <span class="hljs-string">"\\"</span>
+                    + readlineString;
+    System.out.println(readlineString);
+    
+    File file2 = <span class="hljs-keyword">new</span> File(readlineString);						<span class="hljs-comment">//创建一个文件对象</span>
+    
+    
+    FileOutputStream wf = <span class="hljs-keyword">new</span> FileOutputStream(file2);			<span class="hljs-comment">//创建文件写入流</span>
+    DataInputStream dis = <span class="hljs-keyword">new</span> DataInputStream(socket.getInputStream());	<span class="hljs-comment">//创建文件接收流</span>
+    fileSystemOperation.getInfo(file2);
+    
+    <span class="hljs-keyword">long</span> length = dis.readLong();								<span class="hljs-comment">//得到文件大小</span>
+    <span class="hljs-keyword">long</span> nowlength = <span class="hljs-number">0</span>;											<span class="hljs-comment">//当前文件大小</span>
+    <span class="hljs-keyword">int</span> count, n = userGlobalSettingsInfos.getUserBufferSize();
+    <span class="hljs-keyword">byte</span> buffer[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[n];
+    System.out.println(length + <span class="hljs-string">"......."</span>);
+    <span class="hljs-keyword">while</span>(nowlength &lt; length) {
+        count = dis.read(buffer, <span class="hljs-number">0</span>, n);
+        nowlength += count;
+        wf.write(buffer, <span class="hljs-number">0</span>, count);
+        wf.flush();
+        System.out.print(nowlength + <span class="hljs-string">" "</span> + length + <span class="hljs-string">" "</span>);
+        System.out.println(nowlength * <span class="hljs-number">100</span> / length);			<span class="hljs-comment">//传输文件进度</span>
+    }
+    wf.close();
+    System.out.println(<span class="hljs-string">"Tranfer done!"</span>);
+}
+</div></code></pre>
+<h4 id="sendandreciveofserverthreadjava">sendAndReciveOfServerThread.java</h4>
+<p>增加文件的转发的功能：</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//增加文件的接收</span>
+<span class="hljs-comment">//当检测到文件传输时：</span>
+<span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"&lt;File&gt;"</span>)) {
+    readlineString = is1.readLine();													<span class="hljs-comment">//读入对方文件的路径</span>
+    readlineString = readlineString.substring(readlineString.lastIndexOf(<span class="hljs-string">"\\"</span>) + <span class="hljs-number">1</span>);	<span class="hljs-comment">//得到文件名</span>
+    readlineString = serverGlobalSettingsInfos.getServerDirString()
+                    + MultiTalkServer.getAccount(clientASocket).getId()
+                    + <span class="hljs-string">"\\"</span> + readlineString;											<span class="hljs-comment">//得到服务器端保存的文件的绝对路径</span>
+    System.out.println(readlineString);													<span class="hljs-comment">//显示得到的绝对路径</span>
+    File file2 = <span class="hljs-keyword">new</span> File(readlineString);												<span class="hljs-comment">//创建文件的对象</span>
+    FileOutputStream wf = <span class="hljs-keyword">new</span> FileOutputStream(file2);									<span class="hljs-comment">//创建文件的写入流</span>
+    DataInputStream dis1 = <span class="hljs-keyword">new</span> DataInputStream(clientASocket.getInputStream());			<span class="hljs-comment">//创建文件的接受数据流</span>
+    <span class="hljs-keyword">int</span> n = serverGlobalSettingsInfos.getServerBufferSize(), count;																	<span class="hljs-comment">//创建文件的缓冲区</span>
+    <span class="hljs-keyword">long</span> length = dis1.readLong();														<span class="hljs-comment">//读入文件的大小，当读入的数据大小等于此大小时，不再读入数据，转为读入消息</span>
+    <span class="hljs-keyword">long</span> nowLength = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">byte</span> buffer[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[n];
+<span class="hljs-comment">//					readlineString = is1.readLine();</span>
+    fileSystemOperation.getInfo(file2);													<span class="hljs-comment">//显示创建的文件的信息</span>
+    
+    <span class="hljs-keyword">while</span>(nowLength &lt; length) {																<span class="hljs-comment">//读入文件，并放到文件中，当当前读入的文件累计大小与传送前发送的值相等时便不再接收文件，认为文件接收完毕</span>
+        count = dis1.read(buffer, <span class="hljs-number">0</span>, n);												<span class="hljs-comment">//得到一部分的文件，以及读入的大小</span>
+        wf.write(buffer, <span class="hljs-number">0</span>, count);														<span class="hljs-comment">//写文件(当前写入的大小为count)</span>
+        wf.flush();
+        nowLength += count;
+<span class="hljs-comment">//						System.out.print(new String(buffer));</span>
+        System.out.print(nowLength + <span class="hljs-string">" "</span>);
+        System.out.println(nowLength * <span class="hljs-number">100</span> /length);
+    }					
+    System.out.println(<span class="hljs-string">"tranfer done!"</span>);
+    
+    wf.close();																			<span class="hljs-comment">//关闭文件写入流</span>
+<span class="hljs-comment">//增加文件的发送					</span>
+FileInputStream rf = <span class="hljs-keyword">new</span> FileInputStream(file2);									<span class="hljs-comment">//打开刚才暂存的文件</span>
+DataOutputStream dos2 = <span class="hljs-keyword">new</span> DataOutputStream(clientBSocket.getOutputStream());		<span class="hljs-comment">//打开一个数据传输流</span>
+
+readlineString = readlineString.substring(readlineString.lastIndexOf(<span class="hljs-string">"\\"</span>) + <span class="hljs-number">1</span>);	<span class="hljs-comment">//传输文件名</span>
+os2.println(readlineString);
+os2.flush();
+
+dos2.writeLong(file2.length());														<span class="hljs-comment">//传输文件大小</span>
+dos2.flush();
+
+nowLength = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span>(nowLength &lt; length) {															<span class="hljs-comment">//传送文件</span>
+    count = rf.read(buffer, <span class="hljs-number">0</span>, n);
+    nowLength += count;
+    dos2.write(buffer, <span class="hljs-number">0</span>, count);
+    dos2.flush();
+}
+wf.close();
+rf.close();
+System.out.println(<span class="hljs-string">"File tranfer has done!"</span>);
+}
+</div></code></pre>
+<h4 id="sendmessagethreadjava">sendMessageThread.java</h4>
+<p>增加文件的发送</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//增加文件传输</span>
+<span class="hljs-comment">//当检测到时文件传输时</span>
+<span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"&lt;File&gt;"</span>)) {
+    readlineString = sin.readLine();										<span class="hljs-comment">//读入本地要传输的文件的路径（绝对路径）</span>
+    os.println(readlineString);												<span class="hljs-comment">//发送到服务器端</span>
+    os.flush();
+    File file1 = <span class="hljs-keyword">new</span> File(readlineString);									<span class="hljs-comment">//创建文件的对象</span>
+    fileSystemOperation.getInfo(file1);										<span class="hljs-comment">//显示文件信息</span>
+    FileInputStream rf = <span class="hljs-keyword">new</span> FileInputStream(file1);						<span class="hljs-comment">//创建读入文件的流</span>
+    DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(socket.getOutputStream());	<span class="hljs-comment">//创建经过socket的数据发送流</span>
+    <span class="hljs-keyword">int</span> count, n = userGlobalSettingsInfos.getUserBufferSize();														<span class="hljs-comment">//创建一个缓冲区</span>
+    <span class="hljs-keyword">byte</span> buffer[] = <span class="hljs-keyword">new</span> <span class="hljs-keyword">byte</span>[n];
+    
+    System.out.println(<span class="hljs-string">"File is tranfering..."</span>);
+    
+    <span class="hljs-comment">//发送文件的大小，当对方读取到这个大小的数据之后就停止接收文件，如果直接关闭流的话，会导致socket的关闭，或者无法第二次进行传输</span>
+    dos.writeLong(file1.length());
+    dos.flush();
+    
+    <span class="hljs-keyword">while</span>((count = rf.read(buffer, <span class="hljs-number">0</span>, n)) != -<span class="hljs-number">1</span>) {							<span class="hljs-comment">//读取本地文件，发送，这里可以使用判断是否读到文件末来终止读入发送</span>
+        dos.write(buffer, <span class="hljs-number">0</span>, count);
+        dos.flush();
+<span class="hljs-comment">//						System.out.println(new String(buffer));</span>
+        System.out.println(count);
+    }
+    
+    System.out.println(<span class="hljs-string">"File End"</span>);
+<span class="hljs-comment">//					dos.close();</span>
+<span class="hljs-comment">//					socket.shutdownOutput();												//直接关闭发送流或者关闭所有发送流都无法完成需求</span>
+    rf.close();																<span class="hljs-comment">//关闭问读入流（貌似这个关闭无影响？？）</span>
+}
+</div></code></pre>
+<h4 id="serverglobalsettingsinfosjava">serverGlobalSettingsInfos.java</h4>
+<p>服务器端的设置的设定，修改，主要字段有：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">static</span> String serverDirString = <span class="hljs-string">"G:\\Backup\\CollegeProjectBackup\\javaChatRoom\\ChatRoom\\src\\v4\\serverData\\"</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> serverBufferSize = <span class="hljs-number">2048</span>;
+</div></code></pre>
+<h4 id="serverthreadjava">ServerThread.java</h4>
+<p>无变化</p>
+<h4 id="talkclientjava">TalkClient.java</h4>
+<p>无变化</p>
+<h4 id="userglobalsettingsinfosjava">userGlobalSettingsInfos.java</h4>
+<p>用户的设置，包括参数的设置，读取，更改</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">static</span> String usersDirString = <span class="hljs-string">"G:\\Backup\\CollegeProjectBackup\\javaChatRoom\\ChatRoom\\src\\v4\\userData\\"</span>;
+<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> userBufferSize = <span class="hljs-number">2048</span>;
+</div></code></pre>
+<h3 id="v5">v5</h3>
+<h4 id="accountjava">Account.java</h4>
+<p>账户转化成字符串改为转化为json格式的字符串</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">show</span><span class="hljs-params">()</span> </span>{
+		System.out.println((<span class="hljs-keyword">new</span> Gson()).toJson(<span class="hljs-keyword">this</span>));
+}
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">conventAccountToString</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Gson()).toJson(<span class="hljs-keyword">this</span>);
+}
+</div></code></pre>
+<h4 id="filesystemoperationjava">fileSystemOperation.java</h4>
+<p>无变化</p>
+<h4 id="filetransferthreadjava">fileTransferThread.java</h4>
+<p>文件的发送线程，不断的读文件，打包数据块发送，因为数据的读入是字节流，而最后所有的发送字符串都是字符流，所以为了最后文件的存储的正确，所以要以单字节的方式转为字符串，然后打包，，主要的 <code>run()</code> 的实现：</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    Thread thisThread = Thread.currentThread();
+    
+    <span class="hljs-keyword">try</span> {
+        
+        DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(socket.getOutputStream());
+<span class="hljs-comment">//			PrintWriter os = new PrintWriter(socket.getOutputStream());</span>
+        FileInputStream rf = <span class="hljs-keyword">new</span> FileInputStream(file);
+        
+        System.out.println(<span class="hljs-string">"Now it is starting fileTransferThread"</span>);
+        fileSystemOperation.getInfo(file);
+        
+        <span class="hljs-keyword">while</span>(blinker == thisThread) {
+            
+            nowLength = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">while</span>(nowLength &lt; length) {
+                
+                System.out.println(<span class="hljs-string">"Now it is sending the file: "</span> + fileName);
+                
+                <span class="hljs-comment">//获取一个数据块</span>
+                count = rf.read(buffer, <span class="hljs-number">0</span>, n);
+                nowLength += count;
+                
+<span class="hljs-comment">//					os.println((new Message(accountA.getId(), accountA.getName(), accountB.getId(), accountB.getName(), date, fileName, count, nowLength, length, (new String(buffer, userGlobalSettingsInfos.getEncoding())))).getJsonOfMessage());</span>
+<span class="hljs-comment">//					os.flush();</span>
+<span class="hljs-comment">//					dos.writeUTF((new Message(accountA.getId(), accountA.getName(), accountB.getId(), accountB.getName(), date, fileName, count, nowLength, length, (new String(buffer, userGlobalSettingsInfos.getEncoding())))).getJsonOfMessage());</span>
+<span class="hljs-comment">//					dos.flush();</span>
+                
+                <span class="hljs-comment">//先对数据块转化成单字节的字符串类型，然后以UTF编码的json报文串发送此次的数据块，接收者再转化成单字节的byte[]字节数组，即可追加到文件末</span>
+                dos.writeUTF((<span class="hljs-keyword">new</span> Message(accountA.getId(), accountA.getName(), accountB.getId(), accountB.getName(), date, fileName, count, nowLength, length, (<span class="hljs-keyword">new</span> String(buffer, <span class="hljs-string">"ISO-8859-1"</span>))).getJsonOfMessage()));
+                dos.flush();
+            }
+            System.out.println(fileName + <span class="hljs-string">" has sent"</span>);
+            rf.close();	
+            stopThisThread();
+        }
+        
+        
+        
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Error in fileTransferThread: "</span> + e);
+    }
+}
+</div></code></pre>
+<h4 id="getrandomaccountfortestjava">getRandomAccountForTest.java</h4>
+<p>无更改</p>
+<h4 id="messagejava">Message.java</h4>
+<p>所有消息的类，存储所有消息信息，以type的值来分辨具体存储的信息，同时包括发送者、接收者的信息、日期等，对于文件，存储文件的基本信息：文件大小、文件名、以传送文件大小，是否传输完毕等信息；</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Message</span> </span>{
+	<span class="hljs-keyword">private</span> String type = <span class="hljs-string">"message"</span>;			<span class="hljs-comment">//报文的类型，"message"表示一般的消息类型，"file"表示文件传输的一个数据块</span>
+	<span class="hljs-keyword">private</span> String fromAccountId = <span class="hljs-string">"000"</span>;		<span class="hljs-comment">//发送者的ID</span>
+	<span class="hljs-keyword">private</span> String fromAccountName = <span class="hljs-keyword">null</span>;		<span class="hljs-comment">//发送者的昵称</span>
+	<span class="hljs-keyword">private</span> String toAccountId = <span class="hljs-string">"000"</span>;			<span class="hljs-comment">//接收者的ID</span>
+	<span class="hljs-keyword">private</span> String toAccountName = <span class="hljs-keyword">null</span>;		<span class="hljs-comment">//接收者的昵称</span>
+	<span class="hljs-keyword">private</span> String message = <span class="hljs-string">""</span>;				<span class="hljs-comment">//消息报文的数据，即发送的消息内容</span>
+	<span class="hljs-keyword">private</span> Date date = <span class="hljs-keyword">null</span>;					<span class="hljs-comment">//发送时的时间信息</span>
+	
+	<span class="hljs-keyword">private</span> String fileName = <span class="hljs-keyword">null</span>;				<span class="hljs-comment">//文件名</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">512</span>;						<span class="hljs-comment">//当前报文中包含的文件数据量</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> nowLength = <span class="hljs-number">0</span>;					<span class="hljs-comment">//当前文件已经传输的大小</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">long</span> totalLength = <span class="hljs-number">0</span>;				<span class="hljs-comment">//当前文件的原始大小</span>
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> flag = <span class="hljs-keyword">false</span>;				<span class="hljs-comment">//当前文件是否传送完毕</span>
+	<span class="hljs-keyword">private</span> String data = <span class="hljs-keyword">null</span>;					<span class="hljs-comment">//当前文件的一个传输数据块</span>
+		    
+	
+	    <span class="hljs-comment">/**
+	     * 创建一个新的实例 Message.
+	     *
+	     * <span class="hljs-doctag">@param</span> fromAccountId		消息的发送者的ID
+	     * <span class="hljs-doctag">@param</span> fromAccountName	消息的发送者的昵称
+	     * <span class="hljs-doctag">@param</span> toAccountId		消息的接收者的ID
+	     * <span class="hljs-doctag">@param</span> toAccountName		消息的接收者的昵称
+	     * <span class="hljs-doctag">@param</span> message			消息的内容
+	     */</span>
+	    
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Message</span><span class="hljs-params">(String fromAccountId, String fromAccountName, String toAccountId, String toAccountName, String message)</span> </span>{
+		<span class="hljs-keyword">this</span>.type = <span class="hljs-string">"message"</span>;
+		<span class="hljs-keyword">this</span>.fromAccountId = fromAccountId;
+		<span class="hljs-keyword">this</span>.fromAccountName = fromAccountName;
+		<span class="hljs-keyword">this</span>.toAccountId = toAccountId;
+		<span class="hljs-keyword">this</span>.toAccountName = toAccountName;
+		<span class="hljs-keyword">this</span>.message = message;
+		<span class="hljs-keyword">this</span>.date = <span class="hljs-keyword">new</span> Date();
+	}
+	
+	    <span class="hljs-comment">/**
+	     * 创建一个仅为文件的报文，在对文件用byte[]取出数据后，要将其编码转换成ISO-8859-1的字符串，这样才能拼接到文件末尾，保证传输的文件的完整
+	     * 具体的流程如下：
+	     * buffer 是从文件中获取的一个带传送的数据块
+	     * (new String(buffer, "ISO-8859-1)即可以单字节的形式转换成字符串
+	     * 然后和message组合编码为UTF型的报文
+	     * 接收方通过UTF形式获取报文后，可以通过获取"data"字段的字符串并转换成“ISO-8859-1"的byte[]后拼接到文件末即可
+	     * eg: wf.write(jsonObject.get("data").getAsString().getBytes("ISO-8859-1"), 0, n);
+	     *
+	     * <span class="hljs-doctag">@param</span> fromAccountId			发送者的ID
+	     * <span class="hljs-doctag">@param</span> toAccountId			接收者的ID
+	     * <span class="hljs-doctag">@param</span> fileName				传输的文件名
+	     * <span class="hljs-doctag">@param</span> bufferSize			传输的缓冲区
+	     * <span class="hljs-doctag">@param</span> nowLength				传输的当前大小
+	     * <span class="hljs-doctag">@param</span> totalLength			文件的总大小
+	     * <span class="hljs-doctag">@param</span> data					传输的文件的数据块
+	     */</span>
+	    
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Message</span><span class="hljs-params">(String fromAccountId, String fromAccountName, String toAccountId, String toAccountName, Date date, String fileName, <span class="hljs-keyword">int</span> size, <span class="hljs-keyword">long</span> nowLength, <span class="hljs-keyword">long</span> totalLength, String data)</span> </span>{
+		<span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+		<span class="hljs-keyword">this</span>(fromAccountId, fromAccountName, toAccountId, toAccountName, <span class="hljs-string">""</span>);		<span class="hljs-comment">//构造器调用另一个重载的构造器必须在第一行</span>
+		<span class="hljs-keyword">this</span>.date = date;
+		<span class="hljs-keyword">this</span>.type = <span class="hljs-string">"file"</span>;
+		
+		<span class="hljs-keyword">this</span>.fileName = fileName;
+		<span class="hljs-keyword">this</span>.size = size;
+		<span class="hljs-keyword">this</span>.nowLength = nowLength;
+		<span class="hljs-keyword">this</span>.totalLength = totalLength;
+		<span class="hljs-keyword">this</span>.data = data;
+		
+		<span class="hljs-keyword">if</span>(nowLength &lt; totalLength) {
+			flag = <span class="hljs-keyword">false</span>;
+		}
+		<span class="hljs-keyword">else</span> {
+			flag = <span class="hljs-keyword">true</span>;
+		}
+	}
+	
+
+		<span class="hljs-comment">/**
+	    * <span class="hljs-doctag">@Title</span>: getJsonOfMessage
+	    * <span class="hljs-doctag">@Description</span>: TODO 获取一个message类的json字符串，默认为UTF-8编码
+	    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@return</span>    参数
+	    * <span class="hljs-doctag">@return</span> String    返回类型
+	    * <span class="hljs-doctag">@throws</span>
+	    */</span>
+	    
+	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getJsonOfMessage</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Gson()).toJson(<span class="hljs-keyword">this</span>);
+	}
+}
+</div></code></pre>
+<h4 id="multitalkserverjava">MultiTalkServer.java</h4>
+<p>无变化</p>
+<h4 id="recivemessagethreadjava">reciveMessageThread.java</h4>
+<p>通过接收到的json字符串中的信息，判断接收到的消息的类型，对于消息类型直接输出，对于文件信息，将文件数据块追加到文件末。对于文件的数据块要转码后再追加，保证最后的文件数据的正确。</p>
+<p>主要的实现是 <code>run()</code>:</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    Thread thisThread = Thread.currentThread();
+    
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">//由Socket对象得到输入流，并构造相应的BufferedReader对象</span>
+        BufferedReader is = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(socket.getInputStream()));
+        
+        DataInputStream dis = <span class="hljs-keyword">new</span> DataInputStream(socket.getInputStream());
+        String readlineString;
+        
+        <span class="hljs-keyword">while</span>(blinker == thisThread) {
+            
+            <span class="hljs-comment">//以UTF的形式获取一条报文</span>
+            readlineString = dis.readUTF();
+
+            <span class="hljs-comment">//创建一个jsonObject的对象，用于获取报文中的信息</span>
+            JsonObject jsonObject = (JsonObject) <span class="hljs-keyword">new</span> JsonParser().parse(readlineString);
+            
+<span class="hljs-comment">//				System.out.println(jsonObject.get("message").getAsString());</span>
+            
+            <span class="hljs-comment">//当当前报文是普通的消息时</span>
+            <span class="hljs-keyword">if</span>(jsonObject.get(<span class="hljs-string">"type"</span>).getAsString().equals(<span class="hljs-string">"message"</span>)) {
+                <span class="hljs-comment">//本地显示对方发来的信息</span>
+                System.out.println(jsonObject.get(<span class="hljs-string">"date"</span>).getAsString() + <span class="hljs-string">"\t"</span> + jsonObject.get(<span class="hljs-string">"fromAccountId"</span>).getAsString() + <span class="hljs-string">"-"</span> + jsonObject.get(<span class="hljs-string">"fromAccountName"</span>).getAsString() + <span class="hljs-string">" said: "</span> + jsonObject.get(<span class="hljs-string">"message"</span>).getAsString());
+            }
+            <span class="hljs-keyword">else</span> {
+                <span class="hljs-comment">//当当前报文是一个文件传输的数据报文时</span>
+                <span class="hljs-comment">//本地创建一个文件对象</span>
+                File file = <span class="hljs-keyword">new</span> File(userGlobalSettingsInfos.getUserDirString() + TalkClient.account.getId() + <span class="hljs-string">"\\"</span> + jsonObject.get(<span class="hljs-string">"fileName"</span>).getAsString());
+                <span class="hljs-comment">//创建一个文件输出流</span>
+                FileOutputStream wf = <span class="hljs-keyword">new</span> FileOutputStream(file, <span class="hljs-keyword">true</span>);
+                <span class="hljs-comment">//获取当前数据块的大小</span>
+                <span class="hljs-keyword">int</span> n = jsonObject.get(<span class="hljs-string">"size"</span>).getAsInt();
+                
+                
+<span class="hljs-comment">//					wf.write(jsonObject.get("data").getAsString().getBytes(userGlobalSettingsInfos.getEncoding()), 0, n);</span>
+<span class="hljs-comment">//					wf.write(jsonObject.get("data").getAsString().getBytes(), 0, n);</span>
+                
+                <span class="hljs-comment">//将数据块转码，获得byte[]类型的数据，写入文件</span>
+                wf.write(jsonObject.get(<span class="hljs-string">"data"</span>).getAsString().getBytes(<span class="hljs-string">"ISO-8859-1"</span>), <span class="hljs-number">0</span>, n);
+                wf.flush();
+                wf.close();
+                System.out.println(<span class="hljs-string">"recive file"</span>);
+            }
+            
+        }
+        
+        is.close();
+        dis.close();
+        
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Error: "</span> + e);
+    }
+}
+</div></code></pre>
+<h4 id="sendandreciveofserverthreadjava">sendAndReciveOfServerThread.java</h4>
+<p>服务器端的转发消息功能，基本的逻辑执行过程与上一版本的相同，在检测到接收到的字符串是文件类型时，会首先写到本地，然后当检测到文件传输完毕时，开启一个服务器到另一个客户端的传送文件线程；</p>
+<pre class="hljs"><code><div>
+			
+DataInputStream dis = <span class="hljs-keyword">new</span> DataInputStream(clientASocket.getInputStream());
+DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(clientBSocket.getOutputStream());
+
+
+
+String readlineString;
+<span class="hljs-keyword">while</span>(blinker == thisThread) {
+    
+
+    <span class="hljs-comment">//使用UTF编码的形式获取一条报文信息</span>
+    readlineString = dis.readUTF();
+<span class="hljs-comment">//				System.out.println(readlineString);</span>
+    
+<span class="hljs-comment">//				readlineString = new String(readlineByte, "UTF8");</span>
+    
+    
+    <span class="hljs-comment">//将字符串形式的报文转换成json类型的实例对象，用于之后的不同key的value获取</span>
+    JsonObject jsonObject = (JsonObject) <span class="hljs-keyword">new</span> JsonParser().parse(readlineString);
+    
+    
+    <span class="hljs-comment">//当当前报文是普通的消息时</span>
+    <span class="hljs-keyword">if</span>(jsonObject.get(<span class="hljs-string">"type"</span>).getAsString().equals(<span class="hljs-string">"message"</span>)) {
+        
+
+        <span class="hljs-comment">//将这条报文发送到另一个客户端</span>
+        dos.writeUTF(readlineString);
+        dos.flush();
+            
+        <span class="hljs-comment">//服务器端显示通信的记录，此处可以将记录保存到数据库</span>
+        System.out.println(jsonObject.get(<span class="hljs-string">"date"</span>).getAsString() + <span class="hljs-string">" "</span> + jsonObject.get(<span class="hljs-string">"fromAccountId"</span>).getAsString() + <span class="hljs-string">"said to "</span> + jsonObject.get(<span class="hljs-string">"toAccountId"</span>).getAsString() + <span class="hljs-string">": "</span> + jsonObject.get(<span class="hljs-string">"message"</span>).getAsString());
+        
+        <span class="hljs-comment">//当发现一个用户不再和另一个用户聊天时，断开这一个线程</span>
+        <span class="hljs-keyword">if</span>(jsonObject.get(<span class="hljs-string">"message"</span>).getAsString().equals(<span class="hljs-string">"bye"</span>)) {
+            System.out.println(<span class="hljs-string">"stop send and recive thread"</span>);
+            stopThisThread();
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-keyword">else</span> {	<span class="hljs-comment">//当当前报文是文件传输的报文时</span>
+        
+        <span class="hljs-comment">//创建一个在服务器端下的文件，暂存文件</span>
+        File file = <span class="hljs-keyword">new</span> File(serverGlobalSettingsInfos.getServerDirString() + accountA.getId() + <span class="hljs-string">"\\"</span> + jsonObject.get(<span class="hljs-string">"fileName"</span>).getAsString());
+        <span class="hljs-comment">//打印文件的绝对路径</span>
+        System.out.println(serverGlobalSettingsInfos.getServerDirString() + accountA.getId() + <span class="hljs-string">"\\"</span> + jsonObject.get(<span class="hljs-string">"fileName"</span>).getAsString());
+        <span class="hljs-comment">//创建一个文件的输出流，true表示写入的方式是在文件末追加数据</span>
+        FileOutputStream wf = <span class="hljs-keyword">new</span> FileOutputStream(file, <span class="hljs-keyword">true</span>);
+        <span class="hljs-comment">//由报文获取到当前报文中传输的文件数据的大小，用于之后文件的写入的大小</span>
+        <span class="hljs-keyword">int</span> n = jsonObject.get(<span class="hljs-string">"size"</span>).getAsInt();
+        
+        
+        System.out.println(n);
+        
+        
+        <span class="hljs-comment">//将报文中的数据转码为ISO-8859-1的字节数组，然后写入文件</span>
+        wf.write(jsonObject.get(<span class="hljs-string">"data"</span>).getAsString().getBytes(<span class="hljs-string">"ISO-8859-1"</span>), <span class="hljs-number">0</span>, n);
+        wf.flush();
+        wf.close();
+        System.out.println(<span class="hljs-string">"now has recived: "</span> + jsonObject.get(<span class="hljs-string">"nowLength"</span>).getAsLong() + <span class="hljs-string">" "</span> + jsonObject.get(<span class="hljs-string">"nowLength"</span>).getAsLong() * <span class="hljs-number">100</span> / jsonObject.get(<span class="hljs-string">"totalLength"</span>).getAsLong());
+        
+        <span class="hljs-comment">//如果服务器端已经接收到了全部的文件，开启一个由服务器端传送到另一个客户端文件的传输文件的线程</span>
+        <span class="hljs-keyword">if</span>(jsonObject.get(<span class="hljs-string">"flag"</span>).getAsBoolean()) {
+            System.out.println(<span class="hljs-string">"Parpering to send file to client b"</span>);
+            (<span class="hljs-keyword">new</span> fileTransferThread(accountA, accountB, clientBSocket, serverGlobalSettingsInfos.getServerDirString() + accountA.getId() + <span class="hljs-string">"\\"</span> + jsonObject.get(<span class="hljs-string">"fileName"</span>).getAsString())).start();
+        }
+    }
+}
+</div></code></pre>
+<h4 id="sendmessagethreadjava">sendMessageThread.java</h4>
+<p>客户端发送文件、消息的线程，当检测到发送文件时，建立一个发送文件的线程；</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">if</span>(readlineString.equals(<span class="hljs-string">"&lt;File&gt;"</span>)) {
+    readlineString = sin.readLine();										<span class="hljs-comment">//获取要传输的文件的绝对路径</span>
+    System.out.println(<span class="hljs-string">"The file that will be sent is: "</span> + readlineString);	<span class="hljs-comment">//打印要传输的文件的绝对路径</span>
+    (<span class="hljs-keyword">new</span> fileTransferThread(TalkClient.account, TalkClient.theOtherAccount, socket, readlineString)).start();	<span class="hljs-comment">//开启一个文件传输的线程</span>
+}
+</div></code></pre>
+<h4 id="serverglobalsettingsinfosjava">serverGlobalSettingsInfos.java</h4>
+<p>无变化</p>
+<h4 id="serverthreadjava">ServerThread.java</h4>
+<p>将发送的消息包装为json，然后以UTF-8的编码发送</p>
+<pre class="hljs"><code><div>dos.writeUTF((<span class="hljs-keyword">new</span> Message(<span class="hljs-string">""</span>, <span class="hljs-string">"Server"</span>, accountA.getId(), accountA.getName(), <span class="hljs-string">"You logged in!"</span>)).getJsonOfMessage());
+dos.flush();
+</div></code></pre>
+<h4 id="talkclientjava">TalkClient.java</h4>
+<p>除字符串的形式改为json外，无变化</p>
+<h4 id="userglobalsettingsinfosjava">userGlobalSettingsInfos.java</h4>
+<p>无变化</p>
+<h3 id="v6">v6</h3>
+<h4 id="accountjava">Account.java</h4>
+<p>无更改</p>
+<h4 id="accountmessagejava">accountMessage.java</h4>
+<p>增加一个存储所有用户信息列表信息，当有新用户上线时，服务器向所有人发送列表信息，用户可以点击刷新后刷新在线用户列表，此类实现对列表向json消息的转化，以及json向类的转化（利用Gson）</p>
+<p>基本的实现：</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> v6;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> com.google.gson.Gson;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">accountMessage</span> </span>{
+	<span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">"unused"</span>)
+	<span class="hljs-keyword">private</span> <span class="hljs-keyword">final</span> String type = <span class="hljs-string">"account"</span>;
+	<span class="hljs-keyword">private</span> List&lt;Account&gt; accounts;
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">accountMessage</span><span class="hljs-params">(List&lt;Account&gt; accounts)</span> </span>{
+		<span class="hljs-comment">// TODO Auto-generated constructor stub</span>
+		<span class="hljs-keyword">this</span>.accounts = accounts;
+	}
+	
+	    
+	
+	    <span class="hljs-comment">/**
+	    * <span class="hljs-doctag">@Title</span>: getAccountMessageJson
+	    * <span class="hljs-doctag">@Description</span>: TODO 从一个accountMessage实例得到一个json
+	    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@return</span>    参数
+	    * <span class="hljs-doctag">@return</span> String    返回类型
+	    * <span class="hljs-doctag">@throws</span>
+	    */</span>
+	    
+	<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getAccountMessageJson</span><span class="hljs-params">()</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Gson()).toJson(<span class="hljs-keyword">this</span>);
+	}
+	
+	    <span class="hljs-comment">/**
+	    * <span class="hljs-doctag">@Title</span>: getAccountsFromJosn
+	    * <span class="hljs-doctag">@Description</span>: TODO 从一个accountMessage的json 中获取所有的accounts
+	    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@param</span> json
+	    * <span class="hljs-doctag">@param</span> <span class="hljs-doctag">@return</span>    参数
+	    * <span class="hljs-doctag">@return</span> List&lt;Account&gt;    返回类型
+	    * <span class="hljs-doctag">@throws</span>
+	    */</span>
+	    
+	<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> List&lt;Account&gt; <span class="hljs-title">getAccountsFromJosn</span><span class="hljs-params">(String json)</span> </span>{
+		<span class="hljs-keyword">return</span> (<span class="hljs-keyword">new</span> Gson().fromJson(json, accountMessage.class)).accounts;
+	}
+}
+
+</div></code></pre>
+<h4 id="clientcontrollerjava">clientController.java</h4>
+<p>JavaFx的控制器的实现，UI上的控件的事件的处理在此完成，目前只实现点击按钮发送信息，文本框中写入消息、刷新上线用户列表、点击于其聊天的功能。其他功能后台基本实现，但因为没有解决 <strong>非JavaFxUI线程下对UI的更新操作</strong> ，故UI不会显示具体的数据的变化，但控制台可以看到数据的显示。</p>
+<p>主要的方法功能与实现：</p>
+<h5 id="%E5%8F%91%E9%80%81%E6%8C%89%E9%92%AE%E6%8C%89%E4%B8%8B%E4%BA%8B%E4%BB%B6%E5%AE%9E%E7%8E%B0%EF%BC%9A">发送按钮按下事件实现：</h5>
+<p>当按下发送按钮后，判断文本框中的信息是否为空，不为空的情况下发送消息</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">clickSendMessageButton</span><span class="hljs-params">(ActionEvent event)</span> </span>{
+    System.out.println(<span class="hljs-string">"sendButton clicked"</span>);
+    String yourMessage = sendTextField.getText();
+    System.out.println(<span class="hljs-string">"You said: "</span> + yourMessage);
+    <span class="hljs-keyword">if</span>(!yourMessage.isEmpty()) {
+        <span class="hljs-keyword">while</span>(!(<span class="hljs-keyword">new</span> communication().sendMessage(yourMessage, TalkClient.socket, TalkClient.account, TalkClient.theOtherAccount))) {
+            <span class="hljs-keyword">continue</span>;
+        }
+        sendTextField.clear();
+        <span class="hljs-comment">//<span class="hljs-doctag">TODO:</span>此时要在上方的文本框中回显用户输入的信息，以及一些辅助信息，，时间等等</span>
+        reciveTextArea.setStyle(<span class="hljs-string">"-fx-font-size: 16"</span>);	<span class="hljs-comment">//设置字号</span>
+        reciveTextArea.setStyle(<span class="hljs-string">"-fx-text-fill:pink"</span>);	<span class="hljs-comment">//设置颜色</span>
+        reciveTextArea.appendText(<span class="hljs-string">"You: \""</span> + TalkClient.account.getId() + <span class="hljs-string">"-"</span> + TalkClient.account.getName() + <span class="hljs-string">"\" at Time: "</span> + (<span class="hljs-keyword">new</span> Date()) + <span class="hljs-string">" said: \n"</span>);
+        reciveTextArea.appendText(yourMessage + <span class="hljs-string">"\n"</span>);
+        
+    }
+    
+    System.out.println(<span class="hljs-string">"button clicked!"</span>);
+    sendTextField.setText(<span class="hljs-string">"23333333"</span>);
+}
+</div></code></pre>
+<h5 id="%E4%B8%8A%E7%BA%BF%E4%BA%BA%E5%91%98%E5%88%97%E8%A1%A8">上线人员列表</h5>
+<p>最终的UI左侧会显示上线用户，用户在等待选择聊天对象时，点击一个人员的单元格，会自动建立与其的聊天，此处实现单元格的点击事件</p>
+<pre class="hljs"><code><div><span class="hljs-comment">//点击时的事件</span>
+accountListview.getSelectionModel().selectedItemProperty().addListener(
+        (ObservableValue&lt;? extends Account&gt; ov, Account old_val,
+                Account new_val) -&gt; {
+            <span class="hljs-keyword">if</span>(new_val == <span class="hljs-keyword">null</span>) {
+                otherAccountLabel.setText(<span class="hljs-string">"找个人聊天吧....."</span>);
+                <span class="hljs-keyword">return</span>;
+            }
+            otherAccountName = new_val.getName();
+<span class="hljs-comment">//					otherAccountLabel.setText("正在和\"" + otherAccountName + "\"聊天");</span>
+            TalkClient.theOtherAccount = new_val;
+            System.out.println(<span class="hljs-string">"chat with "</span> + new_val.getId() + new_val.getName());
+            <span class="hljs-keyword">while</span>(!(<span class="hljs-keyword">new</span> communication().sendChatWithOtherAccountId(new_val, TalkClient.socket))) {
+                <span class="hljs-keyword">continue</span>;
+            }
+        }
+);
+</div></code></pre>
+<h5 id="%E5%88%B7%E6%96%B0%E7%94%A8%E6%88%B7%E5%88%97%E8%A1%A8">刷新用户列表</h5>
+<p>点击刷新按钮后会刷新当前的上线用户列表，（此处原本是想着实时刷新但是找到的各种非JavaFx线程更新都不起作用，所以改为了用户手动刷新列表的功能）</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">clickRefreshAccountsListButton</span><span class="hljs-params">(ActionEvent event)</span> </span>{
+    Platform.runLater(<span class="hljs-keyword">new</span> Runnable() {
+        
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-comment">// TODO Auto-generated method stub</span>
+            <span class="hljs-comment">//清楚accountsListView控件的焦点</span>
+            accountListview.getSelectionModel().clearSelection();
+            
+            System.out.println(acc.get(<span class="hljs-number">0</span>).getId() + <span class="hljs-string">"******"</span> + acc.get(<span class="hljs-number">0</span>).getName());
+<span class="hljs-comment">//				accountListview.setItems(null);</span>
+            accountListview.getItems().clear();
+<span class="hljs-comment">//				accountListview.setItems(acc);</span>
+<span class="hljs-comment">//				accountListview.refresh();</span>
+            accountListview.getItems().addAll(acc);
+            System.out.println(<span class="hljs-string">"call done"</span>);
+        }
+    });
+    
+    
+    <span class="hljs-comment">//点击时的事件</span>
+    accountListview.getSelectionModel().selectedItemProperty().addListener(
+            (ObservableValue&lt;? extends Account&gt; ov, Account old_val,
+                    Account new_val) -&gt; {
+                <span class="hljs-keyword">if</span>(new_val == <span class="hljs-keyword">null</span>) {
+                    otherAccountLabel.setText(<span class="hljs-string">"找个人聊天吧....."</span>);
+                    <span class="hljs-keyword">return</span>;
+                }
+                otherAccountName = new_val.getName();
+<span class="hljs-comment">//					otherAccountLabel.setText("正在和\"" + otherAccountName + "\"聊天");</span>
+                TalkClient.theOtherAccount = new_val;
+                System.out.println(<span class="hljs-string">"chat with "</span> + new_val.getId() + new_val.getName());
+                <span class="hljs-keyword">while</span>(!(<span class="hljs-keyword">new</span> communication().sendChatWithOtherAccountId(new_val, TalkClient.socket))) {
+                    <span class="hljs-keyword">continue</span>;
+                }
+            }
+    );
+}
+</div></code></pre>
+<h4 id="communicationjava">communication.java</h4>
+<p>实现发送消息、文件或者用户列表的功能</p>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendMessage</span><span class="hljs-params">(String sendMessage, Socket socket, Account accountA, Account accountB)</span> </span>{
+		
+    <span class="hljs-keyword">try</span> {
+        
+        DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(socket.getOutputStream());
+        <span class="hljs-comment">//将用户输入的消息内容转换成报文，并使用UTF编码的报文传输</span>
+        dos.writeUTF((<span class="hljs-keyword">new</span> Message(accountA.getId(), accountA.getName(), accountB.getId(), accountB.getName(), (<span class="hljs-keyword">new</span> String(sendMessage.getBytes(<span class="hljs-string">"UTF-8"</span>), <span class="hljs-string">"UTF-8"</span>)))).getJsonOfMessage());
+        dos.flush();
+        
+        
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Error in sendMessage: "</span> + e);
+        
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+            
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">sendChatWithOtherAccountId</span><span class="hljs-params">(Account theOtherAccount, Socket socket)</span> </span>{
+    <span class="hljs-keyword">try</span> {
+        DataOutputStream dos = <span class="hljs-keyword">new</span> DataOutputStream(socket.getOutputStream());
+        dos.writeUTF(theOtherAccount.conventAccountToString());
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+        <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> handle exception</span>
+        System.out.println(<span class="hljs-string">"Error in sendChatWithOtherAccountId: "</span> + e);
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;
+    }
+}
+</div></code></pre>
+<h4 id="talkclientjava">TalkClient.java</h4>
+<p>客户端UI的实现，，最要是系统通信环境的初始化，界面的绘制</p>
+<p>界面的实现；</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@Override</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">start</span><span class="hljs-params">(Stage primaryStage)</span> </span>{
+    
+    initTalkClient();
+    System.out.println(<span class="hljs-string">"initTalkClient run..."</span>);
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">//读取fxml文件</span>
+        Parent root = FXMLLoader.load(getClass().getResource(<span class="hljs-string">"/v6/clientScene.fxml"</span>));
+
+        <span class="hljs-comment">//窗口的标题</span>
+        primaryStage.setTitle(<span class="hljs-string">"TalkClient"</span>);
+        
+        <span class="hljs-comment">//主窗口加载的场景，场景里面的描述文件</span>
+        primaryStage.setScene(<span class="hljs-keyword">new</span> Scene(root));
+        
+        primaryStage.setResizable(<span class="hljs-keyword">false</span>);
+        
+        
+        <span class="hljs-comment">//最后就是show time</span>
+        primaryStage.show();
+    } <span class="hljs-keyword">catch</span>(Exception e) {
+        e.printStackTrace();
+    }
+}
+</div></code></pre>
+<h1 id="%E7%B3%BB%E7%BB%9F%E6%B5%8B%E8%AF%95">系统测试</h1>
+<h3 id="v1">v1</h3>
+<p>因为是一人一句通信（与服务器），所以先客户端发送一段文字，服务器接收到后显示，然后服务器端发送一段文字，客户端收到，显示，如此往复</p>
+<pre class="hljs"><code><div>预期输入输出：
+client: test
+server: Client:test
+server: test1
+client: Server:test1
+</div></code></pre>
+<p>测试结果相符</p>
+<h3 id="v2">v2</h3>
+<p>此时可以任意两人间通信，但两客户端间的通信仍为一人一句模式：</p>
+<pre class="hljs"><code><div>clientA:
+
+982-79
+Server: You are now logging in!
+Server: Input the id that you wanna talk to...
+876-465
+adsf
+Client: adsf
+Server: afdff
+fdsafsfadsfasf
+Client: fdsafsfadsfasf
+Server: asdfdsf
+adsfafas
+Client: adsfafas
+Server: adsfasdfdas
+
+
+server:
+
+Client1 talk to Client2: adsf
+Client1 talk to Client2: adsf
+Client1 talk to Client2: afdff
+Client1 talk to Client2: afdff
+Client 2 talk to Client1: fdsafsfadsfasf
+Client 2 talk to Client1: asdfdsf
+Client1 talk to Client2: adsfasdfdas
+Client1 talk to Client2: adsfafas
+
+
+clientB
+
+876-465
+Server: You are now logging in!
+Server: Input the id that you wanna talk to...
+982-79
+afdff
+Client: afdff
+Server: adsf
+asdfdsf
+Client: asdfdsf
+Server: fdsafsfadsfasf
+adsfasdfdas
+Client: adsfasdfdas
+Server: adsfafas
+</div></code></pre>
+<p>输入输出结果与预期相符</p>
+<h3 id="v3">v3</h3>
+<p>先启动服务器端，然后启动两个以上的客户端，此时会显示客户端获得的随机用户和其他提示信息，然后对于任意一个客户端输入对方的ID-对方的呢称，建立通信，此后发送的消息对方可以接收到，，对于其他用户发送来的消息也会显示出来：</p>
+<pre class="hljs"><code><div>
+clientA:
+
+174-967
+Server: You logged in!
+			&lt;Tips&gt;: 
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+596-556
+akldfj
+You said: akldfj
+ajkdlf
+You said: ajkdlfa'j'k'd'l'faajkdlf
+akldf
+You said: 'j'k'd'la'j'k'da'j'ka'jaakldf
+lfkjd;a
+You said: lfkjd;a
+
+You said: 
+bye
+You said: bye
+send Thread stop
+send thread stopped
+You have stopped communiating the other person
+			&lt;Tips&gt;: 
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+exit
+Error: java.net.SocketException: Socket closed
+
+
+
+server:
+
+596-556------
+Client1 talk ot Client2: akldfj
+Client1 talk ot Client2: ajkdlfa'j'k'd'l'faajkdlf
+Client1 talk ot Client2: 'j'k'd'la'j'k'da'j'ka'jaakldf
+Client1 talk ot Client2: lfkjd;a
+Client1 talk ot Client2: 
+Client1 talk ot Client2: bye
+stoppppppppppppp
+client1 stoped
+exit------
+
+clientB:
+
+596-556
+Server: You logged in!
+			&lt;Tips&gt;: 
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+He said: akldfj
+He said: ajkdlfa'j'k'd'l'faajkdlf
+He said: 'j'k'd'la'j'k'da'j'ka'jaakldf
+He said: lfkjd;a
+He said: 
+He said: bye
+</div></code></pre>
+<p>输入输出结果与预期相符</p>
+<h3 id="v4">v4</h3>
+<p>具体的启动与上一版本一致，增加文件传输的测试，预期输入 <code>&lt;File&gt;</code> 以及 文件的绝对路径后，发送文件，服务器接收，然后发送到接收者端并保存</p>
+<pre class="hljs"><code><div>clientA:
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\944: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\944
+
+User 944's dir has been mkdired!
+Now you can transfer and recive files in this dir!
+
+944-255
+He said: Server: You logged in!
+He said: 
+He said: 			&lt;Tips&gt;: 
+He said: 
+He said: Server: Input the id that you wanna talk to..
+He said: Or &quot;exit&quot; if you wanna to exit
+302-276
+You said: asjdlflas;
+You said: dsjlfk
+You said: ajsdlkf;
+You said: &lt;File&gt;
+g:\pic.cpp
+&lt;File&gt;	g:\pic.cpp	885	2019年02月25日10时30分
+File is tranfering...
+885
+File End
+You said: 
+
+server:
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\302: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\302
+			&lt;Server&gt;
+
+User 302's dir has been mkdired!
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\944: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\944
+			&lt;Server&gt;
+
+User 944's dir has been mkdired!
+
+302-276------
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\302: has been existed! No need to mkdir it again
+			&lt;Server&gt;
+
+User 302's dir has been mkdired!
+
+Client1 talk ot Client2: asjdlflas;
+Client1 talk ot Client2: dsjlfk
+Client1 talk ot Client2: ajsdlkf;
+Client1 talk ot Client2: &lt;File&gt;
+2
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\944\pic.cpp
+&lt;File&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\serverData\944\pic.cpp	0	2019年06月14日02时38分
+885 100
+tranfer done!
+File tranfer has done!
+
+
+clientB:
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\302: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\302
+
+User 302's dir has been mkdired!
+Now you can transfer and recive files in this dir!
+
+302-276
+He said: Server: You logged in!
+He said: 
+He said: 			&lt;Tips&gt;: 
+He said: 
+He said: Server: Input the id that you wanna talk to..
+He said: Or &quot;exit&quot; if you wanna to exit
+He said: asjdlflas;
+He said: dsjlfk
+He said: ajsdlkf;
+He said: &lt;File&gt;
+File start
+pic.cpp
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\302\pic.cpp
+&lt;File&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v4\userData\302\pic.cpp	0	2019年06月14日02时38分
+885.......
+885 885 100
+Tranfer done!
+
+</div></code></pre>
+<p>输入输出结果与预期相符</p>
+<h3 id="v5">v5</h3>
+<p>输入格式由上一版本的普通字符串改为json格式的字符串即可，其余的输入输出与上版本保持一致：</p>
+<pre class="hljs"><code><div>clientA:
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\userData\131: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\userData\131
+
+User 131's dir has been mkdired!
+Now you can transfer and recive files in this dir!
+
+{&quot;id&quot;:&quot;131&quot;,&quot;name&quot;:&quot;221&quot;}
+{&quot;type&quot;:&quot;message&quot;,&quot;fromAccountId&quot;:&quot;131&quot;,&quot;fromAccountName&quot;:&quot;221&quot;,&quot;toAccountId&quot;:&quot;&quot;,&quot;toAccountName&quot;:&quot;&quot;,&quot;message&quot;:&quot;Send own account\u0027s id&quot;,&quot;date&quot;:&quot;Jun 14, 2019 2:55:20 PM&quot;,&quot;size&quot;:512,&quot;nowLength&quot;:0,&quot;totalLength&quot;:0,&quot;flag&quot;:false}
+Jun 14, 2019 2:55:20 PM	-Server said: You logged in!
+Jun 14, 2019 2:55:20 PM	-Server said: 
+			&lt;Tips&gt;: 
+
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+203 963
+send the other client json: {&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+You said: sdffafa
+You said: &lt;File&gt;
+g:\pic.cpp
+The file that will be sent is: g:\pic.cpp
+fileTransferThread constructoring: g:\pic.cpp
+The file's length is: 885
+You said: Now it is starting fileTransferThread
+&lt;File&gt;	g:\pic.cpp	885	2019年02月25日10时30分
+Now it is sending the file: pic.cpp
+pic.cpp has sent
+bye
+send Thread stop
+send thread stopped
+You have stopped communiating the other person
+Jun 14, 2019 2:55:45 PM	-Server said: 
+			&lt;Tips&gt;: 
+
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+exit
+Error: java.net.SocketException: Socket closed
+
+
+server:
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+conventStringToAccount
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+203 963
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\203: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\203
+			&lt;Server&gt;
+
+User 203's dir has been mkdired!
+
+{&quot;id&quot;:&quot;131&quot;,&quot;name&quot;:&quot;221&quot;}
+conventStringToAccount
+{&quot;id&quot;:&quot;131&quot;,&quot;name&quot;:&quot;221&quot;}
+131 221
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\131: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\131
+			&lt;Server&gt;
+
+User 131's dir has been mkdired!
+
+the other client's json is: {&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+conventStringToAccount
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+203 963
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\203: has been existed! No need to mkdir it again
+			&lt;Server&gt;
+
+User 203's dir has been mkdired!
+
+Jun 14, 2019 2:55:34 PM 131said to 203: sdffafa
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\131\pic.cpp
+885
+now has recived: 885 100
+Parpering to send file to client b
+fileTransferThread constructoring: G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\131\pic.cpp
+The file's length is: 885
+Now it is starting fileTransferThread
+&lt;File&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\serverData\131\pic.cpp	885	2019年06月14日02时55分
+Now it is sending the file: pic.cpp
+pic.cpp has sent
+Jun 14, 2019 2:55:45 PM 131said to 203: bye
+stop send and recive thread
+client1 stoped
+Error:java.io.EOFException
+
+clientB:
+
+G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\userData\203: has been mkdir!
+&lt;Dir&gt;	G:\Backup\CollegeProjectBackup\javaChatRoom\ChatRoom\src\v5\userData\203
+
+User 203's dir has been mkdired!
+Now you can transfer and recive files in this dir!
+
+{&quot;id&quot;:&quot;203&quot;,&quot;name&quot;:&quot;963&quot;}
+{&quot;type&quot;:&quot;message&quot;,&quot;fromAccountId&quot;:&quot;203&quot;,&quot;fromAccountName&quot;:&quot;963&quot;,&quot;toAccountId&quot;:&quot;&quot;,&quot;toAccountName&quot;:&quot;&quot;,&quot;message&quot;:&quot;Send own account\u0027s id&quot;,&quot;date&quot;:&quot;Jun 14, 2019 2:55:20 PM&quot;,&quot;size&quot;:512,&quot;nowLength&quot;:0,&quot;totalLength&quot;:0,&quot;flag&quot;:false}
+Jun 14, 2019 2:55:20 PM	-Server said: You logged in!
+Jun 14, 2019 2:55:20 PM	-Server said: 
+			&lt;Tips&gt;: 
+
+Server: Input the id that you wanna talk to..
+Or &quot;exit&quot; if you wanna to exit
+Jun 14, 2019 2:55:34 PM	131-221 said: sdffafa
+recive file
+Jun 14, 2019 2:55:45 PM	131-221 said: bye
+
+</div></code></pre>
+<p>输入输出结果与预期相符</p>
+<h3 id="v6">v6</h3>
+<p>登陆时：</p>
+<p><img src="./Readme/ui1.png" alt=""></p>
+<p>刷新后：</p>
+<p><img src="./Readme/ui2.png" alt=""></p>
+<p>输入输出结果与预期相符</p>
+<h1 id="%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1%E6%80%BB%E7%BB%93">课程设计总结</h1>
+<p>对所做工作的总体总结：包括最终实现了哪些系统功能，使用了哪些Java编程技术、课程设计过程中遇到的问题、问题的解决以及收获</p>
+<p>最终聊天室实现了基本要求的功能，任意客户端之间的端到端的不受限制的通信，文件的传输，同时文件的传输实现多文件的并行传输与消息的并行发送，即文件的发送过程中仍然可以发送接收消息，对于GUI实现了部分功能，还有一些功能因为尚未解决的bug没有很好的实现。</p>
+<p>此时聊天室系统用到的Java编程技术有：基于Socket的网络通信、多线程的实现、Java下对文件的操作、ecplise中导入第三方jar包、使用Google的Gson实现json存储的消息的编解码、JavaFx的GUI的编写等Java编程技术。</p>
+<p>在设计系统过程中遇到的问题：</p>
+<ul>
+<li>文件夹的递归创建： 开始我只看到了 <code>makdir()</code> 方法，它是直接创建文件的一个方法，，但是没有看到递归创建文件夹的方法，后来才看到还有 <code>madirs()</code> 方法，ecplise的自动补全虽然好用，但是不能过度依赖，后者会补全出不是自己要用的方法。</li>
+<li>json的实现：因为要实现文件传输、消息收发的并行化，所以想着将所有的信息都看作字符串来传送，由接收端来判断收到的字符串的含义，所以在查阅了相关资料后选择Gson来实现json的生成、编解码，通过这个我学会了Java工程中导入使用第三方jar包的方法。</li>
+<li>JavaFx下更新UI的问题：之前看到过JavaFx是一个新兴的GUI技术，正在取代Swing，但是国内的相关的讨论不是很多，遇到的很多问题只能去国外论坛寻找解决方法，这也是最后GUI的开发远远超出自己预想的原因吧，最后还是没有解决 根据数据的变化来更新 <code>JFXListView</code> 控件（非JavaFxUI线程下对UI的更改），不过寻找解决方法的同时也学到了很多的其他有关UI的内容，加深了我对UI设计开发的理解。</li>
+<li>GIt的使用： 在开发系统的过程中，我想着将项目git版本控制，将开发好的版本push到GitHub上，写commit信息，这个过程中巩固了之前学到的git的使用方法，同时我也了解到了ecplise中git的使用过程。</li>
+</ul>
+
+</body>
+</html>

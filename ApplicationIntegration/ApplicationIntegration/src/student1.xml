@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<properties>
+		<driverClassName>com.mysql.jdbc.Driver</driverClassName>
+		<url>jdbc:mysql://localhost:3306/applicationintegration1?serverTimezone=UTC</url>
+		<username>root</username>
+		<password>123456</password>
+	</properties>
+	
+	<table>
+		<cid type="string">学号</cid>
+		<cname type="string">姓名</cname>
+		<csex type="string">性别</csex>
+		<cnid type="string">身份证号</cnid>
+		<cclass type="string">班级</cclass>
+	</table>
+</database>

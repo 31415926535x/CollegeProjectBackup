@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<server>
+    <databases>
+        <databasesNum>2</databasesNum>
+        <databasesSrc>
+            <database id="1">
+                <databaseSettingsName>./databasesXML/student1.xml</databaseSettingsName>
+            </database>
+            <database id="2">
+                <databaseSettingsName>./databasesXML/student2.xml</databaseSettingsName>
+            </database>
+        </databasesSrc>
+    </databases>
+</server>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<properties>
+		<driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+		<url>jdbc:mysql://localhost:3306/applicationintegration1?serverTimezone=UTC</url>
+		<username>root</username>
+		<password>123456</password>
+
+		<databaseName>applicationintegration1</databaseName>
+		<databaseTableNum>1</databaseTableNum>
+	</properties>
+	
+	<table id='1'>
+		<tableproperties>
+			<tableName>student1</tableName>
+			<tableColNum>5</tableColNum>
+		</tableproperties>
+		<columns>
+			<cid>
+				<name>学号</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</cid>
+			<cname>
+				<name>姓名</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</cname>
+			<csex>
+				<name>性别</name>
+				<type>string</type>
+				<isSelect>true</isSelect>
+			</csex>
+			<id>
+				<name>身份证号</name>
+				<type>string</type>
+				<isSelect>false</isSelect>
+			</id>
+			<cclass>
+				<name>班级</name>
+				<type>string</type>
+				<isSelect>true</isSelect>
+			</cclass>
+		</columns>
+	</table>
+</database>

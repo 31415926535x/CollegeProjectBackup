@@ -1,0 +1,166 @@
+package v6;
+
+/**
+* @ClassName: MultiTalkServer
+* @Description: TODO(这里用一句话描述这个类的作用)
+* @author 31415926535x
+* @date 2019-05-01上午11:17:07
+*
+*/
+
+import java.io.*;
+import java.net.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
+
+public class MultiTalkServer{
+	static int clientnum=0; //静态成员变量，记录当前客户的个数
+	static HashMap<Account, Socket> databaseMap = new HashMap<Account, Socket>();
+	static List<Account> accounts = new ArrayList<Account>();
+	static List<Socket> sockets = new ArrayList<Socket>();
+	    /**
+	    * @Title: putAccountIntoDB
+	    * @Description: TODO 将一个账户以及它当前的套接字作为键值保存到 hashMap 中
+	    * @param @param accountString	账户信息（用字符串表示）
+	    * @param @param socket    参数	套接字对象
+	    * @return void    返回类型
+	    * @throws
+	    */
+	    
+	public static void putAccountIntoDB(Account account, Socket socket) {
+		databaseMap.put(account, socket);		//将当前用户的账户的信息和他的套接字对应保存
+		saveAccount(account);
+		saveSocket(socket);
+	}
+	
+	
+	    /**
+	    * @Title: getSocket
+	    * @Description: TODO 寻找到一个账户对象的套接字
+	    * @param @param theOtherClientString	账户字符串表示
+	    * @param @return    参数
+	    * @return Socket    返回类型
+	    * @throws
+	    */
+	    
+	public static Socket getSocket(Account account) {
+		return databaseMap.get(account);
+	}
+	
+	    /**
+	    * @Title: getAccount
+	    * @Description: TODO 寻找一个socket对应的当前用户
+	    * @param @param theOtherClientSocket
+	    * @param @return    参数
+	    * @return Account    返回类型
+	    * @throws
+	    */
+	    
+	public static Account getAccount(Socket theOtherClientSocket) {
+		Set<Account> st = databaseMap.keySet();				//获取当前数据库所有的线上用户
+		System.out.println(st.size());
+		for(Account account: st) {							//如果该用户的套接字等于待查找的用户的套接字，返回这个用户
+			if(databaseMap.get(account).equals(theOtherClientSocket)) {
+				return account;
+			}
+		}
+		return null;
+	}
+	
+	
+	    /**
+	    * @Title: saveAccount
+	    * @Description: TODO 保存每一个上线的用户
+	    * @param @param account    参数
+	    * @return void    返回类型
+	    * @throws
+	    */
+	    
+	public static void saveAccount(Account account) {
+		accounts.add(account);
+	}
+	
+	    /**
+	    * @Title: saveSocket
+	    * @Description: TODO 保存每一个上线的用户
+	    * @param @param socket    参数
+	    * @return void    返回类型
+	    * @throws
+	    */
+	    
+	public static void saveSocket(Socket socket) {
+		sockets.add(socket);
+	}
+	
+	    /**
+	    * @Title: deleteAccount
+	    * @Description: TODO 删除某一个下线用户
+	    * @param @param account    参数
+	    * @return void    返回类型
+	    * @throws
+	    */
+	    
+	public void deleteAccount(Account account) {
+		for(int i = 0; i <= accounts.size() - 1; ++i) {
+			if(accounts.get(i).equals(account)) {
+				accounts.remove(i);
+				break;
+			}
+		}
+	}
+	
+	    /**
+	    * @Title: deleteSocket
+	    * @Description: TODO 删除某一个下线用户
+	    * @param @param socket    参数
+	    * @return void    返回类型
+	    * @throws
+	    */
+	    
+	public void deleteSocket(Socket socket) {
+		for(int i = 0; i <= sockets.size() - 1; ++i) {
+			if(sockets.get(i).equals(socket)) {
+				sockets.remove(i);
+				break;
+			}
+		}
+	}
+	
+	    /**
+	    * @Title: getAccounts
+	    * @Description: TODO 得到所有上线用户列表
+	    * @param @return    参数
+	    * @return List<Account>    返回类型
+	    * @throws
+	    */
+	    
+	public List<Account> getAccounts() {
+		return this.accounts;
+	}
+	
+	public static void main(String args[]) throws IOException {
+		
+		//创建服务器端的数据缓冲文件夹
+		fileSystemOperation.mkdir_("", 2);
+		
+		ServerSocket serverSocket=null;
+		boolean listening = true;
+		try{
+			//创建一个ServerSocket在端口4700监听客户请求
+			serverSocket = new ServerSocket(4700); 			
+		}catch(IOException e) {
+			System.out.println("Could not listen on port:4700.");
+			//出错，打印出错信息
+			System.exit(-1); //退出
+		}
+		
+		while(listening){ //循环监听
+		  //监听到客户请求，根据得到的Socket对象和客户计数创建服务线程，并启动之
+		  new ServerThread(serverSocket.accept(),clientnum).start();
+		  clientnum++; //增加客户计数
+		}
+		serverSocket.close(); //关闭ServerSocket
+	}
+}

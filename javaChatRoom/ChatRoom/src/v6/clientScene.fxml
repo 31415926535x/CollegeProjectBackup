@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="v6.clientController">
+   <children>
+      <JFXTextField fx:id="sendTextField" layoutX="297.0" layoutY="632.0" prefHeight="175.0" prefWidth="906.0" style="-fx-background-color: gray;" />
+      <JFXListView fx:id="accountListview" layoutY="41.0" prefHeight="766.0" prefWidth="297.0" style="-fx-background-color: lightsalmon;" />
+      <JFXButton fx:id="sendMessageButton" layoutX="1149.0" layoutY="632.0" onAction="#clickSendMessageButton" style="-fx-background-color: pink;" text="发送" />
+      <JFXButton fx:id="sendFileButton" layoutX="1099.0" layoutY="632.0" onAction="#clickSendFileButton" style="-fx-background-color: gold;" text="文件" />
+      <JFXTextArea fx:id="reciveTextArea" layoutX="297.0" prefHeight="632.0" prefWidth="906.0" style="-fx-background-color: snow;" />
+      <JFXButton fx:id="refreshAccountsListButton" layoutY="-1.0" onAction="#clickRefreshAccountsListButton" prefHeight="43.0" prefWidth="297.0" style="-fx-background-color: orange;" text="刷新" />
+   </children>
+</AnchorPane>

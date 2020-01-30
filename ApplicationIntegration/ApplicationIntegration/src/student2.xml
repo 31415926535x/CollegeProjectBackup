@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+	<properties>
+		<driverClassName>com.mysql.jdbc.Driver</driverClassName>
+		<url>jdbc:mysql://localhost:3306/applicationintegration2?serverTimezone=UTC</url>
+		<username>root</username>
+		<password>123456</password>
+	</properties>
+	
+	<table>
+		<cid type="string">nid</cid>
+		<cfirstname type="string">FirstName</cfirstname>
+		<clastname type="string">LastName</clastname>
+		<csex type="string">sex</csex>
+		<cbrithyear type="int">year</cbrithyear>
+		<cbrithmonth type="int">month</cbrithmonth>
+		<cbrithday type="int">day</cbrithday>
+		<cstartyear type="int">startyear</cstartyear>
+		<cgpa type="double">GPA</cgpa>
+	</table>
+</database>
