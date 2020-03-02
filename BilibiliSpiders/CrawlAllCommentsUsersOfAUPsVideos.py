@@ -86,7 +86,7 @@ def saveUser():
 mysql = SaveDataToMysql.mysql()
 allUsers = []
 
-# mid = input()
+mid = input()
 CrawlAllCommentsUserOfAUPsVideos(mid)
 mysql.commit()
 print("DONE!!!!!!~~~")

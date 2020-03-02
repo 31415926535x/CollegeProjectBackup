@@ -1,6 +1,6 @@
 心血来潮搞了一个简单的爬虫，主要是想知道某个人的b站账号，但是你知道，b站在搜索一个用户时，如果这个用户没有投过稿，是搜不到的，，，这时就只能想方法搞到对方的mid，，就是 ``space.bilibili.com/9444976`` 后面的那一串数字。偶然看到这个人关注了某个主播，，想到可能这个人会回复主播的视频，于是想着爬到所有up下的视频的评论对应的用户，这样我就可以在数据库里检索昵称得到mid，，，嘿嘿嘿（然而失败了，，不是所有人都像我这么无聊，，，，有些人真的看视频不会回复，，
 
-[项目地址: https://github.com/31415926535x/CollegeProjectBackup/BilibiliSpiders](https://github.com/31415926535x/CollegeProjectBackup/BilibiliSpiders)
+[项目地址: https://github.com/31415926535x/CollegeProjectBackup/tree/master/BilibiliSpiders](https://github.com/31415926535x/CollegeProjectBackup/tree/master/BilibiliSpiders)
 
 <!-- more -->
 
