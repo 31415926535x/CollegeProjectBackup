@@ -1,0 +1,14 @@
+{
+  "name": "fetchojdatabynodejsserver",
+  "version": "1.0.0",
+  "description": "FetchOJDataFromNpuacm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "acm"
+  ],
+  "author": "31415926535x",
+  "license": "ISC"
+}

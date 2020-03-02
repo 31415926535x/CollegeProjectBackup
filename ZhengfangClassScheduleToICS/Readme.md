@@ -1,6 +1,7 @@
 # 简介
 
-这个油猴脚本主要是针对新版的正方教务系统，实现将课程表转化为一个 ``courses.ics`` 文件，这样就可以 **愉快** 的使用 ``Google Calendar`` 来看课程表了，~~（唉，我好像快毕业了哎，，，~~ ，
+
+[这个油猴脚本](https://greasyfork.org/zh-CN/scripts/395847-%E6%96%B0%E7%89%88%E6%AD%A3%E6%96%B9%E6%95%99%E5%8A%A1%E7%B3%BB%E7%BB%9F%E5%AF%BC%E5%87%BA%E8%AF%BE%E7%A8%8B%E8%A1%A8)主要是针对新版的正方教务系统，实现将课程表转化为一个 ``courses.ics`` 文件，这样就可以 **愉快** 的使用 ``Google Calendar`` 来看课程表了，~~（唉，我好像快毕业了哎，，，~~ ，
 
 # 食用方法
 
@@ -21,3 +22,7 @@
 # TODO
 
 有时间将考试信息也加上。。。
+
+# 参考
+
+https://gist.github.com/yulanggong/be953ffee1d42df53a1a
