@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.md": "markdown",
+        "*.java": "java",
+        "iostream": "cpp",
+        "deque": "cpp",
+        "string": "cpp",
+        "vector": "cpp",
+        "ostream": "cpp",
+        "new": "cpp"
+    }
+}

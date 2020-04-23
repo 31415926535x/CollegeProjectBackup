@@ -1,0 +1,125 @@
+\documentclass{standalone}
+\usepackage{CJKutf8}
+%\input{zhwinfonts}
+\usepackage{graphicx}
+\usepackage{subfigure}         
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+
+% some settings for state automata
+\usetikzlibrary{automata} % Import library for drawing automata 
+\usetikzlibrary{positioning} % ...positioning nodes 
+\usetikzlibrary{arrows} % ...customizing arrows 
+\tikzset{node distance=2.5cm, % Minimum distance between two nodes. Change if necessary. 
+			  every state/.style={ % Sets the properties for each state 
+			  semithick, 
+			  fill=gray!10}, 
+			  initial text={}, % No label on start arrow 
+			  double distance=2pt, % Adjust appearance of accept states 
+			  every edge/.style={ % Sets the properties for each transition
+			  draw, 
+			  ->,>=stealth', % Makes edges directed with bold arrowheads 
+			  auto, 
+			  semithick}}
+\let\epsilon\varepsilon
+% some settings for state automata
+
+
+
+\begin{document}
+\minipage{16cm}
+\begin{CJK*}{UTF8}{gbsn}
+
+
+\tikzstyle{V}=[state]
+\tikzstyle{S}=[state,initial]
+\tikzstyle{T}=[state, accepting]
+
+\begin{figure}[htbp]
+\centering
+\subfigure[状态转换图]{
+\begin{tikzpicture}[scale=1.5, auto,swap]
+
+	\node[S] (start) at(0, 0) {$0$};
+	
+	\node[V] (1) at(2, 0) {$1$};
+	\node[T] (2) at(6, 0) {$2$};
+	
+	\node[V] (3) at(2, -2) {$3$};
+	\node[T] (4) at(6, -2) {$4$};
+	
+	\draw (start) edge[loop above] node{空白} (start)
+						 edge[above] node{字母} (1);
+	
+	\draw (1) edge[loop above] node{字母或数字} (1)
+					edge[above] node{非字母或数字} (2);
+	
+	\draw (0, -2) edge[above] node{数字} (3);
+	\draw (3) edge[loop above] node{数字} (3)
+					edge[above] node{非数字} (4);
+
+
+\node[T](5) at(2, -3) {$5$};
+\draw (0, -3) edge[above]node{$+$}(5);
+
+\node[T](6) at(2, -4) {$6$};
+\draw (0, -4) edge[above]node{$-$}(6);
+
+\node[T](7) at(2, -5) {$7$};
+\draw (0, -5) edge[above]node{$*$}(7);
+
+\node[T](8) at(2, -6) {$8$};
+\draw (0, -6) edge[above]node{$/$}(8);
+
+\node[T](9) at(2, -7) {$9$};
+\draw (0, -7) edge[above]node{$=$}(9);
+
+\node[V](10) at(2, -8) {$10$};
+\node[T](11) at(4, -8) {$11$};
+\draw (0, -8) edge[above]node{$<$}(10);
+\draw (10) edge[above]node{$>$}(11);
+
+\node[T](12) at(4, -9) {$12$};
+\draw (10) -- (2, -9) edge[above]node{$=$}(12);
+
+\node[T](13) at(4, -10) {$13$};
+\draw (10) -- (2, -10) edge[above]node{其他}(13);
+
+\node[V](14) at(2, -11) {$14$};
+\draw (0, -11) edge[above]node{$>$}(14);
+
+\node[T](15) at(4, -11) {$15$};
+\node[T](16) at(4, -12) {$16$};
+\draw (14) edge[above]node{$=$}(15);
+\draw (14) -- (2, -12) edge[above]node{其他}(16);
+
+\node[V](17) at(2, -13) {$17$};
+\node[T](18) at(4, -13) {$18$};
+\draw (0, -13) edge[above]node{$:$}(17);
+\draw (17) edge[above]node{$=$}(18);
+
+\node[T](19) at(2, -14) {$19$};
+\draw (0, -14) edge[above]node{$($}(19);
+
+\node[T](20) at(2, -15) {$20$};
+\draw (0, -15) edge[above]node{$)$}(20);
+
+\node[T](21) at(2, -16) {$21$};
+\draw (0, -16) edge[above]node{$,$}(21);
+
+\node[T](22) at(2, -17) {$22$};
+\draw (0, -17) edge[above]node{$;$}(22);
+
+\node[T](23) at(2, -18) {$23$};
+\draw (0, -18) edge[above]node{$.$}(23);
+
+\draw (start) -- (0, -2) -- (0, -3) -- (0, -4) -- (0, -5) -- (0, -6) -- (0, -7) -- (0, -8) -- (0, -9) -- (0, -10) -- (0, -11) -- (0, -12) -- (0, -13) -- (0, -14) -- (0, -15) -- (0, -16) -- (0, -17) -- (0, -18);
+\end{tikzpicture}
+}
+
+\caption{状态转换图}
+\end{figure}
+
+\end{CJK*}
+\endminipage
+\end{document}
