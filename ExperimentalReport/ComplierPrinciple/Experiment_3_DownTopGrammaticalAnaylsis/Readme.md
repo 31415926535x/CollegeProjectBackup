@@ -233,7 +233,7 @@ state SLRAnalysis{
 }
 ```
 
-![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ExperimentalReport/ComplierPrinciple/Experiment_3_TopDownGrammaticalAnalysis/img/DFA/dfa.png)
+![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ExperimentalReport/ComplierPrinciple/Experiment_3_TopDownGrammaticalAnalysis/img/flow/flow.png)
 
 # 源程序
 
@@ -343,7 +343,7 @@ symbolsVT <-- ACTIONTable
 symbolsVN <-- GOTOTable
 ```
 
-![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ExperimentalReport/ComplierPrinciple/Experiment_3_TopDownGrammaticalAnalysis/img/class/类图.png)
+![](https://raw.githubusercontent.com/31415926535x/CollegeProjectBackup/master/ExperimentalReport/ComplierPrinciple/Experiment_3_TopDownGrammaticalAnalysis/img/class/class.png)
 
 [项目地址](https://github.com/31415926535x/CollegeProjectBackup/tree/master/ExperimentalReport/ComplierPrinciple/Experiment_3_TopDownGrammaticalAnalysis)
 
