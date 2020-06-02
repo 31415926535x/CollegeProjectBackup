@@ -1,26 +1,53 @@
 // ==UserScript==
 // @name         新版正方教务系统导出课程表
 // @namespace    http://tampermonkey.net/
-// @version      2.0
+// @version      3.0
 // @description  通过对新版正方教务系统的课表页面的解析，实现导出一个适用于大部分ics日历的文件，理论使用于所有使用新版正方教务系统（可对 ``include`` 进行一定的修改以适用不同的学校的链接）
 // @author       31415926535x
 // @supportURL   https://github.com/31415926535x/CollegeProjectBackup/blob/master/ZhengfangClassScheduleToICS/Readme.md
 // @compatible   chrome
 // @compatible   firefox
 // @license      MIT
-// @include      *://jwgl.*.edu.cn/kbcx/xskbcx_cxXskbcxIndex.html*
+// @include      *://jwgl.*.edu.cn/*
 // @run-at       document-start
 // ==/UserScript==
 
 
+
+// 根据自己学校教务系统的网址修改，应该对于新版教务系统的地址都是一样的，故只需修改上面 include中的教务系统的地址即可
+var ClassScheduleToICSURL = "kbcx/xskbcx_cxXskbcxIndex.html";   // 学生课表查询页面，将该学期的课程信息导出为ics
+var StudentEvalutionURL = "xspjgl/xspj_cxXspjIndex.html";        // 学生评教页面
+
+var setTimeout_ = 4000;                                          // 设置脚本实际运行的开始时间，网络不好建议时间稍长，1000等于1s
 (function (){
     
     'use strict';
+    
+    console.log("Script running.....");
+    unsafeWindow.addEventListener("load", main);
+    
+})();
 
+function main(){
+    var windowURL = window.location.href;
+    if(windowURL.indexOf(ClassScheduleToICSURL) != -1){
+        ClassScheduleToICS();
+    }
+    else if(windowURL.indexOf(StudentEvalutionURL) != -1){
+        // StudentEvalution();
+        // unsafeWindow.addEventListener("load", StudentEvalution);
+        document.getElementById("btn_yd").onclick = function(){
+            window.setTimeout(StudentEvalution, setTimeout_);
+        }
+    }
+}
 
+function ClassScheduleToICS(){
+    console.log("ClassScheduleToICS");
     // 在课表上方创建一个点击按钮
     // --------------------------------------------------------------------------
-    unsafeWindow.addEventListener ("load", pageFullyLoaded);
+    // unsafeWindow.addEventListener ("load", pageFullyLoaded);
+    pageFullyLoaded();
     //加载完成后运行
     function pageFullyLoaded(){
         console.log("Fucking ZhengFang...");
@@ -354,4 +381,95 @@
         a.setAttribute("download", "courses.ics");
     }
     // --------------------------------------------------------------------------
-})();
+}
+
+function StudentEvalution(){
+    // SetBtnZero();
+    console.log("done......");
+    // let trs = document.getElementById("tempGrid").getElementsByTagName("tr");
+    // console.log(trs);
+    // for(let i = 0; i < trs.length; ++i){
+    //     console.log("2333");
+    //     trs[i].onclick = function(){
+    //         console.log("???????????");
+    //         // ModifyHTML();
+    //         setTimeout(ModifyHTML(), 4000);
+    //         console.log("!!!!!!!!");
+    //     }
+    // }
+    ModifyHTML();
+
+    function ModifyHTML(){
+        console.log("modify...")
+        // 添加一个选择要批量打分的选择框
+        let panel_body1 = document.getElementsByClassName("panel panel-default")[1];
+        let panel_body2 = document.getElementsByClassName("panel-body")[3];
+        let blockquote = panel_body2.getElementsByTagName("blockquote")[0].cloneNode(true);
+        blockquote.getElementsByTagName("p")[0].innerText = "一键评价";
+        let table = panel_body2.getElementsByTagName("table")[0].cloneNode(true);
+        table.removeAttribute("data-pjzbxm_id"); table.removeAttribute("data-qzz");
+        let tbody = table.getElementsByTagName("tbody")[0];
+        let tr = tbody.getElementsByTagName("tr")[0];
+        while(tbody.getElementsByTagName("tr").length > 1){
+            tbody.removeChild(tbody.getElementsByTagName("tr")[1]);
+        }
+        tr.removeAttribute("data-zsmbmcb_id"); tr.removeAttribute("data-pjzbxm_id"); tr.removeAttribute("data-pfdjdmb_id");
+        tr.getElementsByTagName("td")[0].innerText = "选择的最高分:";
+        let inputs = tr.getElementsByClassName("radio-pjf");
+        for(let i = 0; i < 5; ++i){
+            // tds[i].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("label")[0].getElementsByTagName("")
+            inputs[i].removeAttribute("name");
+            inputs[i].removeAttribute("data-pfdjdmxmb_id");
+            inputs[i].setAttribute("name", "StudentEvalution");
+        }
+        inputs[0].setAttribute("checked", "checked");
+        
+        
+        // let btn = document.getElementsByClassName("btn-group")[1];
+        let btn = document.createElement("button");
+        btn.className = "btn btn-default";
+        let sp = document.createElement("span");
+        sp.innerText = "一键评价";
+        sp.className = "bigger-120 glyphicon glyphicon-ok";
+        btn.append(sp);
+        btn.setAttribute("id", "btn_StudentEvalution");
+        btn.onclick = function(){
+            let score = 5;
+            let checked = document.getElementsByName("StudentEvalution");
+            for(let i = 0; i < checked.length; ++i){
+                if(checked[i].checked){
+                    score = checked[i].getAttribute("data-dyf")
+                }
+            }
+            console.log("设置的最高分数为: " + score);
+            score = 5 - score;
+            let inputs = document.getElementsByClassName("panel-body")[3].getElementsByTagName("input");
+            let flag = Math.round(Math.random() * (inputs.length / 5));
+            console.log(flag);
+            for(let i = score; i < inputs.length; i += 5){
+                if(Math.round(i / 5) == flag){
+                    inputs[i + 1].setAttribute("checked", "checked");
+                }
+                else{
+                    inputs[i].setAttribute("checked", "checked");
+                }
+            }
+        }
+        let td = document.createElement("td");
+        td.appendChild(btn);
+        
+        tr.appendChild(td);
+        panel_body1.prepend(table);
+        panel_body1.prepend(blockquote);
+        
+
+        }
+              
+}
+
+function SetBtnZero(){
+    // 没用，，，
+    let btn = document.getElementById("btn_yd");
+    btn.className = "btn btn-default btn-primary";
+    btn.removeAttribute("disabled");    
+}
