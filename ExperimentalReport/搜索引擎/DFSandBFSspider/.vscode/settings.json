@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "E:\\python3.7\\python.exe",
+    "env": {"PYTHONPATH" : "${workspaceRoot}"},
+    "envFile": "${workspaceFolder}/.env"
+}
