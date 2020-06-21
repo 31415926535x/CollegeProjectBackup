@@ -1,0 +1,532 @@
+<!DOCTYPE html><html><head>
+      <title>readme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\31415926535x\.vscode\extensions\gicentre.markdown-preview-enhanced-with-litvis-0.22.0\node_modules\mume-with-litvis\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p>&#x5229;&#x7528;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x5B9E;&#x73B0;A|B|C</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</h1>
+
+<p>&#x5229;&#x7528;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x5B9E;&#x73B0;A|B|C&#xFF0C;&#x5373;&#x591A;&#x4E2A;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#x3002;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</h1>
+
+<ul>
+<li>&#x7406;&#x89E3;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;</li>
+<li>&#x4F7F;&#x7528;fork&#x6765;&#x5E38;&#x89C1;&#x8FDB;&#x7A0B;</li>
+<li>&#x7F16;&#x5199;&#x4E09;&#x4E2A;&#x7A0B;&#x5E8F;&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x4F7F;&#x7528;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x901A;&#x4FE1;</li>
+</ul>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</h1>
+
+<h2 class="mume-header" id="%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90">&#x4EFB;&#x52A1;&#x5206;&#x6790;</h2>
+
+<ul>
+<li>&#x9996;&#x5148;&#x7F16;&#x5199;&#x4E09;&#x4E2A;&#x7A0B;&#x5E8F;A&#x3001;B&#x3001;C&#xFF0C;&#x5206;&#x522B;&#x5B9E;&#x73B0;&#x968F;&#x673A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x5C0F;&#x5199;&#x5B57;&#x7B26;&#x4E32;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x53F3;&#x79FB;&#x4E00;&#x4F4D;&#x3001;&#x5B57;&#x7B26;&#x4E32;&#x5C0F;&#x5199;&#x53D8;&#x5927;&#x5199;</li>
+<li>&#x7F16;&#x5199;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x7A0B;&#x5E8F;&#xFF0C;&#x5B9E;&#x73B0;&#x521B;&#x5EFA;&#x4E09;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x5E76;&#x901A;&#x8FC7;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x6765;&#x5B9E;&#x73B0;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;</li>
+</ul>
+<h2 class="mume-header" id="%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1">&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;</h2>
+
+<p>&#x4E09;&#x4E2A;&#x5B50;&#x7A0B;&#x5E8F;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4F7F;&#x7528;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x7F16;&#x5199;&#xFF0C;&#x7A0B;&#x5E8F;&#x6D41;&#x7A0B;&#x56FE;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p code_chunk_offset="0" cmd="true" hide="true"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="1338.4196px" preserveAspectRatio="none" style="width:786px;height:1338px;" version="1.1" viewBox="0 0 786 1338" width="786.921px" zoomAndPan="magnify"><defs><filter height="300%" id="fnp8f01bcy59y" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="4.359673024523161"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="8.719346049046322" dy="8.719346049046322" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="386.921" cy="39.2371" fill="#000000" filter="url(#fnp8f01bcy59y)" rx="21.7984" ry="21.7984" style="stroke: none; stroke-width: 2.1798365122615806;"/><ellipse cx="386.921" cy="1292.6431" fill="none" filter="url(#fnp8f01bcy59y)" rx="21.7984" ry="21.7984" style="stroke: #000000; stroke-width: 2.1798365122615806;"/><ellipse cx="388.0109" cy="1293.733" fill="#000000" rx="13.079" ry="13.079" style="stroke: none; stroke-width: 2.1798365122615806;"/><rect fill="#FEFECE" filter="url(#fnp8f01bcy59y)" height="947.1581" rx="27.248" ry="27.248" style="stroke: #A80036; stroke-width: 3.269754768392371;" width="747.6839" x="13.079" y="191.8256"/><rect fill="#FFFFFF" height="823.9782" rx="27.248" ry="27.248" style="stroke: #FFFFFF; stroke-width: 2.1798365122615806;" width="734.6049" x="19.6185" y="308.466"/><line style="stroke: #A80036; stroke-width: 3.269754768392371;" x1="13.079" x2="760.7629" y1="301.9265" y2="301.9265"/><line style="stroke: #A80036; stroke-width: 3.269754768392371;" x1="13.079" x2="760.7629" y1="255.3027" y2="255.3027"/><text fill="#000000" font-family="sans-serif" font-size="30.5177" lengthAdjust="spacingAndGlyphs" textLength="65.3951" x="354.2234" y="237.698">main</text><text fill="#000000" font-family="sans-serif" font-size="26.158" lengthAdjust="spacingAndGlyphs" textLength="78.4741" x="23.9782" y="285.2797">&#x4E3B;&#x7A0B;&#x5E8F;</text><ellipse cx="357.4932" cy="352.0628" fill="#000000" filter="url(#fnp8f01bcy59y)" rx="21.7984" ry="21.7984" style="stroke: none; stroke-width: 2.1798365122615806;"/><rect fill="#FEFECE" filter="url(#fnp8f01bcy59y)" height="87.1935" rx="27.248" ry="27.248" style="stroke: #A80036; stroke-width: 3.269754768392371;" width="265.9401" x="224.5232" y="452.3352"/><text fill="#000000" font-family="sans-serif" font-size="30.5177" lengthAdjust="spacingAndGlyphs" textLength="244.1417" x="235.4223" y="510.0658">&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x65E0;&#x540D;&#x7BA1;&#x9053;</text><rect fill="#FEFECE" filter="url(#fnp8f01bcy59y)" height="121.0001" rx="27.248" ry="27.248" style="stroke: #A80036; stroke-width: 3.269754768392371;" width="523.1608" x="95.9128" y="618.0028"/><line style="stroke: #A80036; stroke-width: 3.269754768392371;" x1="95.9128" x2="619.0736" y1="681.4799" y2="681.4799"/><text fill="#000000" font-family="sans-serif" font-size="30.5177" lengthAdjust="spacingAndGlyphs" textLength="231.0627" x="241.9619" y="663.8752">&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;1</text><text fill="#000000" font-family="sans-serif" font-size="26.158" lengthAdjust="spacingAndGlyphs" textLength="479.564" x="106.812" y="722.3561">&#x5176;&#x4E2D;&#x7236;&#x8FDB;&#x7A0B;&#x6539;&#x53D8;&#x6807;&#x51C6;&#x8BFB;&#x4E3A;&#x7BA1;&#x9053;1&#x7684;&#x8BFB;&#x8C03;&#x7528;C</text><rect fill="#FEFECE" filter="url(#fnp8f01bcy59y)" height="121.0001" rx="27.248" ry="27.248" style="stroke: #A80036; stroke-width: 3.269754768392371;" width="640.8719" x="37.0572" y="818.5478"/><line style="stroke: #A80036; stroke-width: 3.269754768392371;" x1="37.0572" x2="677.9292" y1="882.0249" y2="882.0249"/><text fill="#000000" font-family="sans-serif" font-size="30.5177" lengthAdjust="spacingAndGlyphs" textLength="322.6158" x="196.1853" y="864.4201">&#x5B50;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B59;&#x8FDB;&#x7A0B;2</text><text fill="#000000" font-family="sans-serif" font-size="26.158" lengthAdjust="spacingAndGlyphs" textLength="597.2752" x="47.9564" y="922.9011">&#x5B50;&#x8FDB;&#x7A0B;&#x6807;&#x51C6;&#x8BFB;&#x4E3A;&#x7BA1;&#x9053;2&#x7684;&#x8BFB;&#x6807;&#x51C6;&#x5199;&#x4E3A;&#x7BA1;&#x9053;1&#x7684;&#x5199;&#x8C03;&#x7528;B</text><rect fill="#FEFECE" filter="url(#fnp8f01bcy59y)" height="87.1935" rx="27.248" ry="27.248" style="stroke: #A80036; stroke-width: 3.269754768392371;" width="455.5858" x="129.7003" y="1019.0927"/><text fill="#000000" font-family="sans-serif" font-size="30.5177" lengthAdjust="spacingAndGlyphs" textLength="433.7875" x="140.5995" y="1076.8233">&#x5B59;&#x8FDB;&#x7A0B;2&#x7684;&#x6807;&#x51C6;&#x5199;&#x4E3A;&#x7BA1;&#x9053;&#x5199;&#x8C03;&#x7528;A</text><!--MD5=[b58f14e1bc62458032970d841bd62019]
+link *start*main to 创建两个无名管道--><path d="M357.4932,374.2317 C357.4932,391.5832 357.4932,417.5102 357.4932,440.7843 " fill="none" id="*start*main-&gt;&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x65E0;&#x540D;&#x7BA1;&#x9053;" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="357.4932,451.9472,366.2125,432.3287,357.4932,441.048,348.7738,432.3287,357.4932,451.9472" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[a585c5485238887d7f012f40145e9efd]
+link 创建两个无名管道 to 创建一个子进程1--><path d="M357.4932,539.5701 C357.4932,559.4219 357.4932,583.7532 357.4932,606.3886 " fill="none" id="&#x521B;&#x5EFA;&#x4E24;&#x4E2A;&#x65E0;&#x540D;&#x7BA1;&#x9053;-&gt;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;1" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="357.4932,617.338,366.2125,597.7194,357.4932,606.4388,348.7738,597.7194,357.4932,617.338" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[867f0eabe08303ebfc318225775be4d8]
+link 创建一个子进程1 to 子进程创建一个孙进程2--><path d="M357.4932,740.0802 C357.4932,761.0328 357.4932,784.8453 357.4932,806.6873 " fill="none" id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;1-&gt;&#x5B50;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B59;&#x8FDB;&#x7A0B;2" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="357.4932,817.9047,366.2125,798.2862,357.4932,807.0055,348.7738,798.2862,357.4932,817.9047" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[0b0202277295032f935ae34cc95e3542]
+link 子进程创建一个孙进程2 to 孙进程2的标准写为管道写调用A--><path d="M357.4932,941.283 C357.4932,962.7054 357.4932,986.713 357.4932,1007.5396 " fill="none" id="&#x5B50;&#x8FDB;&#x7A0B;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B59;&#x8FDB;&#x7A0B;2-&gt;&#x5B59;&#x8FDB;&#x7A0B;2&#x7684;&#x6807;&#x51C6;&#x5199;&#x4E3A;&#x7BA1;&#x9053;&#x5199;&#x8C03;&#x7528;A" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="357.4932,1018.7461,366.2125,999.1276,357.4932,1007.847,348.7738,999.1276,357.4932,1018.7461" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[3a49557cc214808664416704f4135b4e]
+link *start to main--><path d="M386.921,61.4191 C386.921,85.018 386.921,127.7253 386.921,179.9172 " fill="none" id="*start-&gt;main" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="386.921,191.1935,395.6403,171.5749,386.921,180.2943,378.2016,171.5749,386.921,191.1935" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[919badb55f801b9719bee74dd4adc684]
+link main to *end--><path d="M386.921,1140.6045 C386.921,1190.3564 386.921,1232.504 386.921,1259.3064 " fill="none" id="main-&gt;*end" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><polygon fill="#A80036" points="386.921,1270.5136,395.6403,1250.895,386.921,1259.6144,378.2016,1250.895,386.921,1270.5136" style="stroke: #A80036; stroke-width: 2.1798365122615806;"/><!--MD5=[53f1990982395de1cf2fd61b74faefbb]
+@startuml
+hide empty description
+scale 800 width
+[*] - -> main
+main - -> [*]
+
+main: 主程序
+
+
+state main{
+    [*] - -> 创建两个无名管道
+    创建两个无名管道 - -> 创建一个子进程1
+    创建一个子进程1 - -> 子进程创建一个孙进程2
+    子进程创建一个孙进程2 - -> 孙进程2的标准写为管道写调用A
+
+    创建一个子进程1: 其中父进程改变标准读为管道1的读调用C
+    子进程创建一个孙进程2: 子进程标准读为管道2的读标准写为管道1的写调用B
+}
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 CST 2019)
+(MIT source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_211-b12
+Operating System: Windows 10
+Default Encoding: GBK
+Language: zh
+Country: CN
+--></g></svg></p><h2 class="mume-header" id="%E8%B0%83%E8%AF%95%E5%88%86%E6%9E%90">&#x8C03;&#x8BD5;&#x5206;&#x6790;</h2>
+
+<p>&#x7F16;&#x8BD1;&#x8FD0;&#x884C; <code>pipe</code> &#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x89C2;&#x5BDF;&#x5230;&#x4E09;&#x4E2A;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x540C;&#x884C;&#x4EE5;&#x53CA;&#x5904;&#x7406;&#x60C5;&#x51B5;&#x3002;</p>
+<h2 class="mume-header" id="%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C">&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</h2>
+
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/pipe$ ./pipe 
+pid1: 12204
+pid1: 0
+pid2: 12205
+pid2: 0
+A running<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+B running<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+The str from A is: jxadqq
+C running<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.
+The str from B is: kyberr
+The str from C is: KYBERR
+</pre><h2 class="mume-header" id="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h2>
+
+<p>&#x5BF9;&#x6587;&#x4EF6;&#x5939;&#x4E2D;&#x7684;&#x56DB;&#x4E2A;&#x6587;&#x4EF6;&#x5206;&#x522B;&#x7F16;&#x8BD1;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x8FD0;&#x884C; <code>./pipe</code> &#x5373;&#x53EF;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93">&#x5B9E;&#x9A8C;&#x603B;&#x7ED3;</h1>
+
+<p>&#x4F5C;&#x4E3A;&#x6700;&#x57FA;&#x7840;&#x7684;&#x8FDB;&#x7A0B;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;&#xFF0C;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x7684;&#x8FD0;&#x884C;&#x6548;&#x7387;&#x5F88;&#x9AD8;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x4EE3;&#x7801;&#x4E2D;&#x770B;&#x51FA;&#xFF0C;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x539F;&#x672C;&#x7A0B;&#x5E8F;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x66F4;&#x6539;&#x6D41;&#x5411;&#x5230;&#x7BA1;&#x9053;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x6761;&#x5355;&#x5411;&#x7684;&#x7BA1;&#x9053;&#xFF0C;&#x8FDB;&#x800C;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4E3A;&#x53E6;&#x4E00;&#x4F7F;&#x7528;&#x3002;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#x4F7F;&#x7528;&#x5728;&#x5177;&#x6709;&#x60C5;&#x7F18;&#x5173;&#x7CFB;&#x7684;&#x8FDB;&#x7A0B;&#x95F4;&#xFF0C;&#x8FDB;&#x7A0B;&#x7684;&#x5EFA;&#x7ACB;&#x662F;&#x6309;&#x7167;&#x4E00;&#x4E2A;&#x65B9;&#x5411;&#x5EFA;&#x7ACB;&#x7684;&#x3002;</p>
+<h1 class="mume-header" id="%E4%BB%A3%E7%A0%81">&#x4EE3;&#x7801;</h1>
+
+<h3 class="mume-header" id="a">A</h3>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h&gt;</span></span>
+
+<span class="token comment">// &#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;A&#xFF0C;&#x968F;&#x673A;&#x4EA7;&#x751F;&#x591A;&#x4E2A;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> avgc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>avgs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token function">srand</span><span class="token punctuation">(</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> n <span class="token operator">=</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">20</span> <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>n<span class="token operator">--</span><span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token string">&apos;a&apos;</span> <span class="token operator">+</span> <span class="token function">rand</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="b">B</h3>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h&gt;</span></span>
+
+<span class="token comment">// &#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;B&#xFF0C;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x5FAA;&#x73AF;&#x540E;&#x79FB;&#x4E00;&#x4F4D;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> avgc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>avgs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">char</span> ch<span class="token punctuation">[</span>BUFSIZ<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token comment">// while(~scanf(&quot;%s&quot;, ch));</span>
+    <span class="token comment">// scanf(&quot;%s&quot;, ch);</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">read</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> ch<span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// int len = strlen(ch);</span>
+    <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;The str from A is: %s\n&quot;</span><span class="token punctuation">,</span> ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">(</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">-</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">26</span> <span class="token operator">+</span> <span class="token string">&apos;a&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="c">C</h3>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
+
+<span class="token comment">// &#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;C&#xFF0C;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x53D8;&#x4E3A;&#x5927;&#x5199;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> avgc<span class="token punctuation">,</span> <span class="token keyword">char</span> <span class="token operator">*</span><span class="token operator">*</span>avgs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">char</span> ch<span class="token punctuation">[</span>BUFSIZ<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">~</span><span class="token function">scanf</span><span class="token punctuation">(</span><span class="token string">&quot;%s&quot;</span><span class="token punctuation">,</span> ch<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// scanf(&quot;%s&quot;, ch);</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token function">strlen</span><span class="token punctuation">(</span>ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;The str from B is: %s\n&quot;</span><span class="token punctuation">,</span> ch<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;The str from C is: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span><span class="token punctuation">(</span>ch<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> <span class="token string">&apos;a&apos;</span> <span class="token operator">+</span> <span class="token string">&apos;A&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="pipe">pipe</h3>
+
+<pre data-role="codeBlock" data-info="cpp" class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;wait.h&gt;</span></span>
+
+<span class="token comment">// &#x6D4B;&#x8BD5;&#x65E0;&#x540D;&#x7BA1;&#x9053;&#xFF0C;&#x5B9E;&#x73B0; A|B|C</span>
+<span class="token comment">// &#x521B;&#x5EFA;&#x7236;&#x5B50;&#x5B59;&#x8FDB;&#x7A0B;&#xFF0C;&#x4FEE;&#x6539;&#x5176;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x8F93;&#x51FA;&#x5230;&#x7BA1;&#x9053;&#x4E2D;&#x5373;&#x53EF;</span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token keyword">int</span> fd1<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">,</span> fd2<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>      <span class="token comment">// &#x65E0;&#x540D;&#x7BA1;&#x9053;</span>
+    <span class="token keyword">int</span> status<span class="token punctuation">;</span>
+    pid_t pid1<span class="token punctuation">,</span> pid2<span class="token punctuation">;</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span>BUFSIZ<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> ret<span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">pipe</span><span class="token punctuation">(</span>fd1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;pipe1....&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">pipe</span><span class="token punctuation">(</span>fd2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;pipe2....&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x521B;&#x5EFA;B&#x8FDB;&#x7A0B;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pid1 <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;Fork B failed...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;pid1: %d\n&quot;</span><span class="token punctuation">,</span> pid1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>pid1 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">// B &#x8FDB;&#x7A0B;</span>
+        <span class="token comment">// &#x521B;&#x5EFA; C &#x8FDB;&#x7A0B;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pid2 <span class="token operator">=</span> <span class="token function">fork</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;Fork C failed...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;pid2: %d\n&quot;</span><span class="token punctuation">,</span> pid2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pid2 <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">// A &#x8FDB;&#x7A0B;</span>
+            <span class="token comment">// &#x6807;&#x51C6;&#x5199;&#x5230;&#x7BA1;&#x9053;1&#x7684;&#x5199;</span>
+
+            <span class="token function">dup2</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;A running.............\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">&quot;./A&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;./A&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;A done!!!!!!!!!!!!!!!!!!!!!!\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span><span class="token punctuation">{</span>
+            <span class="token comment">// B &#x8FDB;&#x7A0B;</span>
+            <span class="token comment">// &#x6807;&#x51C6;&#x8BFB;&#x5230;&#x7BA1;&#x9053;2&#x8BFB;&#xFF0C;&#x6807;&#x51C6;&#x5199;&#x5230;&#x7BA1;&#x9053;1&#x7684;&#x5199;</span>
+            <span class="token comment">// close(1);</span>
+            <span class="token comment">// dup(fd1[1]);</span>
+            <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">dup2</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment">// close(0);</span>
+            <span class="token comment">// dup(fd2[0]);</span>
+            <span class="token function">dup2</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;B running.............\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">&quot;./B&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;./B&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;B done.........\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token comment">// C &#x8FDB;&#x7A0B;</span>
+        <span class="token comment">// &#x6807;&#x51C6;&#x8BFB;&#x5230;&#x7BA1;&#x9053;2&#x7684;&#x8BFB;</span>
+        <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">dup2</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+        <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">fprintf</span><span class="token punctuation">(</span><span class="token constant">stderr</span><span class="token punctuation">,</span> <span class="token string">&quot;C running.............\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">execlp</span><span class="token punctuation">(</span><span class="token string">&quot;./C&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;./C&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_SUCCESS<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">close</span><span class="token punctuation">(</span>fd1<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">close</span><span class="token punctuation">(</span>fd2<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</a>
+<ul>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90">&#x4EFB;&#x52A1;&#x5206;&#x6790;</a></li>
+<li><a href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1">&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;</a></li>
+<li><a href="#%E8%B0%83%E8%AF%95%E5%88%86%E6%9E%90">&#x8C03;&#x8BD5;&#x5206;&#x6790;</a></li>
+<li><a href="#%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C">&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93">&#x5B9E;&#x9A8C;&#x603B;&#x7ED3;</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">&#x4EE3;&#x7801;</a>
+<ul>
+<li><a href="#a">A</a></li>
+<li><a href="#b">B</a></li>
+<li><a href="#c">C</a></li>
+<li><a href="#pipe">pipe</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

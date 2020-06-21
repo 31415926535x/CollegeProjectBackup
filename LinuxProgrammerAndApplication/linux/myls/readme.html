@@ -1,0 +1,1004 @@
+<!DOCTYPE html><html><head>
+      <title>readme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\31415926535x\.vscode\extensions\gicentre.markdown-preview-enhanced-with-litvis-0.22.0\node_modules\mume-with-litvis\dependencies\katex\katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p>&#x5B9E;&#x9A8C;1  ls&#x547D;&#x4EE4;&#x7684;&#x5B9E;&#x73B0;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</h1>
+
+<p>Shell&#x7F16;&#x7A0B;&#x662F;linux&#x7F16;&#x7A0B;&#x7684;&#x6838;&#x5FC3;&#x5185;&#x5BB9;&#xFF0C;Shell&#x547D;&#x4EE4;&#x7684;&#x7406;&#x89E3;&#x548C;&#x5B9E;&#x73B0;&#x662F;&#x7406;&#x89E3;Shell&#x673A;&#x5236;&#x7684;&#x6700;&#x76F4;&#x63A5;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x672C;&#x5B9E;&#x9A8C;&#x8981;&#x6C42;&#x7528;C&#x8BED;&#x8A00;&#x7F16;&#x5199;&#x548C;&#x8C03;&#x8BD5;&#x4E00;&#x4E2A;ls&#x547D;&#x4EE4;&#x7684;&#x5B9E;&#x73B0;&#x7A0B;&#x5E8F;&#x3002;&#x4EE5;&#x8FBE;&#x5230;&#x7406;&#x89E3;Shell&#x673A;&#x5236;&#x7684;&#x76EE;&#x7684;&#x3002;&#x8981;&#x6C42;&#x5B9E;&#x73B0;&#x81F3;&#x5C11;4&#x4E2A;ls&#x4E0B;&#x7684;&#x547D;&#x4EE4;&#x3002;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</h1>
+
+<p>&#x901A;&#x8FC7;&#x9605;&#x8BFB;linux&#x76F8;&#x5173;&#x6587;&#x6863;&#xFF0C;&#x4EE5;&#x53CA;&#x4F7F;&#x7528;man&#x547D;&#x4EE4;&#x5BF9;ls&#x7684;&#x5B66;&#x4E60;&#xFF0C;&#x4E86;&#x89E3;&#x5230;ls&#x7684;&#x4E00;&#x4E9B;&#x57FA;&#x7840;&#x547D;&#x4EE4;&#xFF0C;&#x5982; <code>-a&#x5217;&#x51FA;&#x6240;&#x6709;&#x6587;&#x4EF6;</code> <code>-f&#x4E0D;&#x6392;&#x5E8F;&#x7684;-a</code> <code>-l&#x663E;&#x793A;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x4E00;&#x884C;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;</code> <code>-R &#x4EE5;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;</code> <code>-C&#x6309;&#x5217;&#x6392;&#x5E8F;&#x663E;&#x793A;</code> ``-x&#x6309;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA; &#x7B49;&#x7B49;&#x547D;&#x4EE4;&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x547D;&#x4EE4;&#xFF0C;&#x53EA;&#x662F;&#x7528;linux&#x4E0B;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x5982;stat&#x7B49;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x7B49;&#x3002;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</h1>
+
+<ul>
+<li>&#x9996;&#x5148;&#x4E86;&#x89E3;&#x6BCF;&#x4E00;&#x4E2A;&#x4E2D;&#x547D;&#x4EE4;&#x7684;&#x5177;&#x4F53;&#x542B;&#x4E49;&#xFF0C;&#x5206;&#x6790;&#x6BCF;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x90E8;&#x5206;&#x5185;&#x5BB9;</li>
+<li>&#x5206;&#x522B;&#x7F16;&#x5199;&#x6BCF;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x547D;&#x4EE4;&#x53D8;&#x91CF;&#x6765;&#x786E;&#x5B9A;&#x6267;&#x884C;&#x7684;&#x547D;&#x4EE4;&#xFF0C;&#x4F9D;&#x6B21;&#x6765;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x540C;&#x65F6;&#x6267;&#x884C;&#x6548;&#x679C;</li>
+<li>&#x7F16;&#x5199;&#x6D4B;&#x8BD5;&#x7A0B;&#x5E8F;</li>
+</ul>
+<h2 class="mume-header" id="%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90">&#x4EFB;&#x52A1;&#x5206;&#x6790;</h2>
+
+<ul>
+<li>&#x8F93;&#x5165;&#x5F62;&#x5F0F;&#xFF1A; <code>ls [option]...[files]...</code> &#x5373;ls&#x547D;&#x4EE4;&#x540E;&#x8DDF;&#x968F;&#x5177;&#x4F53;&#x7684;&#x5B50;&#x547D;&#x4EE4;&#x548C;&#x8DEF;&#x5F84;&#xFF0C;&#x4E0D;&#x8F93;&#x5165;&#x4E3A;&#x9ED8;&#x8BA4;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x5E76;&#x6267;&#x884C; <code>ls -a ./</code></li>
+<li>&#x8F93;&#x51FA;&#x5F62;&#x5F0F;&#xFF1A; &#x6839;&#x636E;&#x547D;&#x4EE4;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x8F93;&#x51FA;&#x5F62;&#x5F0F;&#x4E0D;&#x540C;&#xFF0C;&#x5982; <code>ls -a</code> &#x5C06;&#x8F93;&#x51FA;&#x6240;&#x6709;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF1B; <code>ls -l</code> &#x5C06;&#x8F93;&#x51FA;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4EE5;&#x53CA;&#x5177;&#x4F53;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6587;&#x4EF6;&#x7C7B;&#x578B;&#x3001;&#x6743;&#x9650;&#x3001;&#x5927;&#x5C0F;&#x3001;&#x4FEE;&#x6539;&#x65F6;&#x95F4;&#x3001;&#x6587;&#x4EF6;&#x540D;&#x7B49;&#x7B49;&#x5185;&#x5BB9;&#xFF1B; <code>ls -R</code> &#x5C06;&#x9012;&#x5F52;&#x7684;&#x8F93;&#x51FA;&#x6BCF;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#xFF1B;&#x6B64;&#x5916;&#x591A;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x7EC4;&#x5408;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x4E5F;&#x4E0D;&#x540C;&#xFF0C;&#x5982; <code>ls -l -R ./</code> &#x5C06;&#x9012;&#x5F52;&#x7684;&#x8F93;&#x51FA;&#x5F53;&#x524D;&#x76EE;&#x5F55;&#x4E0B;&#x6240;&#x6709;&#x6587;&#x4EF6;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5C06;&#x8F93;&#x51FA;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x7A0B;&#x5E8F;&#x8FBE;&#x5230;&#x7684;&#x529F;&#x80FD;&#xFF1A;&#x57FA;&#x672C;&#x5B9E;&#x73B0;ls&#x547D;&#x4EE4;&#x7684;&#x5BF9;&#x5E94;&#x5B50;&#x547D;&#x4EE4;</li>
+</ul>
+<h2 class="mume-header" id="%E6%A6%82%E8%A6%81%E8%AE%BE%E8%AE%A1">&#x6982;&#x8981;&#x8BBE;&#x8BA1;</h2>
+
+<h3 class="mume-header" id="%E4%B8%BB%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3">&#x4E3B;&#x7A0B;&#x5E8F;&#x5165;&#x53E3;</h3>
+
+<p><code>main.h</code> &#x5C06;&#x5B9E;&#x73B0;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x5165;&#x53E3;&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x53D7;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x503C;&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; myls&#x65B9;&#x6CD5;</p>
+<h3 class="mume-header" id="%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0">&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</h3>
+
+<ul>
+<li>&#x9996;&#x5148;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x4F4D;&#x6765;&#x8868;&#x793A;&#x5F53;&#x524D;&#x63A5;&#x53D7;&#x5230;&#x7684;&#x5B50;&#x547D;&#x4EE4;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5982; <code>MYLS_A 1</code> &#x8868;&#x793A; <code>myls -a</code> &#x7684;&#x60C5;&#x51B5;&#x7B49;&#x7B49;</li>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6240;&#x6709;&#x7ED3;&#x679C;&#x7684;&#x7ED3;&#x6784;&#x4F53;&#xFF0C;&#x65B9;&#x4FBF;&#x540E;&#x7EED;&#x6392;&#x5E8F;&#x8F93;&#x51FA;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token comment">// &#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x5BF9;&#x67D0;&#x4E9B;&#x547D;&#x4EE4;&#x7684;&#x6392;&#x5E8F;&#x529F;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5148;&#x8981;&#x5B58;&#x4E0B;&#x6765;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> FILE_NODE<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> file_type<span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x6587;&#x4EF6;&#x3001;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7B49;&#x7B49;</span>
+    <span class="token keyword">char</span> file_mode<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7684;&#x5404;&#x4E2A;&#x6743;&#x9650;</span>
+    <span class="token keyword">int</span> st_nlink<span class="token punctuation">;</span> <span class="token comment">// &#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7684;&#x4E2A;&#x6570;</span>
+    <span class="token keyword">char</span> uname<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x7528;&#x6237;&#x540D;</span>
+    <span class="token keyword">char</span> gname<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x7EC4;&#x540D;</span>
+    <span class="token keyword">int</span> file_size<span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x5927;&#x5C0F;</span>
+    <span class="token keyword">char</span> date<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;&#x65E5;&#x671F;</span>
+    <span class="token keyword">char</span> file_name<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x540D;</span>
+    bool islink<span class="token punctuation">;</span> <span class="token comment">// &#x662F;&#x5426;&#x662F;&#x94FE;&#x63A5;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">char</span> file_link<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x6307;&#x5411;&#x7684;&#x6587;&#x4EF6;&#x540D;</span>
+<span class="token punctuation">}</span>FILE_NODE<span class="token punctuation">;</span>
+</pre><ul>
+<li>&#x5BF9;&#x4E8E;&#x7EAF;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528; <code>stat</code> &#x51FD;&#x6570;&#x6765;&#x83B7;&#x53D6;&#x5176;&#x6240;&#x6709;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5B58;&#x50A8;&#x5373;&#x53EF;&#xFF1B; &#x5BF9;&#x4E8E;&#x6587;&#x4EF6;&#x5939;&#x6587;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528; <code>opendir</code> &#x548C; <code>readdir</code> &#x7B49;&#x51FD;&#x6570;&#x7684;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x6765;&#x5BF9;&#x6587;&#x4EF6;&#x5939;&#x4FE1;&#x606F;&#x8BFB;&#x53D6;&#xFF1B;</li>
+<li>&#x5BF9;&#x4E8E;&#x9012;&#x5F52;&#x7684;&#x8BFB;&#x53D6;&#xFF0C;&#x8981;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x9012;&#x5F52;&#x51FD;&#x6570;&#x6765;&#x8BFB;&#x53D6;&#xFF0C;&#x5F53;&#x8BFB;&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x4FDD;&#x5B58;&#x6587;&#x4EF6;&#x5939;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x7B49;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x5939;&#x663E;&#x793A;&#x5B8C;&#x6BD5;&#x540E;&#x518D;&#x5BF9;&#x672C;&#x5C42;&#x6240;&#x6709;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x8BFB;&#x53D6;&#x5373;&#x53EF;</li>
+<li>&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#xFF1A;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x4EE4;&#x8981;&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x53C2;&#x6570;&#x6765;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#xFF0C;&#x786E;&#x5B9A;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x4EE5;&#x53CA;&#x8F93;&#x51FA;&#x7684;&#x683C;&#x5F0F;&#xFF08;&#x6309;&#x5217;&#x6392;&#x5E8F;&#x8FD8;&#x662F;&#x6309;&#x884C;&#x6392;&#x5E8F;&#x7B49;&#xFF09;</li>
+</ul>
+<h2 class="mume-header" id="%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1">&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;</h2>
+
+<p>&#x7A0B;&#x5E8F;&#x6D41;&#x7A0B;&#x56FE;&#xFF1A;</p>
+<p code_chunk_offset="0" cmd="true" hide="true"><!--?xml version="1.0" encoding="UTF-8" standalone="no"?--><svg xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" contentscripttype="application/ecmascript" contentstyletype="text/css" height="978.7394px" preserveAspectRatio="none" style="width:1193px;height:978px;" version="1.1" viewBox="0 0 1193 978" width="1193.2267px" zoomAndPan="magnify"><defs><filter height="300%" id="f15tg35ubajram" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.257761053621825"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.51552210724365" dy="4.51552210724365" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><ellipse cx="593.2267" cy="20.3198" fill="#000000" filter="url(#f15tg35ubajram)" rx="11.2888" ry="11.2888" style="stroke: none; stroke-width: 1.1288805268109126;"/><ellipse cx="593.2267" cy="955.0329" fill="none" filter="url(#f15tg35ubajram)" rx="11.2888" ry="11.2888" style="stroke: #000000; stroke-width: 1.1288805268109126;"/><ellipse cx="593.7912" cy="955.5974" fill="#000000" rx="6.7733" ry="6.7733" style="stroke: none; stroke-width: 1.1288805268109126;"/><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="776.1153" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="1172.9069" x="6.7733" y="99.3415"/><rect fill="#FFFFFF" height="712.3236" rx="14.111" ry="14.111" style="stroke: #FFFFFF; stroke-width: 1.1288805268109126;" width="1166.1336" x="10.1599" y="159.7465"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="6.7733" x2="1179.6802" y1="156.3599" y2="156.3599"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="6.7733" x2="1179.6802" y1="132.2146" y2="132.2146"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="33.8664" x="576.2935" y="123.0976">main</text><text fill="#000000" font-family="sans-serif" font-size="13.5466" lengthAdjust="spacingAndGlyphs" textLength="40.6397" x="12.4177" y="147.7389">&#x4E3B;&#x7A0B;&#x5E8F;</text><ellipse cx="225.7761" cy="182.3241" fill="#000000" filter="url(#f15tg35ubajram)" rx="11.2888" ry="11.2888" style="stroke: none; stroke-width: 1.1288805268109126;"/><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="74.5061" x="188.523" y="234.2526"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="63.2173" x="194.1675" y="264.1498">&#x8BFB;&#x53D6;&#x53C2;&#x6570;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="74.5061" x="283.349" y="234.2526"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="63.2173" x="288.9934" y="264.1498">&#x8BBE;&#x7F6E;&#x53C2;&#x6570;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="74.5061" x="378.175" y="234.2526"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="63.2173" x="383.8194" y="264.1498">&#x786E;&#x5B9A;&#x8DEF;&#x5F84;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="200.9407" x="473.0009" y="234.2526"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="189.6519" x="478.6453" y="264.1498">&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="62.6628" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="320.6021" x="19.191" y="471.882"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="19.191" x2="339.793" y1="504.7551" y2="504.7551"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="12.4177" x="173.2832" y="495.6381">_l</text><text fill="#000000" font-family="sans-serif" font-size="13.5466" lengthAdjust="spacingAndGlyphs" textLength="298.0245" x="24.8354" y="525.9238">&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x4E3A;&#x771F;&#xFF0C;&#x5F53;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x65F6;&#x5C06;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x4FE1;&#x606F;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="62.6628" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="171.5898" x="360.1129" y="471.882"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="360.1129" x2="531.7027" y1="504.7551" y2="504.7551"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="20.3198" x="435.7479" y="495.6381">_C</text><text fill="#000000" font-family="sans-serif" font-size="13.5466" lengthAdjust="spacingAndGlyphs" textLength="149.0122" x="365.7573" y="525.9238">&#x5F53;&#x663E;&#x793A;&#x65F6;&#xFF0C;&#x8C03;&#x7528;&#x6392;&#x5E8F;&#x51FD;&#x6570;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="56.444" x="545.2493" y="727.5734"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="31.6087" x="557.667" y="757.4706">&#x663E;&#x793A;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="56.444" x="545.2493" y="813.3683"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="31.6087" x="557.667" y="843.2655">&#x7ED3;&#x675F;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="367.0218" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="298.0245" x="552.0226" y="320.0476"/><rect fill="#FFFFFF" height="327.3754" rx="14.111" ry="14.111" style="stroke: #FFFFFF; stroke-width: 1.1288805268109126;" width="291.2512" x="555.4092" y="356.3073"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="552.0226" x2="850.047" y1="352.9207" y2="352.9207"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="18.0621" x="692.0038" y="343.8037">_a</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="74.5061" x="651.3641" y="367.5961"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="63.2173" x="657.0085" y="397.4933">&#x6253;&#x5F00;&#x76EE;&#x5F55;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="90.3104" x="643.4619" y="453.3911"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="79.0216" x="649.1063" y="483.2882">&#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x533A;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="248.3537" x="564.4403" y="539.186"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="237.0649" x="570.0847" y="569.0831">&#x4F7F;&#x7528;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x6307;&#x9488;&#x6765;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x6587;&#x4EF6;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="232.5494" x="572.3424" y="624.9809"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="221.2606" x="577.9868" y="654.878">&#x8C03;&#x7528;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x51FD;&#x6570;&#x4FDD;&#x5B58;&#x7ED3;&#x679C;</text><!--MD5=[de7710532f38979b40709f43a63a70ac]
+link 打开目录 to 改变工作区--><path d="M688.6171,412.8157 C688.6171,423.3538 688.6171,436.1632 688.6171,447.3978 " fill="none" id="&#x6253;&#x5F00;&#x76EE;&#x5F55;-&gt;&#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x533A;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="688.6171,453.11,693.1326,442.95,688.6171,447.4656,684.1016,442.95,688.6171,453.11" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[e3fcd307c7136fc14c05e3197a9cc781]
+link 改变工作区 to 使用目录列表指针来读取所有文件--><path d="M688.6171,498.6106 C688.6171,509.1487 688.6171,521.9581 688.6171,533.1927 " fill="none" id="&#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x533A;-&gt;&#x4F7F;&#x7528;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x6307;&#x9488;&#x6765;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x6587;&#x4EF6;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="688.6171,538.9049,693.1326,528.745,688.6171,533.2605,684.1016,528.745,688.6171,538.9049" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[0216c5e26383f2e97b24fae4ccddc0ab]
+link 使用目录列表指针来读取所有文件 to 调用获取文件信息函数保存结果--><path d="M688.6171,584.4053 C688.6171,594.9441 688.6171,607.7528 688.6171,618.9879 " fill="none" id="&#x4F7F;&#x7528;&#x76EE;&#x5F55;&#x5217;&#x8868;&#x6307;&#x9488;&#x6765;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x6587;&#x4EF6;-&gt;&#x8C03;&#x7528;&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x51FD;&#x6570;&#x4FDD;&#x5B58;&#x7ED3;&#x679C;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="688.6171,624.6992,693.1326,614.5393,688.6171,619.0548,684.1016,614.5393,688.6171,624.6992" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="367.0218" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="266.4158" x="870.3669" y="320.0476"/><rect fill="#FFFFFF" height="327.3754" rx="14.111" ry="14.111" style="stroke: #FFFFFF; stroke-width: 1.1288805268109126;" width="259.6425" x="873.7535" y="356.3073"/><line style="stroke: #A80036; stroke-width: 1.6933207902163687;" x1="870.3669" x2="1136.7827" y1="352.9207" y2="352.9207"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="20.3198" x="993.4149" y="343.8037">_R</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="169.3321" x="906.4911" y="367.5961"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="158.0433" x="912.1355" y="397.4933">&#x5F97;&#x5230;&#x5F53;&#x524D;&#x9012;&#x5F52;&#x5C42;&#x7684;&#x8DEF;&#x5F84;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="153.5278" x="914.3932" y="453.3911"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="142.2389" x="920.0376" y="483.2882">&#x8C03;&#x7528;&#x6587;&#x4EF6;&#x5939;&#x663E;&#x793A;&#x65B9;&#x6CD5;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="216.7451" x="882.7846" y="539.186"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="205.4563" x="888.429" y="569.0831">&#x6311;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8BE5;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x5939;</text><rect fill="#FEFECE" filter="url(#f15tg35ubajram)" height="45.1552" rx="14.111" ry="14.111" style="stroke: #A80036; stroke-width: 1.6933207902163687;" width="169.3321" x="906.4911" y="624.9809"/><text fill="#000000" font-family="sans-serif" font-size="15.8043" lengthAdjust="spacingAndGlyphs" textLength="158.0433" x="912.1355" y="654.878">&#x5BF9;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x9012;&#x5F52;</text><!--MD5=[671330faca258a2c523290405c9adc42]
+link 得到当前递归层的路径 to 调用文件夹显示方法--><path d="M991.1571,412.8157 C991.1571,423.3538 991.1571,436.1632 991.1571,447.3978 " fill="none" id="&#x5F97;&#x5230;&#x5F53;&#x524D;&#x9012;&#x5F52;&#x5C42;&#x7684;&#x8DEF;&#x5F84;-&gt;&#x8C03;&#x7528;&#x6587;&#x4EF6;&#x5939;&#x663E;&#x793A;&#x65B9;&#x6CD5;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="991.1571,453.11,995.6726,442.95,991.1571,447.4656,986.6416,442.95,991.1571,453.11" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[f277f13eb9919056cec05167f5304921]
+link 调用文件夹显示方法 to 挑出所有的该路径下的文件夹--><path d="M991.1571,498.6106 C991.1571,509.1487 991.1571,521.9581 991.1571,533.1927 " fill="none" id="&#x8C03;&#x7528;&#x6587;&#x4EF6;&#x5939;&#x663E;&#x793A;&#x65B9;&#x6CD5;-&gt;&#x6311;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8BE5;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x5939;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="991.1571,538.9049,995.6726,528.745,991.1571,533.2605,986.6416,528.745,991.1571,538.9049" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[aef494ffeda501b2c4bbcd51e6ad8f77]
+link 挑出所有的该路径下的文件夹 to 对这些文件夹进行递归--><path d="M991.1571,584.4053 C991.1571,594.9441 991.1571,607.7528 991.1571,618.9879 " fill="none" id="&#x6311;&#x51FA;&#x6240;&#x6709;&#x7684;&#x8BE5;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x6587;&#x4EF6;&#x5939;-&gt;&#x5BF9;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x9012;&#x5F52;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="991.1571,624.6992,995.6726,614.5393,991.1571,619.0548,986.6416,614.5393,991.1571,624.6992" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[294873b3588d803e3bf6f404386fef8a]
+link *start*main to 读取参数--><path d="M225.7761,193.8048 C225.7761,202.7907 225.7761,216.2176 225.7761,228.2707 " fill="none" id="*start*main-&gt;&#x8BFB;&#x53D6;&#x53C2;&#x6570;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="225.7761,234.0517,230.2916,223.8918,225.7761,228.4073,221.2606,223.8918,225.7761,234.0517" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[816240ceb3114a74d0c0304327329ecc]
+link 读取参数 to 设置参数--><path d="M263.1883,256.8302 C267.8134,256.8302 272.4395,256.8302 277.0645,256.8302 " fill="none" id="&#x8BFB;&#x53D6;&#x53C2;&#x6570;-&gt;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="282.9246,256.8302,272.7646,252.3147,277.2802,256.8302,272.7646,261.3458,282.9246,256.8302" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[5bb80417ee9b61dbb5bd9b6922f6e1ad]
+link 设置参数 to 确定路径--><path d="M358.0143,256.8302 C362.6393,256.8302 367.2655,256.8302 371.8905,256.8302 " fill="none" id="&#x8BBE;&#x7F6E;&#x53C2;&#x6570;-&gt;&#x786E;&#x5B9A;&#x8DEF;&#x5F84;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="377.7505,256.8302,367.5906,252.3147,372.1061,256.8302,367.5906,261.3458,377.7505,256.8302" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[56f1df92b81c93098732712cf38b5a19]
+link 确定路径 to 根据含有不同的参数来执行--><path d="M452.7782,256.8302 C457.419,256.8302 462.0598,256.8302 466.7007,256.8302 " fill="none" id="&#x786E;&#x5B9A;&#x8DEF;&#x5F84;-&gt;&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="472.5799,256.8302,462.4199,252.3147,466.9355,256.8302,462.4199,261.3458,472.5799,256.8302" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[83050019e85dfcf6281c973c98a65915]
+link 根据含有不同的参数来执行 to _a--><path d="M584.7917,279.6483 C589.734,289.1162 596.0241,301.1682 603.1112,314.7475 " fill="none" id="&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;-&gt;_a" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="605.7573,319.8173,605.0609,308.7209,603.1463,314.813,597.0542,312.8984,605.7573,319.8173" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[021e8edee1fe3eb52ee373a78233272c]
+link 根据含有不同的参数来执行 to _l--><path d="M476.4711,279.4112 C426.569,291.5275 371.737,306.8419 349.953,320.0476 C287.2843,358.0378 233.0213,425.4026 203.4096,466.7501 " fill="none" id="&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;-&gt;_l" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="199.9214,471.6596,209.4868,465.9926,203.1905,467.0583,202.1248,460.7619,199.9214,471.6596" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[2cfe4c542ae1d81263f7f3f13aa69009]
+link 根据含有不同的参数来执行 to _R--><path d="M674.0275,262.9183 C732.1242,269.7175 804.4967,285.2114 860.207,320.0476 C862.0211,321.1821 863.8205,322.3471 865.6075,323.5426 " fill="none" id="&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;-&gt;_R" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="870.3037,326.7746,864.494,317.295,865.6539,323.5747,859.3742,324.7347,870.3037,326.7746" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[2f852ec3aab0dbc829ad3bc8432bcefe]
+link 根据含有不同的参数来执行 to _C--><path d="M562.1509,279.6483 C540.1626,321.777 491.483,415.044 464.6179,466.5142 " fill="none" id="&#x6839;&#x636E;&#x542B;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x6765;&#x6267;&#x884C;-&gt;_C" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="461.93,471.6652,470.6331,464.7464,464.541,466.661,462.6264,460.5689,461.93,471.6652" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[8596d6de4190d164c90709a2a5a33250]
+link _a to 显示--><path d="M605.8262,687.0331 C598.8598,700.3787 592.5618,712.4464 587.4119,722.3128 " fill="none" id="_a-&gt;&#x663E;&#x793A;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="584.6721,727.5621,593.3752,720.6433,587.283,722.5579,585.3684,716.4658,584.6721,727.5621" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[ccc2d44adaf007bb362b23171a6a324b]
+link _l to 显示--><path d="M199.9214,535.3217 C228.6231,576.0528 284.7364,647.3992 349.953,686.9337 C410.4361,723.5986 493.1221,739.1772 539.0867,745.3465 " fill="none" id="_l-&gt;&#x663E;&#x793A;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="545.0506,746.1216,535.5573,740.3344,539.4533,745.3942,534.3935,749.2902,545.0506,746.1216" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[cc89146af2f6e20c142875680eabea1e]
+link _R to 显示--><path d="M870.3037,680.2067 C866.987,682.5525 863.6207,684.799 860.207,686.9337 C779.7889,737.2208 664.6476,747.2021 607.8491,748.9068 " fill="none" id="_R-&gt;&#x663E;&#x793A;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="601.8773,749.0617,612.15,753.3144,607.5199,748.9165,611.9178,744.2864,601.8773,749.0617" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[c72fbfa7c1b13ee4e5d67292f1278044]
+link _C to 显示--><path d="M462.0643,535.5734 C487.2531,583.8342 535.4675,676.2105 559.349,721.9651 " fill="none" id="_C-&gt;&#x663E;&#x793A;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="562.1373,727.3081,561.4382,716.212,559.5251,722.3046,553.4325,720.3915,562.1373,727.3081" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[a1ec401e8ef4b59c1a31657f8e49fdc0]
+link 显示 to 结束--><path d="M573.4713,772.7928 C573.4713,783.3315 573.4713,796.1403 573.4713,807.3753 " fill="none" id="&#x663E;&#x793A;-&gt;&#x7ED3;&#x675F;" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="573.4713,813.0867,577.9868,802.9268,573.4713,807.4423,568.9558,802.9268,573.4713,813.0867" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[3a49557cc214808664416704f4135b4e]
+link *start to main--><path d="M593.2267,32.0365 C593.2267,44.0918 593.2267,65.7313 593.2267,93.2512 " fill="none" id="*start-&gt;main" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="593.2267,99.2117,597.7422,89.0517,593.2267,93.5673,588.7112,89.0517,593.2267,99.2117" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[919badb55f801b9719bee74dd4adc684]
+link main to *end--><path d="M593.2267,876.057 C593.2267,902.4987 593.2267,924.0569 593.2267,937.7263 " fill="none" id="main-&gt;*end" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><polygon fill="#A80036" points="593.2267,943.4409,597.7422,933.281,593.2267,937.7965,588.7112,933.281,593.2267,943.4409" style="stroke: #A80036; stroke-width: 1.1288805268109126;"/><!--MD5=[6810fc03d244b9c7d2b536fdf59ee62d]
+@startuml
+hide empty description
+scale 1200 width
+[*] - -> main
+main - -> [*]
+
+main: 主程序
+
+
+state main{
+    [*] - -> 读取参数
+    读取参数 -> 设置参数
+    设置参数 -> 确定路径
+    确定路径 -> 根据含有不同的参数来执行 
+    根据含有不同的参数来执行 - -> _a
+    根据含有不同的参数来执行 - -> _l
+    根据含有不同的参数来执行 - -> _R
+    根据含有不同的参数来执行 - -> _C
+    _a - -> 显示
+    _l - -> 显示
+    _R - -> 显示
+    _C - -> 显示
+    显示 - -> 结束
+
+    state _a{
+        打开目录 - -> 改变工作区
+        改变工作区 - -> 使用目录列表指针来读取所有文件
+        使用目录列表指针来读取所有文件 - -> 调用获取文件信息函数保存结果
+    }
+    _l: 设置参数为真，当读取文件信息时将读取所有信息
+    state _R{
+        得到当前递归层的路径 - -> 调用文件夹显示方法
+        调用文件夹显示方法 - -> 挑出所有的该路径下的文件夹
+        挑出所有的该路径下的文件夹 - -> 对这些文件夹进行递归
+    }
+    _C: 当显示时，调用排序函数
+
+}
+@enduml
+
+PlantUML version 1.2019.11(Sun Sep 22 18:02:15 CST 2019)
+(MIT source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Java Version: 1.8.0_211-b12
+Operating System: Windows 10
+Default Encoding: GBK
+Language: zh
+Country: CN
+--></g></svg></p><h2 class="mume-header" id="%E8%B0%83%E8%AF%95%E5%88%86%E6%9E%90-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C">&#x8C03;&#x8BD5;&#x5206;&#x6790;&#x3001;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</h2>
+
+<p>&#x4E00;&#x4E9B;&#x547D;&#x4EE4;&#x7684;&#x5C55;&#x793A;&#xFF1A;</p>
+<ul>
+<li>&#x65E0;&#x53C2;&#x6570;&#x65F6;&#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls 
+main.c  main.o  makefile  myls  myls.c  myls.h  myls.o 
+</pre><ul>
+<li><code>./myls --help</code> &#xFF1A;</li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls --help
+Here is the usage of <span class="token string">&apos;myls&apos;</span><span class="token keyword">:</span> 
+Usage: <span class="token function">ls</span> <span class="token punctuation">[</span>OPTiON<span class="token punctuation">]</span><span class="token punctuation">..</span>.<span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+
+<span class="token operator">&lt;</span>-l<span class="token operator">&gt;</span>:   --list          use a long listing <span class="token function">format</span>       &#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;
+<span class="token operator">&lt;</span>-a<span class="token operator">&gt;</span>:   --all           <span class="token keyword">do</span> not ignore entries starting with.    &#x4E0D;&#x5FFD;&#x7565;&#x9690;&#x85CF;&#x6587;&#x4EF6;
+<span class="token operator">&lt;</span>-f<span class="token operator">&gt;</span>:                   <span class="token keyword">do</span> not <span class="token function">sort</span>     &#x4E0D;&#x6392;&#x5E8F;
+<span class="token operator">&lt;</span>-R<span class="token operator">&gt;</span>:   --recursive     list subdirectories recursively &#x4EE5;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;
+<span class="token operator">&lt;</span>-C<span class="token operator">&gt;</span>:                   list entries by columns &#x6309;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;
+<span class="token operator">&lt;</span>-x<span class="token operator">&gt;</span>:                   list entries by lines instead of by columns     &#x6309;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;
+</pre><ul>
+<li><code>myls -a</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls -a
+<span class="token keyword">.</span>  <span class="token punctuation">..</span>  main.c  main.o  makefile  myls  myls.c  myls.h  myls.o  
+</pre><ul>
+<li><code>myls -l</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls -l
+-rwxrw-r-- 1 x31415 x31415  1334 Jun 11 13:29 main.c              
+-rwxrw-r-- 1 x31415 x31415  4208 Jun 11 13:29 main.o              
+-rwxrw-r-- 1 x31415 x31415   328 Jun 07 19:52 makefile            
+-rwxrwxr-x 1 x31415 x31415 22624 Jun 11 13:29 myls                
+-rwxrw-r-- 1 x31415 x31415  9913 Jun 11 13:38 myls.c              
+-rwxrw-r-- 1 x31415 x31415  2824 Jun 10 19:58 myls.h              
+-rwxrw-r-- 1 x31415 x31415 16480 Jun 10 22:32 myls.o 
+</pre><ul>
+<li><code>myls -R</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls -R <span class="token punctuation">..</span>/
+/<span class="token punctuation">..</span>/:
+ipc  myls  pipe  socket              
+
+/<span class="token punctuation">..</span>/ipc/:
+Semaphore  msg  sharecache  socket        
+
+/<span class="token punctuation">..</span>/ipc/Semaphore/:
+main  main.c  sharecache  socket              
+
+/<span class="token punctuation">..</span>/ipc/msg/:
+msgrecive  msgrecive.c  msgsend  msgsend.c      
+
+/<span class="token punctuation">..</span>/ipc/sharecache/:
+shmrecive  shmrecive.c  shmsend  shmsend.c      
+
+/<span class="token punctuation">..</span>/myls/:
+main.c  main.o  makefile  myls  myls.c  myls.h  myls.o    
+
+/<span class="token punctuation">..</span>/pipe/:
+A  A.c  B  B.c  C  C.c  pipe  pipe.c      
+
+/<span class="token punctuation">..</span>/socket/:
+client  server  B  B.c  C  C.c  pipe  pipe.c      
+
+/<span class="token punctuation">..</span>/socket/client/:
+client  client.c  client.o  makefile  C  C.c  pipe  pipe.c  
+
+/<span class="token punctuation">..</span>/socket/server/:
+makefile  server  server.c  server.o  C  C.c  pipe  pipe.c 
+</pre><ul>
+<li><code>myls -R -l ../</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls -R -l <span class="token punctuation">..</span>/
+/<span class="token punctuation">..</span>/:
+drwxrwxr-x 5 x31415 x31415 4096 Jun 21 20:26 ipc                 
+drwxrwxrwx 2 x31415 x31415 4096 Jun 21 21:50 myls                
+drwxrwxr-x 2 x31415 x31415 4096 Jun 18 16:42 pipe                
+drwxrwxr-x 4 x31415 x31415 4096 Jun 11 18:26 socket              
+
+/<span class="token punctuation">..</span>/ipc/:
+drwxrwxr-x 2 x31415 x31415 4096 Jun 21 20:22 Semaphore           
+drwxrwxr-x 2 x31415 x31415 4096 Jun 21 20:25 msg                 
+drwxrwxr-x 2 x31415 x31415 4096 Jun 21 20:57 sharecache          
+
+/<span class="token punctuation">..</span>/ipc/Semaphore/:
+-rwxrwxr-x 1 x31415 x31415 13192 Jun 21 20:22 main                
+-rwxrw-r-- 1 x31415 x31415  2257 Jun 21 20:22 main.c              
+
+/<span class="token punctuation">..</span>/ipc/msg/:
+-rwxrwxr-x 1 x31415 x31415 8704 Jun 21 19:49 msgrecive           
+-rwxrw-r-- 1 x31415 x31415  742 Jun 21 19:50 msgrecive.c         
+-rwxrwxr-x 1 x31415 x31415 8792 Jun 21 19:50 msgsend             
+-rwxrw-r-- 1 x31415 x31415  790 Jun 21 19:50 msgsend.c           
+
+/<span class="token punctuation">..</span>/ipc/sharecache/:
+-rwxrwxr-x 1 x31415 x31415 12944 Jun 21 20:57 shmrecive           
+-rwxrw-r-- 1 x31415 x31415  1283 Jun 21 20:57 shmrecive.c         
+-rwxrwxr-x 1 x31415 x31415 12984 Jun 21 20:51 shmsend             
+-rwxrw-r-- 1 x31415 x31415  1200 Jun 21 20:48 shmsend.c           
+
+/<span class="token punctuation">..</span>/myls/:
+-rwxrw-r-- 1 x31415 x31415  1334 Jun 11 13:29 main.c              
+-rwxrw-r-- 1 x31415 x31415  4208 Jun 11 13:29 main.o              
+-rwxrw-r-- 1 x31415 x31415   328 Jun 07 19:52 makefile            
+-rwxrwxr-x 1 x31415 x31415 22624 Jun 21 21:50 myls                
+-rwxrw-r-- 1 x31415 x31415  9913 Jun 11 13:38 myls.c              
+-rwxrw-r-- 1 x31415 x31415  2824 Jun 10 19:58 myls.h              
+-rwxrw-r-- 1 x31415 x31415 16480 Jun 21 21:50 myls.o              
+
+/<span class="token punctuation">..</span>/pipe/:
+-rwxrwxr-x 1 x31415 x31415  8408 Jun 18 01:15 A                   
+-rwxrw-r-- 1 x31415 x31415   262 Jun 18 01:15 A.c                 
+-rwxrwxr-x 1 x31415 x31415  8480 Jun 18 16:39 B                   
+-rwxrw-r-- 1 x31415 x31415   463 Jun 18 16:40 B.c                 
+-rwxrwxr-x 1 x31415 x31415  8600 Jun 18 15:48 C                   
+-rwxrw-r-- 1 x31415 x31415   431 Jun 18 15:48 C.c                 
+-rwxrwxr-x 1 x31415 x31415 12824 Jun 18 16:42 pipe                
+-rwxrw-r-- 1 x31415 x31415  2046 Jun 18 16:42 pipe.c              
+
+/<span class="token punctuation">..</span>/socket/:
+drwxrwxr-x 2 x31415 x31415 4096 Jun 11 19:36 client              
+drwxrwxr-x 2 x31415 x31415 4096 Jun 11 19:38 server              
+
+/<span class="token punctuation">..</span>/socket/client/:
+-rwxrwxr-x 1 x31415 x31415 13208 Jun 11 19:36 client              
+-rwxrw-r-- 1 x31415 x31415  1315 Jun 11 19:36 client.c            
+-rwxrw-r-- 1 x31415 x31415  3456 Jun 11 19:36 client.o            
+-rwxrw-r-- 1 x31415 x31415   330 Jun 11 18:27 makefile            
+
+/<span class="token punctuation">..</span>/socket/server/:
+-rwxrw-r-- 1 x31415 x31415   331 Jun 11 18:28 makefile            
+-rwxrwxr-x 1 x31415 x31415 13224 Jun 11 19:38 server              
+-rwxrw-r-- 1 x31415 x31415  1948 Jun 11 19:38 server.c            
+-rwxrw-r-- 1 x31415 x31415  3712 Jun 11 19:38 server.o  
+</pre><ul>
+<li><code>myls -X</code></li>
+</ul>
+<pre data-role="codeBlock" data-info="shell" class="language-shell">x31415@iZ2zea1nnstgr3h5ccfovoZ:~/linux/myls$ ./myls -X ./
+main.c  main.o  makefile  myls  myls.c  myls.h  myls.o   
+</pre><h2 class="mume-header" id="%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</h2>
+
+<p>&#x5728;linux&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x8FDB;&#x5165;&#x7A0B;&#x5E8F;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528; <code>./myls</code> &#x6765;&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7F16;&#x8BD1;&#x6E90;&#x6587;&#x4EF6;&#x751F;&#x6210;&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x7F16;&#x8BD1;&#x7684;&#x65B9;&#x6CD5;&#x4F7F;&#x7528; <code>make</code> &#x5373;&#x53EF;&#x3002;</p>
+<h1 class="mume-header" id="%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93">&#x5B9E;&#x9A8C;&#x603B;&#x7ED3;</h1>
+
+<p>&#x8FD9;&#x6B21;&#x5B9E;&#x9A8C;&#x4F7F;&#x7528;linux&#x4E2D;&#x7684;&#x4E00;&#x4E9B;&#x7CFB;&#x7EDF;&#x63D0;&#x4F9B;&#x7684;&#x51FD;&#x6570;&#x6765;&#x5B9E;&#x73B0;&#x5BF9;&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#x7684;&#x8BFB;&#x53D6;&#xFF0C;&#x4E3B;&#x8981;&#x662F; <code>stat</code> <code>opendir</code> &#x548C; <code>readdir</code> &#x7B49;&#x51FD;&#x6570;&#x7684;&#x4F7F;&#x7528;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7684;&#x64CD;&#x4F5C;&#x4E3B;&#x8981;&#x662F;&#x903B;&#x8F91;&#x7684;&#x5B9E;&#x73B0;&#x4E0A;&#x4EE3;&#x7801;&#x548C;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;&#x7684;&#x7F16;&#x5199;&#x3002;&#x8FD9;&#x6B21;&#x5B9E;&#x9A8C;&#x5145;&#x5206;&#x7684;&#x7406;&#x89E3;&#x4E86;linux&#x4E0B;c&#x5BF9;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x64CD;&#x4F5C;&#x6A21;&#x5F0F;&#xFF0C;&#x540C;&#x65F6;&#x89C2;&#x770B;&#x6E90;&#x7801;&#x548C;&#x522B;&#x4EBA;&#x7684;&#x5B9E;&#x73B0;&#x4E5F;&#x4ECE;&#x4E2D;&#x5B66;&#x4E60;&#x5230;&#x4E86;&#x5F88;&#x591A;&#x64CD;&#x4F5C;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982;c&#x4E2D;&#x5BF9;&#x7ED3;&#x6784;&#x4F53;&#x7684;&#x6392;&#x5E8F;&#x65B9;&#x6CD5;&#xFF0C;&#x6587;&#x4EF6;&#x64CD;&#x4F5C;&#x4E2D;&#x683C;&#x5F0F;&#x5316;&#x7684;&#x4F18;&#x5316;&#x8FC7;&#x7A0B;&#x7B49;&#x7B49;&#x3002;</p>
+<h1 class="mume-header" id="%E4%BB%A3%E7%A0%81">&#x4EE3;&#x7801;</h1>
+
+<h2 class="mume-header" id="mainc">main.c</h2>
+
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&quot;myls.h&quot;</span></span>
+
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">int</span> avgc<span class="token punctuation">,</span> <span class="token keyword">char</span><span class="token operator">*</span><span class="token operator">*</span> avgs<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> path<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token string">&quot;./&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x9ED8;&#x8BA4;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x4E3A;&#x5F53;&#x524D;&#x8DEF;&#x5F84;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> avgc <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandIsA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-f&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandIsF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-l&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandIsL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-R&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandIsR</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-C&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandIsC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;-x&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">setCommandISX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">strcmp</span><span class="token punctuation">(</span>avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">&quot;--help&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;Here is the usage of &apos;myls&apos;: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;Usage: ls [OPTiON]...[FILE]...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-l&gt;:\t--list\tuse a long listing format\t&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-a&gt;:\t--all\tdo not ignore entries starting with.\t&#x4E0D;&#x5FFD;&#x7565;&#x9690;&#x85CF;&#x6587;&#x4EF6;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-f&gt;:\t\tdo not sort\t&#x4E0D;&#x6392;&#x5E8F;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-R&gt;:\t--recursive\tlist subdirectories recursively\t&#x4EE5;&#x9012;&#x5F52;&#x7684;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x4EF6;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-C&gt;:\t\tlist entries by columns\t&#x6309;&#x5217;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&lt;-x&gt;:\t\tlist entries by lines instead of by columns\t&#x6309;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x8F93;&#x51FA;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token function">strcpy</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> avgs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token function">myls</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="mylsh">myls.h</h2>
+
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token macro property">#<span class="token directive keyword">ifndef</span> myls_h</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> myls_h</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdio.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdlib.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;string.h&gt;</span></span>
+
+
+<span class="token comment">// stat</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/types.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/stat.h&gt;</span></span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;unistd.h&gt;</span> </span>
+
+<span class="token comment">// dir</span>
+<span class="token comment">// #include&lt;sys/types.h&gt;</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;dirent.h&gt;</span></span>
+
+<span class="token comment">// pwd</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;pwd.h&gt;</span></span>
+
+<span class="token comment">// time</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;time.h&gt;</span></span>
+
+<span class="token comment">// gcc&#x4E0D;&#x652F;&#x6301;bool</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;stdbool.h&gt;</span></span>
+
+<span class="token comment">// &#x4E3A;&#x4E86;&#x8F93;&#x51FA;&#x7684;&#x7F8E;&#x89C2;&#xFF0C;&#x67D0;&#x4E9B;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x5F97;&#x77E5;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x7684;&#x5BBD;&#x5EA6;</span>
+<span class="token macro property">#<span class="token directive keyword">include</span><span class="token string">&lt;sys/ioctl.h&gt;</span></span>
+
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">myls</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/****************************** &#x6587;&#x4EF6;&#x5904;&#x7406;&#x90E8;&#x5206; *******************************/</span>
+<span class="token comment">// &#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x5BF9;&#x67D0;&#x4E9B;&#x547D;&#x4EE4;&#x7684;&#x6392;&#x5E8F;&#x529F;&#x80FD;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x76F4;&#x63A5;&#x8F93;&#x51FA;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5148;&#x8981;&#x5B58;&#x4E0B;&#x6765;</span>
+<span class="token keyword">typedef</span> <span class="token keyword">struct</span> FILE_NODE<span class="token punctuation">{</span>
+    <span class="token keyword">char</span> file_type<span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x5305;&#x62EC;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x3001;&#x76EE;&#x5F55;&#x6587;&#x4EF6;&#x3001;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7B49;&#x7B49;</span>
+    <span class="token keyword">char</span> file_mode<span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7684;&#x5404;&#x4E2A;&#x6743;&#x9650;</span>
+    <span class="token keyword">int</span> st_nlink<span class="token punctuation">;</span> <span class="token comment">// &#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x7684;&#x4E2A;&#x6570;</span>
+    <span class="token keyword">char</span> uname<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x7528;&#x6237;&#x540D;</span>
+    <span class="token keyword">char</span> gname<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x7EC4;&#x540D;</span>
+    <span class="token keyword">int</span> file_size<span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x5927;&#x5C0F;</span>
+    <span class="token keyword">char</span> date<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x7684;&#x4FEE;&#x6539;&#x65E5;&#x671F;</span>
+    <span class="token keyword">char</span> file_name<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x6587;&#x4EF6;&#x540D;</span>
+    bool islink<span class="token punctuation">;</span> <span class="token comment">// &#x662F;&#x5426;&#x662F;&#x94FE;&#x63A5;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">char</span> file_link<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// &#x94FE;&#x63A5;&#x6587;&#x4EF6;&#x6307;&#x5411;&#x7684;&#x6587;&#x4EF6;&#x540D;</span>
+<span class="token punctuation">}</span>FILE_NODE<span class="token punctuation">;</span>
+FILE_NODE file_node<span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> file_node_num<span class="token punctuation">;</span>  <span class="token comment">// &#x6587;&#x4EF6;&#x6570;</span>
+
+<span class="token keyword">void</span> <span class="token function">error_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> e<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x9519;&#x8BEF;&#x8F93;&#x51FA;</span>
+<span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5C06;&#x5904;&#x7406;&#x540E;&#x7684;&#x6309;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x8F93;&#x51FA;</span>
+<span class="token keyword">void</span> <span class="token function">file_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5904;&#x7406;&#x5355;&#x4E2A;&#x6587;&#x4EF6;</span>
+<span class="token keyword">void</span> <span class="token function">dir_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> pathname<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5904;&#x7406;&#x4E00;&#x4E2A;&#x76EE;&#x5F55;</span>
+<span class="token keyword">void</span> <span class="token function">file_type_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x5904;&#x7406;&#x7C7B;&#x578B;&#xFF0C;&#x76EE;&#x5F55;&#x6216;&#x8005;&#x6587;&#x4EF6;&#x7B49;</span>
+<span class="token keyword">void</span> <span class="token function">file_mode_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x5904;&#x7406;&#x6743;&#x9650;</span>
+<span class="token keyword">void</span> <span class="token function">file_nlink_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x5904;&#x7406;&#x786C;&#x94FE;&#x63A5;&#x6570;&#x91CF;</span>
+<span class="token keyword">void</span> <span class="token function">file_user_group_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5904;&#x7406;&#x7528;&#x6237;&#x53CA;&#x7EC4;</span>
+<span class="token keyword">void</span> <span class="token function">file_size_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x5904;&#x7406;&#x6587;&#x4EF6;&#x5927;&#x5C0F;</span>
+<span class="token keyword">void</span> <span class="token function">file_lastchange_time_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5904;&#x7406;&#x6587;&#x4EF6;&#x6700;&#x540E;&#x4FEE;&#x6539;&#x65F6;&#x95F4;</span>
+<span class="token keyword">void</span> <span class="token function">file_name_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x5904;&#x7406;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x94FE;&#x63A5;&#x6587;&#x4EF6;&#xFF0C;&#x8FFD;&#x52A0;&#x5BF9;&#x5E94;&#x94FE;&#x63A5;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
+<span class="token keyword">void</span> <span class="token function">file_link_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// &#x5904;&#x7406;&#x94FE;&#x63A5;&#x7684;&#x6587;&#x4EF6;</span>
+
+
+<span class="token comment">/*************************** &#x547D;&#x4EE4;&#x5904;&#x7406;&#x90E8;&#x5206; **********************************/</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_A 1</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_L 2</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_F 4</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_R 8</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_X 16</span>
+<span class="token macro property">#<span class="token directive keyword">define</span> MYLS_C 32</span>
+<span class="token keyword">unsigned</span> <span class="token keyword">int</span> COMMANDFLAG<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x8BBE;&#x7F6E; -a  &#x663E;&#x793A;&#x6587;&#x4EF6;&#x540D;&#xFF0C;&#x6309;&#x5217;&#x9002;&#x5F53;&#x7684;&#x4EE5;&#x5B57;&#x5178;&#x5E8F;&#x6392;&#x5E8F;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x8BBE;&#x7F6E; -l &#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#xFF0C;&#x6BCF;&#x884C;&#x4E00;&#x4E2A;&#xFF0C;&#x9ED8;&#x8BA4;&#x4EE5;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5B57;&#x5178;&#x5E8F;&#x6392;&#x5E8F;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x8BBE;&#x7F6E; -f &#x4E0E; -a &#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x4E0D;&#x6392;&#x5E8F;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsR</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5BF9;&#x6587;&#x4EF6;&#x5939;&#x8FDB;&#x884C;&#x9012;&#x5F52;&#x663E;&#x793A;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandISX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5BF9;&#x6587;&#x4EF6;&#x6309;&#x5217;&#x8F93;&#x51FA;&#xFF0C;&#x6A2A;&#x5411;&#x6392;&#x5E8F;</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5BF9;&#x6587;&#x4EF6;&#x6309;&#x5217;&#x8F93;&#x51FA;&#xFF0C;&#x7EB5;&#x5411;&#x6392;&#x5E8F;</span>
+<span class="token macro property">#<span class="token directive keyword">endif</span></span>
+</pre><h2 class="mume-header" id="mylsc">myls.c</h2>
+
+<pre data-role="codeBlock" data-info="c" class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&quot;myls.h&quot;</span></span>
+
+
+<span class="token keyword">void</span> <span class="token function">dir_print_dfs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">myls</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> path<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">struct</span> stat st <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">lstat</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;lstat...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// &#x9012;&#x5F52;&#x663E;&#x793A;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_R<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">dir_print_dfs</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    file_node_num <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISDIR</span><span class="token punctuation">(</span>st<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">dir_print</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">else</span> <span class="token function">file_print</span><span class="token punctuation">(</span>path<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">error_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">perror</span><span class="token punctuation">(</span><span class="token string">&quot;Error: &quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">perror</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">exit</span><span class="token punctuation">(</span>EXIT_FAILURE<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// exit(1);</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">int</span> <span class="token function">cmp_string</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">void</span><span class="token operator">*</span> a<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">void</span><span class="token operator">*</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// &#x7ED3;&#x6784;&#x4F53;&#x5B57;&#x7B26;&#x4E32;&#x6392;&#x5E8F;</span>
+    <span class="token keyword">return</span> <span class="token function">strcmp</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>FILE_NODE<span class="token operator">*</span><span class="token punctuation">)</span>a<span class="token punctuation">)</span><span class="token punctuation">.</span>file_name<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">*</span><span class="token punctuation">(</span>FILE_NODE<span class="token operator">*</span><span class="token punctuation">)</span>b<span class="token punctuation">)</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">get_max_len</span><span class="token punctuation">(</span>bool sizeOrname<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x7EC4;&#x4E2D;&#x5927;&#x5C0F;&#x6700;&#x5927;&#x7684;&#x90A3;&#x4E00;&#x4E2A;&#x7684;&#x957F;&#x5EA6;</span>
+    <span class="token keyword">int</span> len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> file_node_num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        len <span class="token operator">=</span> len <span class="token operator">&lt;</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_size <span class="token operator">?</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_size <span class="token operator">:</span> len<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">int</span> ans <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>len<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token operator">++</span>ans<span class="token punctuation">;</span>
+        len <span class="token operator">/=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> ans<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">int</span> <span class="token function">get_winsize_col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x5BBD;&#x5EA6;</span>
+    <span class="token keyword">struct</span> winsize size<span class="token punctuation">;</span>
+    <span class="token function">ioctl</span><span class="token punctuation">(</span>STDIN_FILENO<span class="token punctuation">,</span> TIOCGWINSZ<span class="token punctuation">,</span> <span class="token operator">&amp;</span>size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> size<span class="token punctuation">.</span>ws_col<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// &#x9ED8;&#x8BA4;&#x6309;&#x7167;&#x6587;&#x4EF6;&#x540D;&#x7684;&#x5B57;&#x5178;&#x5E8F;&#x8FDB;&#x884C;&#x8F93;&#x51FA;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">qsort</span><span class="token punctuation">(</span>file_node<span class="token punctuation">,</span> file_node_num <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span> cmp_string<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">if</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_L<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> max_size_len <span class="token operator">=</span> <span class="token function">get_max_len</span><span class="token punctuation">(</span>true<span class="token punctuation">)</span><span class="token punctuation">;</span>           <span class="token comment">// &#x6309;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x6700;&#x5927;&#x7684;&#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;</span>
+        <span class="token keyword">int</span> max_uname_len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max_gnmame_len <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> file_node_num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            max_uname_len <span class="token operator">=</span> max_uname_len <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">)</span> <span class="token operator">:</span> max_uname_len<span class="token punctuation">;</span>
+            max_gnmame_len <span class="token operator">=</span> max_gnmame_len <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">)</span> <span class="token operator">:</span> max_gnmame_len<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> file_node_num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%c&quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s &quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%d &quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>st_nlink<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%*s &quot;</span><span class="token punctuation">,</span> max_uname_len<span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%*s &quot;</span><span class="token punctuation">,</span> max_gnmame_len<span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%*d &quot;</span><span class="token punctuation">,</span> max_size_len<span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_size<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s &quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%-20s&quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>islink<span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s&quot;</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_link<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token comment">// &#x786E;&#x5B9A;&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x7F29;&#x8FDB;&#x957F;&#x5EA6;&#xFF0C;&#x4EE5;&#x53CA;&#x6700;&#x540E;&#x7684;&#x884C;&#x6570;</span>
+        <span class="token keyword">int</span> col <span class="token operator">=</span> <span class="token function">get_winsize_col</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max_col <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> file_node_num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>max_col <span class="token operator">=</span> max_col <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">:</span> max_col<span class="token punctuation">;</span>
+        max_col <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        max_col <span class="token operator">=</span> col <span class="token operator">/</span> max_col<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> max_row <span class="token operator">=</span> <span class="token punctuation">(</span>file_node_num <span class="token operator">+</span> max_col <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> max_col<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> cols<span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">memset</span><span class="token punctuation">(</span>cols<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>cols<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// &#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x884C;&#x7684;&#x6700;&#x957F;&#x503C;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max_row<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> max_col<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_X<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i <span class="token operator">*</span> max_col <span class="token operator">+</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i <span class="token operator">*</span> max_col <span class="token operator">+</span> j<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">:</span> cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span><span class="token punctuation">{</span>
+                    cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i <span class="token operator">+</span> j <span class="token operator">*</span> max_row<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token function">strlen</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i <span class="token operator">+</span> j <span class="token operator">*</span> max_row<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span> <span class="token operator">:</span> cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> flag <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> x<span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> max_row<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> j <span class="token operator">&lt;</span> max_col<span class="token punctuation">;</span> <span class="token operator">++</span>j<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_X<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    x <span class="token operator">=</span> i <span class="token operator">*</span> max_col <span class="token operator">+</span> j<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span><span class="token punctuation">{</span>
+                    x <span class="token operator">=</span> i <span class="token operator">+</span> j <span class="token operator">*</span> max_row<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%-*s  &quot;</span><span class="token punctuation">,</span> cols<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token operator">--</span>flag<span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>flag <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">file_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token operator">++</span>file_node_num<span class="token punctuation">;</span>
+    <span class="token function">file_type_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_mode_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_nlink_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_user_group_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_size_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_lastchange_time_print</span><span class="token punctuation">(</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">file_name_print</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token keyword">void</span> <span class="token function">dir_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> pathname<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    DIR<span class="token operator">*</span> dir <span class="token operator">=</span> <span class="token function">opendir</span><span class="token punctuation">(</span>pathname<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x6253;&#x5F00;&#x76EE;&#x5F55;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>dir <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;opendir...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x5224;&#x65AD;&#x8BE5;&#x76EE;&#x5F55;&#x662F;&#x5426;&#x80FD;&#x6253;&#x5F00;</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">chdir</span><span class="token punctuation">(</span>pathname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;chdir...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// &#x6539;&#x53D8;&#x5DE5;&#x4F5C;&#x533A;&#xFF0C;&#x65B9;&#x4FBF;stat&#x4F7F;&#x7528;</span>
+
+    <span class="token keyword">struct</span> dirent<span class="token operator">*</span> dir_next <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>             <span class="token comment">// &#x76EE;&#x5F55;&#x5217;&#x8868;&#x6587;&#x4EF6;&#x7684;&#x6307;&#x9488;</span>
+
+    <span class="token keyword">struct</span> stat st <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>                        <span class="token comment">// &#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x7684;stat</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>dir_next <span class="token operator">=</span> <span class="token function">readdir</span><span class="token punctuation">(</span>dir<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">char</span><span class="token operator">*</span> filename <span class="token operator">=</span> dir_next<span class="token operator">-&gt;</span>d_name<span class="token punctuation">;</span>      <span class="token comment">// &#x6587;&#x4EF6;&#x6216;&#x76EE;&#x5F55;&#x540D;&#x5B57;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">lstat</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">file_print</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">char</span> paths<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> path_n<span class="token punctuation">;</span>
+<span class="token keyword">void</span> <span class="token function">dir_print_dfs</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> path<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    file_node_num <span class="token operator">=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>paths<span class="token punctuation">[</span><span class="token operator">++</span>path_n<span class="token punctuation">]</span><span class="token punctuation">,</span> path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> path_n<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;%s%c&quot;</span><span class="token punctuation">,</span> paths<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>paths<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token function">strlen</span><span class="token punctuation">(</span>paths<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;/&apos;</span> <span class="token operator">?</span>  <span class="token operator">:</span> <span class="token string">&apos;/&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">&quot;:\n&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">dir_print</span><span class="token punctuation">(</span>path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">display</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">puts</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// char pathname[1024];</span>
+    <span class="token comment">// strcpy(pathname, sta[top]);</span>
+    <span class="token comment">// char buf[1024];</span>
+    <span class="token comment">// getcwd(buf, 1024);</span>
+    <span class="token comment">// printf(&quot;%s\n&quot;, buf);</span>
+    <span class="token comment">// printf(&quot;%s\n&quot;, sta[top]);</span>
+    <span class="token comment">// if(!~chdir(sta[top]))error_print(&quot;chdir...&quot;);</span>
+    <span class="token comment">// getcwd(buf, 1024);</span>
+    <span class="token comment">// printf(&quot;%s\n&quot;, buf);</span>
+    <span class="token keyword">struct</span> stat st <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> tmp<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">128</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">int</span> num <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> file_node_num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">lstat</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">,</span> <span class="token operator">&amp;</span>st<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISDIR</span><span class="token punctuation">(</span>st<span class="token punctuation">.</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">strcpy</span><span class="token punctuation">(</span>tmp<span class="token punctuation">[</span>num<span class="token operator">++</span><span class="token punctuation">]</span><span class="token punctuation">,</span> file_node<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> num<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token function">dir_print_dfs</span><span class="token punctuation">(</span>tmp<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token operator">~</span><span class="token function">chdir</span><span class="token punctuation">(</span><span class="token string">&quot;../&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;chdir...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token operator">--</span>path_n<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_type_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment">// mode_t mode = (*st).st_mode;</span>
+    mode_t mode <span class="token operator">=</span> st<span class="token operator">-&gt;</span>st_mode<span class="token punctuation">;</span>
+    
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISREG</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">;</span>       <span class="token comment">// &#x666E;&#x901A;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISDIR</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;d&apos;</span><span class="token punctuation">;</span>  <span class="token comment">// &#x76EE;&#x5F55;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISLNK</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;l&apos;</span><span class="token punctuation">;</span>  <span class="token comment">// &#x94FE;&#x63A5;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISCHR</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;c&apos;</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5B57;&#x7B26;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISFIFO</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;p&apos;</span><span class="token punctuation">;</span> <span class="token comment">// &#x7BA1;&#x9053;&#x6587;&#x4EF6;</span>
+    <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISBLK</span><span class="token punctuation">(</span>mode<span class="token punctuation">)</span><span class="token punctuation">)</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_type <span class="token operator">=</span> <span class="token string">&apos;b&apos;</span><span class="token punctuation">;</span>  <span class="token comment">// &#x5757;&#x8BBE;&#x5907;&#x6587;&#x4EF6;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_mode_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    mode_t mode <span class="token operator">=</span> st<span class="token operator">-&gt;</span>st_mode<span class="token punctuation">;</span>
+
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IRUSR <span class="token operator">?</span> <span class="token string">&apos;r&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IWUSR <span class="token operator">?</span> <span class="token string">&apos;w&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IWUSR <span class="token operator">?</span> <span class="token string">&apos;x&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IRGRP <span class="token operator">?</span> <span class="token string">&apos;r&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IWGRP <span class="token operator">?</span> <span class="token string">&apos;w&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IXGRP <span class="token operator">?</span> <span class="token string">&apos;x&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IROTH <span class="token operator">?</span> <span class="token string">&apos;r&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IWOTH <span class="token operator">?</span> <span class="token string">&apos;w&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_mode<span class="token punctuation">[</span><span class="token number">8</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">(</span>mode <span class="token operator">&amp;</span> S_IXOTH <span class="token operator">?</span> <span class="token string">&apos;x&apos;</span> <span class="token operator">:</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_nlink_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>st_nlink <span class="token operator">=</span> st<span class="token operator">-&gt;</span>st_nlink<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_user_group_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">,</span> <span class="token string">&apos;\0&apos;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>uname<span class="token punctuation">,</span> <span class="token function">getpwuid</span><span class="token punctuation">(</span>st<span class="token operator">-&gt;</span>st_uid<span class="token punctuation">)</span><span class="token operator">-&gt;</span>pw_name<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x6839;&#x636E;&#x6587;&#x4EF6;&#x7684;&#x7528;&#x6237;id&#x83B7;&#x53D6;&#x7528;&#x6237;&#x540D;</span>
+
+    <span class="token function">memset</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">,</span> <span class="token string">&apos;\0&apos;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcpy</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>gname<span class="token punctuation">,</span> <span class="token function">getpwuid</span><span class="token punctuation">(</span>st<span class="token operator">-&gt;</span>st_gid<span class="token punctuation">)</span><span class="token operator">-&gt;</span>pw_name<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">// &#x6839;&#x636E;&#x6587;&#x4EF6;&#x7684;&#x7528;&#x6237;id&#x83B7;&#x53D6;&#x7EC4;&#x540D;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_size_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_size <span class="token operator">=</span> st<span class="token operator">-&gt;</span>st_size<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_lastchange_time_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span><span class="token operator">*</span> mon<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">&quot;Jan&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;Feb&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;Mar&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;Apr&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;May&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;Jun&quot;</span><span class="token punctuation">,</span>
+       <span class="token string">&quot;Jul&quot;</span><span class="token punctuation">,</span>  <span class="token string">&quot;Aug&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Sep&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Oct&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Nov&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;Dec&quot;</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">struct</span> tm<span class="token operator">*</span> file_time <span class="token operator">=</span> <span class="token function">localtime</span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token punctuation">(</span>st<span class="token operator">-&gt;</span>st_mtime<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>file_time <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;localtime...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">,</span> <span class="token string">&apos;\0&apos;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">char</span> _mon<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">,</span> _day<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> _time<span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>_mon<span class="token punctuation">,</span> <span class="token string">&quot;%s &quot;</span><span class="token punctuation">,</span> mon<span class="token punctuation">[</span>file_time<span class="token operator">-&gt;</span>tm_mon<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>_day<span class="token punctuation">,</span> <span class="token string">&quot;%02d &quot;</span><span class="token punctuation">,</span> file_time<span class="token operator">-&gt;</span>tm_mday <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>_time<span class="token punctuation">,</span> <span class="token string">&quot;%02d:%02d&quot;</span><span class="token punctuation">,</span> file_time<span class="token operator">-&gt;</span>tm_hour<span class="token punctuation">,</span> file_time<span class="token operator">-&gt;</span>tm_min<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcat</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">,</span> _mon<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcat</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">,</span> _day<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">strcat</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>date<span class="token punctuation">,</span> _time<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_name_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">,</span> <span class="token keyword">const</span> <span class="token keyword">struct</span> stat<span class="token operator">*</span> st<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>filename<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_A<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span><span class="token punctuation">(</span>COMMANDFLAG <span class="token operator">&amp;</span> MYLS_F<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token operator">--</span>file_node_num<span class="token punctuation">;</span>
+            <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">,</span> <span class="token string">&apos;\0&apos;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_name<span class="token punctuation">,</span> <span class="token string">&quot;%s&quot;</span><span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">S_ISLNK</span><span class="token punctuation">(</span>st<span class="token operator">-&gt;</span>st_mode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">file_link_print</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">void</span> <span class="token function">file_link_print</span><span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token keyword">char</span><span class="token operator">*</span> filename<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">char</span> buf<span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">==</span> <span class="token function">readlink</span><span class="token punctuation">(</span>filename<span class="token punctuation">,</span> buf<span class="token punctuation">,</span> <span class="token keyword">sizeof</span> buf<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token function">error_print</span><span class="token punctuation">(</span><span class="token string">&quot;readlink...&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">memset</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_link<span class="token punctuation">,</span> <span class="token string">&apos;\0&apos;</span><span class="token punctuation">,</span> <span class="token keyword">sizeof</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_link<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">sprintf</span><span class="token punctuation">(</span>file_node<span class="token punctuation">[</span>file_node_num<span class="token punctuation">]</span><span class="token punctuation">.</span>file_link<span class="token punctuation">,</span> <span class="token string">&quot;-&gt; %s&quot;</span><span class="token punctuation">,</span> buf<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+
+
+<span class="token keyword">void</span> <span class="token function">setCommandIsA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_A<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_L<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsF</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_F<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsR</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_R<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">setCommandISX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_X<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">void</span> <span class="token function">setCommandIsC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    COMMANDFLAG <span class="token operator">|=</span> MYLS_C<span class="token punctuation">;</span>
+    <span class="token keyword">return</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre>
+      </div>
+      <div class="md-sidebar-toc"><ul>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84">&#x5B9E;&#x9A8C;&#x76EE;&#x7684;</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9">&#x5B9E;&#x9A8C;&#x5185;&#x5BB9;</a></li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4">&#x5B9E;&#x9A8C;&#x6B65;&#x9AA4;</a>
+<ul>
+<li><a href="#%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90">&#x4EFB;&#x52A1;&#x5206;&#x6790;</a></li>
+<li><a href="#%E6%A6%82%E8%A6%81%E8%AE%BE%E8%AE%A1">&#x6982;&#x8981;&#x8BBE;&#x8BA1;</a>
+<ul>
+<li><a href="#%E4%B8%BB%E7%A8%8B%E5%BA%8F%E5%85%A5%E5%8F%A3">&#x4E3B;&#x7A0B;&#x5E8F;&#x5165;&#x53E3;</a></li>
+<li><a href="#%E4%B8%BB%E8%A6%81%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0">&#x4E3B;&#x8981;&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</a></li>
+</ul>
+</li>
+<li><a href="#%E8%AF%A6%E7%BB%86%E8%AE%BE%E8%AE%A1">&#x8BE6;&#x7EC6;&#x8BBE;&#x8BA1;</a></li>
+<li><a href="#%E8%B0%83%E8%AF%95%E5%88%86%E6%9E%90-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C">&#x8C03;&#x8BD5;&#x5206;&#x6790;&#x3001;&#x6D4B;&#x8BD5;&#x7ED3;&#x679C;</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E">&#x4F7F;&#x7528;&#x8BF4;&#x660E;</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%9E%E9%AA%8C%E6%80%BB%E7%BB%93">&#x5B9E;&#x9A8C;&#x603B;&#x7ED3;</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">&#x4EE3;&#x7801;</a>
+<ul>
+<li><a href="#mainc">main.c</a></li>
+<li><a href="#mylsh">myls.h</a></li>
+<li><a href="#mylsc">myls.c</a></li>
+</ul>
+</li>
+</ul>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
