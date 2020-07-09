@@ -1,0 +1,41 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build",
+      // "command": "D:\\mingw64\\bin\\gcc.exe",
+      "command": "D:\\mingw64\\bin\\g++.exe",
+      "args": [
+        "-g",
+        "-std=c++17",
+
+        "-LG:\\实验报告\\实训\\WpdPack_4_1_2\\WpdPack\\Lib\\x64",
+        "-IG:\\实验报告\\实训\\WpdPack_4_1_2\\WpdPack\\Include",
+
+        "-finput-charset=UTF-8",
+        "-fexec-charset=GBK",
+        
+        "${fileDirname}\\global.cpp",
+        "${fileDirname}\\get_devs.cpp",
+        "${fileDirname}\\catch_packets.cpp",
+        "${fileDirname}\\analysis_struct.cpp",
+        "${file}",
+
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        
+        "-lwsock32",  // #include<winsock2.h> 使用
+        "-lwpcap",    // #include<pcap.h> 使用
+        "-lws2_32",    // #include<ws2tcpip.h> 使用
+        "-lpthread"   // #include<pthread.h> 使用
+      ],
+      "options": {
+        "cwd": "D:\\mingw64\\bin"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ]
+    }
+  ],
+  "version": "2.0.0"
+}

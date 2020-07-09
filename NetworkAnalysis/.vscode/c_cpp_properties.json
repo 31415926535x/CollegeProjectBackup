@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win64",
+            "includePath": [
+                "${workspaceRoot}",
+                "D:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\",
+                "G:\\实验报告\\实训\\WpdPack_4_1_2\\WpdPack\\Include\\"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceRoot}",
+                    "D:\\mingw64\\lib\\gcc\\x86_64-w64-mingw32\\8.1.0\\include\\",
+                    "G:\\实验报告\\实训\\WpdPack_4_1_2\\WpdPack\\Include\\"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "compilerPath": "D:\\mingw64\\bin\\g++.exe",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
