@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         新版正方教务系统导出课程表
 // @namespace    http://tampermonkey.net/
-// @version      4.0
+// @version      4.1
 // @description  通过对新版正方教务系统的课表页面的解析，实现导出一个适用于大部分ics日历的文件，理论使用于所有使用新版正方教务系统（可对 ``include`` 进行一定的修改以适用不同的学校的链接）
 // @author       31415926535x
 // @supportURL   https://github.com/31415926535x/CollegeProjectBackup/blob/master/ZhengfangClassScheduleToICS/Readme.md
@@ -82,7 +82,7 @@ function ClassScheduleToICS(){
         btn.onclick = function(){
             startDate = StartDate.value;
             generateCalendar(parseCourses(parseTable()));    // 嘿嘿。。
-            alert("ics文件已经生成，请导入到您所使用的日历文件；（Google Calendar需要自行设置课程的颜色。。。）");
+            alert("ics文件已经生成，请导入到您所使用的日历文件；（Google Calendar需要自行设置课程的颜色。。。）\n如果发现获取到的数据有误，请在github上提出issues，我会尽快解决（前提我能进入学校的教务系统QAQ）");
         }
     }
     // --------------------------------------------------------------------------
@@ -165,6 +165,21 @@ function ClassScheduleToICS(){
             let course = new Course();
             course.week = data.week[i];
             course.name = data.divs[i].getElementsByTagName("span")[0].getElementsByTagName("font")[0].innerText;
+            // 2021.2.25 更新：
+            // 原课程名标签由 span 改为 u，可能存在获取不到课程名的情况
+            // 故通过其他方法解决，并尝试增加多种获取方法，以增加正确获取到的可能性
+            if(course.name.length == 0){
+                course.name = data.divs[0].innerText.split('\n\n')[0];
+            }
+            if(course.name.length == 0){
+                course.name = data.divs[0].getElementsByTagName('u')[0].innerText;
+            }
+            if(course.name.length == 0){
+                course.name = data.divs[0].children[0].innerText;
+            }
+            if(course.name.length == 0){
+                console.log("%c " + '\n\n\n检测到可能未能获取到课程名，猜测是教务系统已经更新页面相关标签，\n建议在github提出issues，我会尝试解决\n\n\n', "color: red")
+            }
             course.name = course.name.substr(0, course.name.length - 1);
             data.divs[i].querySelectorAll("p").forEach(p => {
                 if(p.getElementsByTagName("span")[0].getAttribute("title") == "节/周"){
@@ -265,6 +280,8 @@ function ClassScheduleToICS(){
 
         // 将每一个课程信息转化为事件 VEVENT 并添加一个提醒
         console.log(courses);
+        console.log('======================!!!============================')
+        console.log('如果出现数据有误等情况，请仔细观察上面获取到的课程信息是否和页面的课程信息一致，\n如果出现某个字段为空（即 xxxx=\'\'）的现象，\n请在GitHub提出issues，我会尽量解决（如果还能够进入教务管理系统的话）谢谢！！')
         courses.forEach(course => {
             for(let i = 0; i < course.isSingleOrDouble.length; ++i){
                 let e = new ICSEvent("" + getDate(course.startWeek[i], course.week) + getTime(course.startTime, 0), 
@@ -611,3 +628,7 @@ class ICSEvent{
 }
 
 // -------------------------------- ICS类，用于处理所有有关日历的操作 ------------------------------------------//
+
+
+
+class BootS
