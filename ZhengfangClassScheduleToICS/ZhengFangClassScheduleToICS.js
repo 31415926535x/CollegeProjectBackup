@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         新版正方教务系统导出课程表
 // @namespace    http://tampermonkey.net/
-// @version      4.1
+// @version      4.2
 // @description  通过对新版正方教务系统的课表页面的解析，实现导出一个适用于大部分ics日历的文件，理论使用于所有使用新版正方教务系统（可对 ``include`` 进行一定的修改以适用不同的学校的链接）
 // @author       31415926535x
 // @supportURL   https://github.com/31415926535x/CollegeProjectBackup/blob/master/ZhengfangClassScheduleToICS/Readme.md
@@ -68,12 +68,14 @@ function ClassScheduleToICS(){
         let dwnbtn = document.createElement("button");
         dwnbtn.className = "btn btn-default";
         sp = document.createElement("span");
-        sp.innerText = "选择本学期第一个星期一:";
+        sp.innerText = "选择本学期第一个星期一:     ";
         sp.className = "bigger-120 glyphicon glyphicon-time";
         dwnbtn.appendChild(sp);
         let StartDate = document.createElement("input");
         StartDate.type = "date";
-        StartDate.value = "2020-01-01";
+        // 这里通过自动获取当前时间来设定日期
+        // StartDate.value = "2020-01-01";
+        StartDate.value = (new Date()).toLocaleDateString().replaceAll("/", "-");
         div.appendChild(btn);
         dwnbtn.appendChild(StartDate);
         div.appendChild(dwnbtn);
@@ -82,7 +84,7 @@ function ClassScheduleToICS(){
         btn.onclick = function(){
             startDate = StartDate.value;
             generateCalendar(parseCourses(parseTable()));    // 嘿嘿。。
-            alert("ics文件已经生成，请导入到您所使用的日历文件；（Google Calendar需要自行设置课程的颜色。。。）\n如果发现获取到的数据有误，请在github上提出issues，我会尽快解决（前提我能进入学校的教务系统QAQ）");
+            alert("ics文件已经生成，请导入到您所使用的日历文件；（Google Calendar需要自行设置课程的颜色。。。）\n如果发现获取到的数据有误，请在github上提出issues，\n并尽量使用F12进入开发者模式，附上截屏（含有cousrse的数据以及课程信息页面，注意个人信息），\n我会尽快解决（前提我还能进入学校的教务系统QAQ）");
         }
     }
     // --------------------------------------------------------------------------
@@ -167,20 +169,27 @@ function ClassScheduleToICS(){
             course.name = data.divs[i].getElementsByTagName("span")[0].getElementsByTagName("font")[0].innerText;
             // 2021.2.25 更新：
             // 原课程名标签由 span 改为 u，可能存在获取不到课程名的情况
+            // 某些课程，如【调】会使用u标签加粗，其他的不变
             // 故通过其他方法解决，并尝试增加多种获取方法，以增加正确获取到的可能性
             if(course.name.length == 0){
-                course.name = data.divs[0].innerText.split('\n\n')[0];
+                course.name = data.divs[i].getElementsByTagName('u')[0].innerText;
             }
             if(course.name.length == 0){
-                course.name = data.divs[0].getElementsByTagName('u')[0].innerText;
+                course.name = data.divs[i].children[0].innerText;
             }
             if(course.name.length == 0){
-                course.name = data.divs[0].children[0].innerText;
-            }
+                course.name = data.divs[i].innerText.split('\n\n')[0];
+            }            
             if(course.name.length == 0){
                 console.log("%c " + '\n\n\n检测到可能未能获取到课程名，猜测是教务系统已经更新页面相关标签，\n建议在github提出issues，我会尝试解决\n\n\n', "color: red")
             }
-            course.name = course.name.substr(0, course.name.length - 1);
+            // 这里不通过substr去空格了，因为可能有些学校的教务系统，教务员填写课程没有添加末尾空格或者没有添加一个小星星的占位符，会导致课程名减一的bug
+            // 同时尝试去除【调】
+            // course.name = course.name.substr(0, course.name.length - 1);
+            course.name = course.name.replace(/^\s+/, '').replace(/\s+$/, '');      // 去除前后空格
+            course.name = course.name.replace("☆", "");                            // 去除小星星
+            course.name = course.name.replace("【调】", "");                        // 去除 【调】
+
             data.divs[i].querySelectorAll("p").forEach(p => {
                 if(p.getElementsByTagName("span")[0].getAttribute("title") == "节/周"){
                     // 进行起始周数以及持续时间的解析
