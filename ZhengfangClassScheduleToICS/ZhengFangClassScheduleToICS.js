@@ -1,14 +1,13 @@
 // ==UserScript==
-// @name         新版正方教务系统导出课程表
+// @name        test
 // @namespace    http://tampermonkey.net/
-// @version      4.2
+// @version      0.1
 // @description  通过对新版正方教务系统的课表页面的解析，实现导出一个适用于大部分ics日历的文件，理论使用于所有使用新版正方教务系统（可对 ``include`` 进行一定的修改以适用不同的学校的链接）
-// @author       31415926535x
-// @supportURL   https://github.com/31415926535x/CollegeProjectBackup/blob/master/ZhengfangClassScheduleToICS/Readme.md
+// @author       feldan
 // @compatible   chrome
 // @compatible   firefox
 // @license      MIT
-// @include      *://jwgl.*.edu.cn/*
+// @include      *://172.16.254.1/*
 // @run-at       document-start
 // ==/UserScript==
 
@@ -22,12 +21,12 @@ var StudentEvalutionURL = "xspjgl/xspj_cxXspjIndex.html";        // 学生评教
 
 var setTimeout_ = 4000;                                          // 设置脚本实际运行的开始时间，网络不好建议时间稍长，1000等于1s
 (function (){
-    
+
     'use strict';
-    
+
     console.log("Script running.....");
     unsafeWindow.addEventListener("load", main);
-    
+
 })();
 
 function main(){
@@ -91,7 +90,7 @@ function ClassScheduleToICS(){
 
     // 本学期设定的开始日期
     var startDate;
-        
+
     // 全局变量Week的双引射
     // --------------------------------------------------------------------------
     var Week;
@@ -130,7 +129,7 @@ function ClassScheduleToICS(){
                 }
             }
         });
-        return {week: week, divs: divs};        
+        return {week: week, divs: divs};
     }
     // --------------------------------------------------------------------------
 
@@ -179,7 +178,7 @@ function ClassScheduleToICS(){
             }
             if(course.name.length == 0){
                 course.name = data.divs[i].innerText.split('\n\n')[0];
-            }            
+            }
             if(course.name.length == 0){
                 console.log("%c " + '\n\n\n检测到可能未能获取到课程名，猜测是教务系统已经更新页面相关标签，\n建议在github提出issues，我会尝试解决\n\n\n', "color: red")
             }
@@ -204,7 +203,7 @@ function ClassScheduleToICS(){
                         course.startTime = parseInt(time.substring(0, time.indexOf("-")));
                         course.endTime = parseInt(time.substring(time.indexOf("-") + 1, time.indexOf("节")));
 
-                        
+
                         course.isSingleOrDouble = new Array();
                         course.startWeek = new Array();
                         course.endWeek = new Array();
@@ -247,17 +246,111 @@ function ClassScheduleToICS(){
 
 
     // --------------------------------------------------------------------------
-    // 通过节次确定时间， 默认每天上午8点上课，每节课两小时（无休息时间），下午2点上课
-    function getTime(num, StartOrEnd){
-        if(num <= 4){
-            num = 7 + num + StartOrEnd;
-        }
-        else{
-            num = 9 + num + StartOrEnd;
-        }
+    // // 通过节次确定时间， 默认每天上午8点上课，每节课两小时（无休息时间），下午2点上课
+    // function getTime(num, StartOrEnd){
+    //     if(num <= 4){
+    //         num = 7 + num + StartOrEnd;
+    //     }
+    //     else{
+    //         num = 9 + num + StartOrEnd;
+    //     }
 
-        return "" + getFixedLen("" + num, 2) + "0000";
+    //     return "" + getFixedLen("" + num, 2) + "0000";
+    // }
+    // function getFixedLen(s, len){
+    //     if(s.length < len){
+    //         return getFixedLen("0" + s, len);
+    //     }
+    //     else if(s.length > len){
+    //         return s.slice(0, len);
+    //     }
+    //     else{
+    //         return s;
+    //     }
+    // }
+    // 通过节次确定时间，使用数组、json实现？
+    var TIME = {
+        "1": {
+            "name": "第1节",
+            "startTime": {
+                "hour": '08',
+                "minute": '30'
+            }
+        },
+        "2": {
+            "name": "第2节",
+            "startTime": {
+                "hour": '09',
+                "minute": '20'
+            }
+    
+        },
+        "3": {
+            "name": "第3节",
+            "startTime": {
+                "hour": '10',
+                "minute": '25'
+            },
+    
+        },
+        "4": {
+            "name": "第4节",
+            "startTime": {
+                "hour": '11',
+                "minute": '15'
+            },
+    
+        },
+        "5": {
+            "name": "第5节",
+            "startTime": {
+                "hour": '14',
+                "minute": '40'
+            },
+    
+        },
+        "6": {
+            "name": "第6节",
+            "startTime": {
+                "hour": '15',
+                "minute": '30'
+            },
+    
+        },
+        "7": {
+            "name": "第7节",
+            "startTime": {
+                "hour": '16',
+                "minute": '30'
+            },
+    
+        },
+        "8": {
+            "name": "第8节",
+            "startTime": {
+                "hour": '17',
+                "minute": '20'
+            },
+    
+        },
+        "9": {
+            "name": "第9节",
+            "startTime": {
+                "hour": '19',
+                "minute": '30'
+            },
+    
+        },
+        "10": {
+            "name": "第10节",
+            "startTime": {
+                "hour": '20',
+                "minute": '20'
+            },
+    
+        }
     }
+    
     function getFixedLen(s, len){
         if(s.length < len){
             return getFixedLen("0" + s, len);
@@ -269,6 +362,19 @@ function ClassScheduleToICS(){
             return s;
         }
     }
+    
+    function getTime(num, StartOrEnd) {
+        var hour = TIME[num].startTime.hour;
+        var minute = parseInt(TIME[num].startTime.minute) + StartOrEnd;
+        if (minute >= 60) {
+            minute = minute - 60;
+            hour = parseInt(hour) + 1;
+        }
+        var time =  "" + getFixedLen("" + hour,2) + getFixedLen("" + minute,2);
+        console.log(time)
+        return time;
+    }
+
     // 通过周数获得具体的日期（相对学期开始的那一周）
     function getDate(num, wk){
         let date = new Date(startDate.toString());
@@ -293,10 +399,10 @@ function ClassScheduleToICS(){
         console.log('如果出现数据有误等情况，请仔细观察上面获取到的课程信息是否和页面的课程信息一致，\n如果出现某个字段为空（即 xxxx=\'\'）的现象，\n请在GitHub提出issues，我会尽量解决（如果还能够进入教务管理系统的话）谢谢！！')
         courses.forEach(course => {
             for(let i = 0; i < course.isSingleOrDouble.length; ++i){
-                let e = new ICSEvent("" + getDate(course.startWeek[i], course.week) + getTime(course.startTime, 0), 
-                                    "" + getDate(course.startWeek[i], course.week) + getTime(course.endTime, 1), 
+                let e = new ICSEvent("" + getDate(course.startWeek[i], course.week) + getTime(course.startTime, 0),
+                                    "" + getDate(course.startWeek[i], course.week) + getTime(course.endTime, 45), //设定单节上课时间
                                     "" + course.name + " " + course.location + " " + course.teacher + " " + course.info);
-                e.setRRULE("WEEKLY", res.Calendar.WKST, 
+                e.setRRULE("WEEKLY", res.Calendar.WKST,
                             "" + (course.endWeek[i] - course.startWeek[i] + course.isSingleOrDouble[i]) / course.isSingleOrDouble[i],
                             "" + course.isSingleOrDouble[i],
                             "" + course.week.substr(0, 2).toUpperCase());
@@ -305,213 +411,34 @@ function ClassScheduleToICS(){
         });
 
         // 建立一个周数事件，持续20周
-        (function(){
-            for(let i = 1; i < 20; ++i){
-                let e = new ICSEvent("" + getDate(i, Week[1]) + getTime(-1, 0),
-                                    "" + getDate(i, Week[1]) + getTime(-1, 1),
-                                    "" + "第" + i + "周");
-                res.pushEvent(e);
-            }
-        })();
-        
+        // (function(){
+        //     for(let i = 1; i < 20; ++i){
+        //         let e = new ICSEvent("" + getDate(i, Week[1]) + getTime(-1, 0),
+        //                             "" + getDate(i, Week[1]) + getTime(-1, 1),
+        //                             "" + "第" + i + "周");
+        //         res.pushEvent(e);
+        //     }
+        // })();
+
         res.pushCalendarEnd();
         res.exportIcs();
     }
     // --------------------------------------------------------------------------
 }
 
-// 导出考试信息
-function ExamScheduleToICS(){
-    console.log("ExamScheduleToICS");
-
-    pageFullyLoaded();
-    //加载完成后运行
-    function pageFullyLoaded(){
-        let div = document.getElementsByClassName("col-sm-12")[1];
-        let btn = document.createElement("button");
-        btn.className = "btn btn-primary btn-sm";
-        btn.id = "exportbtn";
-        btn.innerText = "导出ICS文件";
-
-        div.appendChild(btn);
-
-
-        btn.onclick = function(){
-            generateCalendar();
-            alert("ics文件已经生成，请导入到您所使用的日历文件；（Google Calendar需要自行设置课程的颜色。。。）");
-        }
-
-        document.getElementById("search_go").click();
-    }
-    function generateCalendar(){
-        let table = document.getElementById("tabGrid");
-        let trs = table.getElementsByTagName("tr");
-
-        class EXAM{
-            constructor(e){
-                if(e){
-                    this.course = e.course; // 课程名
-                    this.teacher = e.teacher;   // 教师
-                    this.examNmae = e.examNmae; // 考试名称：期中还是期末
-                    this.timeS = e.timeS;     // 考试时间
-                    this.timeT = e.timeE;     // 考试时间
-                    this.location = e.location; // 考试地点组成： 考试地点、考试校区、座位号
-                }
-            }
-        }
-        let exams = new Array();
-        for(let i = 1; i < trs.length; ++i){
-            let tds = trs[i].getElementsByTagName("td");
-            let exam = new EXAM();
-            exam.loction = "";
-            trs[i].querySelectorAll("td").forEach(tr => {
-                let attr = tr.getAttribute("aria-describedby");
-                if(attr == "tabGrid_kcmc"){
-                    // 课程名称
-                    exam.course = tr.innerText;
-                }
-                else if(attr == "tabGrid_jsxx"){
-                    // 教师
-                    exam.teacher = tr.innerText.substring(tr.innerText.indexOf("/") + 1, tr.innerText.length);
-                }
-                else if(attr == "tabGrid_ksmc"){
-                    // 考试类型
-                    exam.examNmae = tr.innerText;
-                }
-                else if(attr == "tabGrid_kssj"){
-                    // 考试时间
-                    let time = tr.innerText;
-                    let date = "" + time[0] + time[1] + time[2] + time[3] + time[5] + time[6] + time[8] + time[9] + "T";
-                    exam.timeS = date + time[11] + time[12] + time[14] + time[15] + "00";
-                    exam.timeE = date + time[17] + time[18] + time[20] + time[21] + "00";
-                }
-                else if(attr == "tabGrid_cdmc"){
-                    // 考试地点
-                    exam.location = tr.innerText;
-                }
-                else if(attr == "tabGrid_cdxqmc"){
-                    // 校区
-                    exam.location += " " + tr.innerText;
-                }
-                else if(attr == "tabGrid_zwh"){
-                    // 座位号
-                    exam.location += "  " + tr.innerText;
-                }
-                // 可以根据自己学校和自己的喜好添加你想要的信息
-            });
-            exams.push(exam);
-        }
-        console.log(exams);
-        let ics = new ICS();
-        exams.forEach(ex => {
-            let e = new ICSEvent("" + ex.timeS, "" + ex.timeE, "" + ex.course + " " + ex.examNmae + " " + ex.teacher + " " + ex.location);
-            ics.pushEvent(e);
-        });
-        ics.pushCalendarEnd();
-        ics.exportIcs();
-    }
-}
-
-
-function StudentEvalution(){
-    // SetBtnZero();
-    console.log("done......");
-    // let trs = document.getElementById("tempGrid").getElementsByTagName("tr");
-    // console.log(trs);
-    // for(let i = 0; i < trs.length; ++i){
-    //     console.log("2333");
-    //     trs[i].onclick = function(){
-    //         console.log("???????????");
-    //         // ModifyHTML();
-    //         setTimeout(ModifyHTML(), 4000);
-    //         console.log("!!!!!!!!");
-    //     }
-    // }
-    ModifyHTML();
-
-    function ModifyHTML(){
-        console.log("modify...")
-        // 添加一个选择要批量打分的选择框
-        let panel_body1 = document.getElementsByClassName("panel panel-default")[1];
-        let panel_body2 = document.getElementsByClassName("panel-body")[3];
-        let blockquote = panel_body2.getElementsByTagName("blockquote")[0].cloneNode(true);
-        blockquote.getElementsByTagName("p")[0].innerText = "一键评价";
-        let table = panel_body2.getElementsByTagName("table")[0].cloneNode(true);
-        table.removeAttribute("data-pjzbxm_id"); table.removeAttribute("data-qzz");
-        let tbody = table.getElementsByTagName("tbody")[0];
-        let tr = tbody.getElementsByTagName("tr")[0];
-        while(tbody.getElementsByTagName("tr").length > 1){
-            tbody.removeChild(tbody.getElementsByTagName("tr")[1]);
-        }
-        tr.removeAttribute("data-zsmbmcb_id"); tr.removeAttribute("data-pjzbxm_id"); tr.removeAttribute("data-pfdjdmb_id");
-        tr.getElementsByTagName("td")[0].innerText = "选择的最高分:";
-        let inputs = tr.getElementsByClassName("radio-pjf");
-        for(let i = 0; i < 5; ++i){
-            // tds[i].getElementsByTagName("div")[0].getElementsByTagName("div")[0].getElementsByTagName("label")[0].getElementsByTagName("")
-            inputs[i].removeAttribute("name");
-            inputs[i].removeAttribute("data-pfdjdmxmb_id");
-            inputs[i].setAttribute("name", "StudentEvalution");
-        }
-        inputs[0].setAttribute("checked", "checked");
-        
-        
-        // let btn = document.getElementsByClassName("btn-group")[1];
-        let btn = document.createElement("button");
-        btn.className = "btn btn-default";
-        let sp = document.createElement("span");
-        sp.innerText = "一键评价";
-        sp.className = "bigger-120 glyphicon glyphicon-ok";
-        btn.append(sp);
-        btn.setAttribute("id", "btn_StudentEvalution");
-        btn.onclick = function(){
-            let score = 5;
-            let checked = document.getElementsByName("StudentEvalution");
-            for(let i = 0; i < checked.length; ++i){
-                if(checked[i].checked){
-                    score = checked[i].getAttribute("data-dyf")
-                }
-            }
-            console.log("设置的最高分数为: " + score);
-            score = 5 - score;
-            let inputs = document.getElementsByClassName("panel-body")[3].getElementsByTagName("input");
-            let flag = Math.round(Math.random() * (inputs.length / 5));
-            console.log(flag);
-            for(let i = score; i < inputs.length; i += 5){
-                if(Math.round(i / 5) == flag){
-                    inputs[i + 1].setAttribute("checked", "checked");
-                }
-                else{
-                    inputs[i].setAttribute("checked", "checked");
-                }
-            }
-        }
-        let td = document.createElement("td");
-        td.appendChild(btn);
-        
-        tr.appendChild(td);
-        panel_body1.prepend(table);
-        panel_body1.prepend(blockquote);
-        
-
-        }
-              
-}
-
-
-
 // ----------------------------------------- 一些基础方法 ----------------------------------------------------//
 function SetBtnZero(){
     // 没用，，，
     let btn = document.getElementById("btn_yd");
     btn.className = "btn btn-default btn-primary";
-    btn.removeAttribute("disabled");    
+    btn.removeAttribute("disabled");
 }
 
 // -------------------------------- ICS类，用于处理所有有关日历的操作 ------------------------------------------//
 var CRLF = "\n";
 var SPACE = " ";
 class ICS{
-    
+
     Calendar;       // 日历参数
     ics;            // ics格式的日历，
     res;            // 最后格式化的结果
@@ -526,7 +453,7 @@ class ICS{
             Calendar.CALSCALE = "GREGORIAN";        // 历法，默认是公历
             Calendar.TIMEZONE = "Asia/Shanghai"     // 时区，默认是上海
             Calendar.ISVALARM = true;               // 提醒，默认是开启
-            Calendar.VALARM = "-P0DT0H30M0S";       // 提醒，默认半小时
+            Calendar.VALARM = "-P0DT0H0M0S";       // 提醒，默认半小时
             Calendar.WKST = "SU";                   // 一周开始，默认是周日
 
         })(this.Calendar || (this.Calendar = {}));
@@ -614,13 +541,13 @@ class ICSEvent{
     constructor(DTSTART, DTEND, SUMMARY){
         this.DTSTART = DTSTART;
         this.DTEND = DTEND;
-        this.SUMMARY = SUMMARY; 
+        this.SUMMARY = SUMMARY;
     }
     isrrule = false;
     RRULE;
     setRRULE(FREQ, WKST, COUNT, INTERVAL, BYDAY){
         this.isrrule = true;
-        this.RRULE = "RRULE:FREQ=" + FREQ + ";WKST=" + WKST + ";COUNT=" + COUNT + ";INTERVAL=" + INTERVAL + ";BYDAY=" + BYDAY;        
+        this.RRULE = "RRULE:FREQ=" + FREQ + ";WKST=" + WKST + ";COUNT=" + COUNT + ";INTERVAL=" + INTERVAL + ";BYDAY=" + BYDAY;
     }
     getRRULE(){
         return "" + this.RRULE;
@@ -637,5 +564,3 @@ class ICSEvent{
 }
 
 // -------------------------------- ICS类，用于处理所有有关日历的操作 ------------------------------------------//
-
-
