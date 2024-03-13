@@ -55,7 +55,7 @@ function ClassScheduleToICS(){
     pageFullyLoaded();
     //加载完成后运行
     function pageFullyLoaded(){
-        console.log("Fucking ZhengFang...");
+        console.log("Fucking ZhengFang... ");
         let div = document.getElementsByClassName("btn-toolbar pull-right")[0];
         let btn = document.createElement("button");
         btn.className = "btn btn-default";
@@ -232,7 +232,7 @@ function ClassScheduleToICS(){
                 else if(p.getElementsByTagName("span")[0].getAttribute("title") == "上课地点"){
                     course.location = p.getElementsByTagName("font")[1].innerText;
                 }
-                else if(p.getElementsByTagName("span")[0].getAttribute("title") == "教师"){
+                else if(p.getElementsByTagName("span")[0].getAttribute("title").indexOf("教师") != -1){
                     course.teacher = p.getElementsByTagName("font")[1].innerText;
                 }
             });
