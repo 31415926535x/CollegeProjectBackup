@@ -232,7 +232,7 @@ function ClassScheduleToICS(){
                 else if(p.getElementsByTagName("span")[0].getAttribute("title") == "上课地点"){
                     course.location = p.getElementsByTagName("font")[1].innerText;
                 }
-                else if(p.getElementsByTagName("span")[0].getAttribute("title").indexOgf("教师") != -1){
+                else if(p.getElementsByTagName("span")[0].getAttribute("title").indexOf("教师") != -1){
                     course.teacher = p.getElementsByTagName("font")[1].innerText;
                 }
             });
